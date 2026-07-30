@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { Menu, X, MessageCircle, Layers } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { SITE_CONFIG, NAV_LINKS } from "@/data/config";
 
 export default function Header() {
@@ -73,8 +74,14 @@ export default function Header() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group focus:outline-none">
-            <div className="w-9 h-9 rounded-xl bg-[#6B0F1A] flex items-center justify-center text-[#F4E409] shadow-xs">
-              <Layers className="w-5 h-5 stroke-[2.5]" />
+            <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-[#F0E2E4] shadow-xs flex-shrink-0">
+              <Image
+                src="/images/logo.jpeg"
+                alt="Racks on Rent Logo"
+                fill
+                sizes="40px"
+                className="object-cover"
+              />
             </div>
             <div>
               <span className="text-xl font-extrabold tracking-tight text-[#6B0F1A] block leading-none">
@@ -154,8 +161,14 @@ export default function Header() {
               onClick={closeMenu}
               className="flex items-center gap-2.5 focus:outline-none"
             >
-              <div className="w-9 h-9 rounded-xl bg-[#6B0F1A] flex items-center justify-center text-[#F4E409] shadow-xs">
-                <Layers className="w-5 h-5 stroke-[2.5]" />
+              <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-[#F0E2E4] shadow-xs flex-shrink-0">
+                <Image
+                  src="/images/logo.jpeg"
+                  alt="Racks on Rent Logo"
+                  fill
+                  sizes="40px"
+                  className="object-cover"
+                />
               </div>
               <div>
                 <span className="text-xl font-extrabold tracking-tight text-[#6B0F1A] block leading-none">

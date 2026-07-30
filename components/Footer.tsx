@@ -1,5 +1,6 @@
 import React from "react";
-import { Phone, Mail, MessageCircle, Layers } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, MessageCircle } from "lucide-react";
 import { SITE_CONFIG, NAV_LINKS } from "@/data/config";
 
 export default function Footer() {
@@ -12,8 +13,14 @@ export default function Footer() {
           
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#F4E409] flex items-center justify-center text-[#3D0710] shadow-xs">
-              <Layers className="w-6 h-6 stroke-[2.5]" />
+            <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-[#F4E409]/40 shadow-xs flex-shrink-0">
+              <Image
+                src="/images/logo.jpeg"
+                alt="Racks on Rent Logo"
+                fill
+                sizes="40px"
+                className="object-cover"
+              />
             </div>
             <div>
               <span className="text-xl font-extrabold text-white block">
