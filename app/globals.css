@@ -62,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #3D0710;
 }
 
-/* Hero CTA Entrance Animations */
+/* Keyframes */
 @keyframes ctaEntrance {
   0% {
     opacity: 0;
@@ -74,7 +74,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Hero Video Entrance Animation */
 @keyframes heroVideoEntrance {
   0% {
     opacity: 0;
@@ -86,7 +85,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Subtle One-Time Attention Pulse */
 @keyframes ctaAttentionPulse {
   0%, 100% {
     transform: scale(1);
@@ -98,7 +96,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Accent Line Reveal */
 @keyframes lineReveal {
   0% {
     width: 0;
@@ -110,6 +107,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@keyframes sectionReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Reusable Animation Classes */
 .animate-cta-btn-1 {
   opacity: 0;
   animation: ctaEntrance 700ms cubic-bezier(0.22, 1, 0.36, 1) 100ms forwards;
@@ -134,15 +143,67 @@ h1, h2, h3, h4, h5, h6 {
   animation: lineReveal 600ms cubic-bezier(0.22, 1, 0.36, 1) 300ms forwards;
 }
 
+/* Nav Link Center Underline Reveal */
+.nav-link-hover {
+  position: relative;
+  transition: color 220ms cubic-bezier(0.22, 1, 0.36, 1), transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .nav-link-hover:hover {
+    transform: translateY(-2px);
+  }
+  .nav-link-hover::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #F4E409;
+    transition: width 220ms cubic-bezier(0.22, 1, 0.36, 1), left 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    border-radius: 9999px;
+  }
+  .nav-link-hover:hover::after {
+    width: 70%;
+    left: 15%;
+  }
+}
+
+/* Card Hover System */
+.card-hover-system {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1), border-color 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .card-hover-system:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 16px 40px rgba(107, 15, 26, 0.12);
+    border-color: rgba(107, 15, 26, 0.4);
+  }
+}
+
+/* Button Press Tactile Feedback */
+.btn-press-feedback {
+  transition: transform 140ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 140ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-press-feedback:active {
+  transform: scale(0.97) !important;
+}
+
 /* Reduced Motion Override */
 @media (prefers-reduced-motion: reduce) {
   .animate-cta-btn-1,
   .animate-cta-btn-2,
   .animate-hero-video-entrance,
   .animate-cta-pulse-group,
-  .animate-accent-line {
+  .animate-accent-line,
+  .card-hover-system,
+  .nav-link-hover {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
+  }
+  .nav-link-hover::after {
+    display: none !important;
   }
 }

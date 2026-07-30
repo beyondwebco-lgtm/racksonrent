@@ -321,9 +321,9 @@ export default function GymSpaceShowcase({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
 
                 {/* Floating Category Label */}
-                <div className="absolute bottom-4 left-4 right-4 bg-[#3D0710]/95 text-[#FFF6A3] px-4 py-2.5 rounded-xl border border-[#F4E409]/40 shadow-lg flex items-center justify-between text-xs font-extrabold backdrop-blur-xs">
-                  <span>{activeCategory.title} Space</span>
-                  <ArrowRight className="w-4 h-4 text-[#F4E409]" />
+                <div className="absolute bottom-4 left-4 right-4 bg-[#3D0710] text-white px-5 py-3 rounded-2xl border-2 border-[#F4E409] shadow-xl flex items-center justify-between text-sm sm:text-base font-bold tracking-wide z-10">
+                  <span className="truncate">{activeCategory.title} Space</span>
+                  <ArrowRight className="w-5 h-5 text-[#F4E409] flex-shrink-0 ml-2" />
                 </div>
               </div>
             </div>

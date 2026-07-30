@@ -7,25 +7,25 @@ export default function HowItWorks() {
       number: 1,
       title: "List Your Unused Space",
       description: "Add rack details and available space information.",
-      icon: <PlusCircle className="w-6 h-6 text-[#6B0F1A]" />,
+      icon: PlusCircle,
     },
     {
       number: 2,
       title: "Brands Discover You",
       description: "Relevant wellness brands find your available space.",
-      icon: <Search className="w-6 h-6 text-[#6B0F1A]" />,
+      icon: Search,
     },
     {
       number: 3,
       title: "Connect & Approve",
       description: "Review requests and approve suitable brands.",
-      icon: <Handshake className="w-6 h-6 text-[#6B0F1A]" />,
+      icon: Handshake,
     },
     {
       number: 4,
       title: "Earn Regular Income",
       description: "Build partnerships and generate additional monthly income.",
-      icon: <TrendingUp className="w-6 h-6 text-[#6B0F1A]" />,
+      icon: TrendingUp,
     },
   ];
 
@@ -48,36 +48,39 @@ export default function HowItWorks() {
 
         {/* 4 Step Cards with Desktop Arrows */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {steps.map((step, idx) => (
-            <div key={step.number} className="relative flex flex-col">
-              <div className="rounded-3xl border border-[#F0E2E4] bg-[#FFFDF5] p-6 shadow-[0_12px_35px_rgba(107,15,26,0.06)] flex flex-col items-center text-center relative group hover:-translate-y-1 hover:border-[#6B0F1A]/40 transition-all h-full">
-                
-                {/* Step Number Circle */}
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#6B0F1A] font-black text-[#FFF6A3] mb-5 shadow-sm text-lg border-2 border-[#F4E409]">
-                  {step.number}
+          {steps.map((step, idx) => {
+            const IconComp = step.icon;
+            return (
+              <div key={step.number} className="relative flex flex-col group">
+                <div className="rounded-3xl border border-[#F0E2E4] bg-[#FFFDF5] p-6 shadow-[0_12px_35px_rgba(107,15,26,0.06)] flex flex-col items-center text-center relative group-hover:-translate-y-1.5 group-hover:scale-[1.01] group-hover:border-[#6B0F1A]/50 group-hover:shadow-[0_20px_45px_rgba(107,15,26,0.12)] transition-all duration-300 h-full">
+                  
+                  {/* Step Number Circle */}
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#6B0F1A] font-black text-[#FFF6A3] mb-5 shadow-sm text-lg border-2 border-[#F4E409] group-hover:scale-110 group-hover:bg-[#F4E409] group-hover:text-[#3D0710] group-hover:border-[#6B0F1A] transition-all duration-300">
+                    {step.number}
+                  </div>
+
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFF6A3] mb-4 text-[#6B0F1A] group-hover:bg-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors duration-300">
+                    <IconComp className="w-6 h-6" />
+                  </div>
+
+                  <h3 className="text-lg font-black text-[#6B0F1A] mb-2 group-hover:text-[#3D0710] transition-colors">
+                    {step.title}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-[#5F5F5F] leading-relaxed font-medium">
+                    {step.description}
+                  </p>
                 </div>
 
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFF6A3] mb-4 text-[#6B0F1A]">
-                  {step.icon}
-                </div>
-
-                <h3 className="text-lg font-black text-[#6B0F1A] mb-2">
-                  {step.title}
-                </h3>
-
-                <p className="text-xs sm:text-sm text-[#5F5F5F] leading-relaxed font-medium">
-                  {step.description}
-                </p>
+                {/* Connecting Desktop Arrow */}
+                {idx < steps.length - 1 && (
+                  <div className="hidden lg:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 p-1.5 rounded-full bg-[#F4E409] text-[#3D0710] shadow-sm border border-[#6B0F1A]/20 group-hover:translate-x-1.5 group-hover:bg-[#3D0710] group-hover:text-[#F4E409] transition-all duration-300">
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                )}
               </div>
-
-              {/* Connecting Desktop Arrow (hidden on mobile and last step) */}
-              {idx < steps.length - 1 && (
-                <div className="hidden lg:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 p-1.5 rounded-full bg-[#F4E409] text-[#3D0710] shadow-sm border border-[#6B0F1A]/20">
-                  <ArrowRight className="w-4 h-4" />
-                </div>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

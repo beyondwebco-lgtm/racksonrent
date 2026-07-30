@@ -11,22 +11,22 @@ export default function Footer() {
         {/* Main Footer Row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-[#6B0F1A]/60">
           
-          {/* Brand */}
+          {/* Prominently Enlarged Brand Logo */}
           <div className="flex items-center gap-3">
-            <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-[#F4E409]/40 shadow-xs flex-shrink-0">
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-[#F4E409]/60 shadow-md flex-shrink-0 bg-white">
               <Image
                 src="/images/logo.jpeg"
                 alt="Racks on Rent Logo"
                 fill
-                sizes="40px"
+                sizes="(max-width: 640px) 56px, 64px"
                 className="object-cover"
               />
             </div>
             <div>
-              <span className="text-xl font-extrabold text-white block">
+              <span className="text-2xl sm:text-3xl font-black text-white block leading-none">
                 Racks<span className="text-[#F4E409]">on</span>Rent
               </span>
-              <span className="text-xs font-bold text-[#FFF6A3] uppercase tracking-wider block">
+              <span className="text-xs sm:text-sm font-extrabold text-[#FFF6A3] uppercase tracking-wider block mt-1">
                 {SITE_CONFIG.tagline}
               </span>
             </div>

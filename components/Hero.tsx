@@ -226,8 +226,8 @@ export default function Hero({ onSelectRole }: HeroProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
 
                   {/* Overlay Badge */}
-                  <div className="absolute bottom-6 right-6 bg-[#3D0710] text-[#FFF6A3] px-4 py-2 rounded-full border border-[#F4E409]/40 shadow-md flex items-center gap-2 text-xs font-extrabold z-10">
-                    <span className="w-2 h-2 rounded-full bg-[#F4E409] animate-ping" />
+                  <div className="absolute bottom-6 right-6 bg-[#3D0710] text-white px-5 py-2.5 rounded-full border-2 border-[#F4E409] shadow-xl flex items-center gap-2 text-xs sm:text-sm font-bold tracking-wide z-10">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#F4E409] animate-ping" />
                     <span>Extra Space. Extra Opportunity.</span>
                   </div>
                 </div>

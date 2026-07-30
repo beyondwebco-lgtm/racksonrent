@@ -81,27 +81,28 @@ export default function Header({ onSelectRole }: HeaderProps) {
   return (
     <header
       className={`sticky top-0 z-40 transition-all duration-200 border-b border-[#F0E2E4] bg-[#FFFDF5]/95 backdrop-blur-md ${
-        scrolled ? "py-2.5 shadow-xs" : "py-3.5"
+        scrolled ? "py-2 shadow-xs" : "py-3"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
         
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group focus:outline-none flex-shrink-0">
-          <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-[#F0E2E4] shadow-xs flex-shrink-0">
+        {/* Prominently Enlarged Logo & Brand Name */}
+        <Link href="/" className="flex items-center gap-3 group focus:outline-none flex-shrink-0">
+          <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 shadow-md flex-shrink-0 bg-white">
             <Image
               src="/images/logo.jpeg"
               alt="Racks on Rent Logo"
               fill
-              sizes="40px"
+              sizes="(max-width: 640px) 56px, 64px"
+              priority
               className="object-cover"
             />
           </div>
           <div>
-            <span className="text-xl font-extrabold tracking-tight text-[#6B0F1A] block leading-none">
+            <span className="text-2xl sm:text-3xl font-black tracking-tight text-[#6B0F1A] block leading-none">
               Racks<span className="text-[#6B0F1A]">on</span>Rent
             </span>
-            <span className="text-[10px] font-bold text-[#6B0F1A] tracking-wider uppercase block mt-0.5">
+            <span className="text-xs sm:text-sm font-extrabold text-[#6B0F1A] tracking-wider uppercase block mt-1">
               Sublet Space. Share Success.
             </span>
           </div>
@@ -170,22 +171,22 @@ export default function Header({ onSelectRole }: HeaderProps) {
             <Link
               href="/"
               onClick={closeMenu}
-              className="flex items-center gap-2.5 focus:outline-none"
+              className="flex items-center gap-3 focus:outline-none"
             >
-              <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-[#F0E2E4] shadow-xs flex-shrink-0">
+              <div className="relative w-12 h-12 rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 shadow-md flex-shrink-0 bg-white">
                 <Image
                   src="/images/logo.jpeg"
                   alt="Racks on Rent Logo"
                   fill
-                  sizes="40px"
+                  sizes="48px"
                   className="object-cover"
                 />
               </div>
               <div>
-                <span className="text-xl font-extrabold tracking-tight text-[#6B0F1A] block leading-none">
+                <span className="text-2xl font-black tracking-tight text-[#6B0F1A] block leading-none">
                   Racks<span className="text-[#6B0F1A]">on</span>Rent
                 </span>
-                <span className="text-[10px] font-bold text-[#6B0F1A] tracking-wider uppercase block mt-0.5">
+                <span className="text-xs font-extrabold text-[#6B0F1A] tracking-wider uppercase block mt-1">
                   Sublet Space. Share Success.
                 </span>
               </div>

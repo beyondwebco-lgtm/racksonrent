@@ -12,6 +12,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import EnquiryForm from "@/components/EnquiryForm";
 import FAQ from "@/components/FAQ";
 import TrustStrip from "@/components/TrustStrip";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function HomePage() {
   const [selectedRole, setSelectedRole] = useState<"gym-owner" | "wellness" | "general">("gym-owner");
@@ -52,18 +53,43 @@ export default function HomePage() {
     <>
       <Hero onSelectRole={handleRoleSelect} />
       <HeroStats />
-      <SpaceSearch onSearch={handleSearchSelect} />
-      <AboutUs />
-      <GymSpaceShowcase onSelectCategoryAction={handleShowcaseSelect} />
-      <PopularCategories />
-      <HowItWorks />
-      <WhyChooseUs />
-      <EnquiryForm
-        selectedRole={selectedRole}
-        initialSearchValues={searchValues}
-        onRoleChange={(r) => setSelectedRole(r)}
-      />
-      <FAQ />
+
+      <ScrollReveal>
+        <SpaceSearch onSearch={handleSearchSelect} />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <AboutUs />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <GymSpaceShowcase onSelectCategoryAction={handleShowcaseSelect} />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <PopularCategories />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <HowItWorks />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <WhyChooseUs />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <EnquiryForm
+          selectedRole={selectedRole}
+          initialSearchValues={searchValues}
+          onRoleChange={(r) => setSelectedRole(r)}
+        />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <FAQ />
+      </ScrollReveal>
+
       <TrustStrip />
     </>
   );
