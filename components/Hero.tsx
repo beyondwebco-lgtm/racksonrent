@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Dumbbell, Store, TrendingUp, ShieldCheck, Lock, CheckCircle2 } from "lucide-react";
 
@@ -9,6 +9,9 @@ interface HeroProps {
 }
 
 export default function Hero({ onSelectRole }: HeroProps) {
+  const [btn1Pos, setBtn1Pos] = useState({ x: 0, y: 0 });
+  const [btn2Pos, setBtn2Pos] = useState({ x: 0, y: 0 });
+
   const handleRoleClick = (role: "gym-owner" | "wellness") => {
     if (onSelectRole) {
       onSelectRole(role);
@@ -17,6 +20,34 @@ export default function Hero({ onSelectRole }: HeroProps) {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleMouseMoveBtn1 = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (typeof window !== "undefined" && window.innerWidth < 1024) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const relX = e.clientX - (rect.left + rect.width / 2);
+    const relY = e.clientY - (rect.top + rect.height / 2);
+    const shiftX = Math.max(-3, Math.min(3, relX * 0.04));
+    const shiftY = Math.max(-3, Math.min(3, relY * 0.04));
+    setBtn1Pos({ x: shiftX, y: shiftY });
+  };
+
+  const handleMouseLeaveBtn1 = () => {
+    setBtn1Pos({ x: 0, y: 0 });
+  };
+
+  const handleMouseMoveBtn2 = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (typeof window !== "undefined" && window.innerWidth < 1024) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const relX = e.clientX - (rect.left + rect.width / 2);
+    const relY = e.clientY - (rect.top + rect.height / 2);
+    const shiftX = Math.max(-3, Math.min(3, relX * 0.04));
+    const shiftY = Math.max(-3, Math.min(3, relY * 0.04));
+    setBtn2Pos({ x: shiftX, y: shiftY });
+  };
+
+  const handleMouseLeaveBtn2 = () => {
+    setBtn2Pos({ x: 0, y: 0 });
   };
 
   const benefitItems = [
@@ -65,31 +96,73 @@ export default function Hero({ onSelectRole }: HeroProps) {
               ))}
             </div>
 
-            {/* 2 Primary CTAs with supporting labels */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-              <button
-                type="button"
-                onClick={() => handleRoleClick("gym-owner")}
-                className="flex-1 inline-flex flex-col items-center justify-center gap-0.5 rounded-2xl bg-[#F4E409] border-2 border-[#6B0F1A]/20 px-6 py-3.5 text-[#3D0710] shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#3D0710] hover:text-[#F4E409] focus:outline-none cursor-pointer group"
-              >
-                <div className="flex items-center gap-2 text-base font-black">
-                  <Dumbbell className="w-5 h-5" />
-                  <span>I Own a Gym</span>
-                </div>
-                <span className="text-[11px] font-bold uppercase tracking-wider opacity-80">List Your Space</span>
-              </button>
+            {/* Animated 2 Primary CTAs with supporting labels */}
+            <div className="relative pt-4">
+              {/* Thin Accent Line */}
+              <div className="w-16 h-0.5 bg-[#6B0F1A]/30 rounded-full animate-accent-line mb-3" />
 
-              <button
-                type="button"
-                onClick={() => handleRoleClick("wellness")}
-                className="flex-1 inline-flex flex-col items-center justify-center gap-0.5 rounded-2xl border-2 border-[#6B0F1A] bg-[#6B0F1A] px-6 py-3.5 text-[#FFF6A3] shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#3D0710] hover:text-[#F4E409] focus:outline-none cursor-pointer group"
-              >
-                <div className="flex items-center gap-2 text-base font-black">
-                  <Store className="w-5 h-5" />
-                  <span>I Own a Wellness Brand</span>
-                </div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#F4E409]">Find Space to Display</span>
-              </button>
+              {/* Background Accent Glow */}
+              <div className="absolute inset-0 -top-1 bg-[radial-gradient(ellipse_at_center,rgba(244,228,9,0.30),transparent_70%)] pointer-events-none rounded-3xl blur-md animate-cta-pulse-group" />
+
+              <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center gap-4 z-10">
+                
+                {/* Button 1: I Own a Gym */}
+                <button
+                  type="button"
+                  onClick={() => handleRoleClick("gym-owner")}
+                  onMouseMove={handleMouseMoveBtn1}
+                  onMouseLeave={handleMouseLeaveBtn1}
+                  className="animate-cta-btn-1 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-2xl bg-[#F4E409] border-2 border-[#6B0F1A]/20 px-6 py-3.5 text-[#3D0710] shadow-md transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:scale-[1.018] hover:shadow-[0_14px_30px_rgba(107,15,26,0.22)] active:scale-[0.97] focus:outline-none cursor-pointer group"
+                >
+                  {/* One-Time Light Sweep Overlay */}
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
+
+                  {/* Inner Content Container with Proximity Shift */}
+                  <div
+                    style={{
+                      transform: `translate(${btn1Pos.x}px, ${btn1Pos.y}px)`,
+                    }}
+                    className="transition-transform duration-200 ease-out flex flex-col items-center justify-center w-full"
+                  >
+                    <div className="flex items-center gap-2 text-base font-black">
+                      <Dumbbell className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                      <span>I Own a Gym</span>
+                    </div>
+                    <span className="text-[11px] font-bold uppercase tracking-wider opacity-80 mt-0.5">
+                      List Your Space
+                    </span>
+                  </div>
+                </button>
+
+                {/* Button 2: I Own a Wellness Brand */}
+                <button
+                  type="button"
+                  onClick={() => handleRoleClick("wellness")}
+                  onMouseMove={handleMouseMoveBtn2}
+                  onMouseLeave={handleMouseLeaveBtn2}
+                  className="animate-cta-btn-2 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-2xl border-2 border-[#6B0F1A] bg-[#6B0F1A] px-6 py-3.5 text-[#FFF6A3] shadow-md transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:scale-[1.018] hover:shadow-[0_14px_30px_rgba(107,15,26,0.35)] active:scale-[0.97] focus:outline-none cursor-pointer group"
+                >
+                  {/* One-Time Light Sweep Overlay */}
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-[#F4E409]/30 to-transparent pointer-events-none" />
+
+                  {/* Inner Content Container with Proximity Shift */}
+                  <div
+                    style={{
+                      transform: `translate(${btn2Pos.x}px, ${btn2Pos.y}px)`,
+                    }}
+                    className="transition-transform duration-200 ease-out flex flex-col items-center justify-center w-full"
+                  >
+                    <div className="flex items-center gap-2 text-base font-black">
+                      <Store className="w-5 h-5 text-[#FFF6A3] group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                      <span>I Own a Wellness Brand</span>
+                    </div>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#F4E409] mt-0.5">
+                      Find Space to Display
+                    </span>
+                  </div>
+                </button>
+
+              </div>
             </div>
           </div>
 

@@ -61,3 +61,70 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-thumb:hover {
   background: #3D0710;
 }
+
+/* Hero CTA Entrance Animations */
+@keyframes ctaEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Subtle One-Time Attention Pulse */
+@keyframes ctaAttentionPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.025);
+    opacity: 0.9;
+  }
+}
+
+/* Accent Line Reveal */
+@keyframes lineReveal {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 4rem;
+    opacity: 1;
+  }
+}
+
+.animate-cta-btn-1 {
+  opacity: 0;
+  animation: ctaEntrance 700ms cubic-bezier(0.22, 1, 0.36, 1) 100ms forwards;
+}
+
+.animate-cta-btn-2 {
+  opacity: 0;
+  animation: ctaEntrance 700ms cubic-bezier(0.22, 1, 0.36, 1) 220ms forwards;
+}
+
+.animate-cta-pulse-group {
+  animation: ctaAttentionPulse 800ms cubic-bezier(0.22, 1, 0.36, 1) 1600ms 1 forwards;
+}
+
+.animate-accent-line {
+  opacity: 0;
+  animation: lineReveal 600ms cubic-bezier(0.22, 1, 0.36, 1) 300ms forwards;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .animate-cta-btn-1,
+  .animate-cta-btn-2,
+  .animate-cta-pulse-group,
+  .animate-accent-line {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

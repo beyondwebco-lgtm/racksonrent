@@ -3,9 +3,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, LogIn, UserPlus, Dumbbell } from "lucide-react";
+import { Menu, X, Dumbbell } from "lucide-react";
 import { NAV_LINKS } from "@/data/config";
-import AuthModal from "@/components/AuthModal";
 
 interface HeaderProps {
   onSelectRole?: (role: "gym-owner" | "wellness") => void;
@@ -14,10 +13,6 @@ interface HeaderProps {
 export default function Header({ onSelectRole }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [authModalState, setAuthModalState] = useState<{
-    isOpen: boolean;
-    type: "login" | "signup";
-  }>({ isOpen: false, type: "login" });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,109 +78,84 @@ export default function Header({ onSelectRole }: HeaderProps) {
     }
   };
 
-  const openAuthModal = (type: "login" | "signup") => {
-    closeMenu();
-    setAuthModalState({ isOpen: true, type });
-  };
-
   return (
-    <>
-      <header
-        className={`sticky top-0 z-40 transition-all duration-200 border-b border-[#F0E2E4] bg-[#FFFDF5]/95 backdrop-blur-md ${
-          scrolled ? "py-2.5 shadow-xs" : "py-3.5"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
-          
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group focus:outline-none flex-shrink-0">
-            <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-[#F0E2E4] shadow-xs flex-shrink-0">
-              <Image
-                src="/images/logo.jpeg"
-                alt="Racks on Rent Logo"
-                fill
-                sizes="40px"
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <span className="text-xl font-extrabold tracking-tight text-[#6B0F1A] block leading-none">
-                Racks<span className="text-[#6B0F1A]">on</span>Rent
-              </span>
-              <span className="text-[10px] font-bold text-[#6B0F1A] tracking-wider uppercase block mt-0.5">
-                Sublet Space. Share Success.
-              </span>
-            </div>
-          </Link>
-
-          {/* Desktop Navigation (>= 1024px) */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="px-3 py-2 rounded-xl text-xs xl:text-sm font-bold text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/50 transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Desktop Action Buttons (>= 1024px) */}
-          <div className="hidden lg:flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => openAuthModal("login")}
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-[#6B0F1A] hover:bg-[#FFF6A3]/60 transition-colors cursor-pointer"
-            >
-              <LogIn className="w-4 h-4" />
-              <span>Login</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => openAuthModal("signup")}
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-[#6B0F1A] border border-[#6B0F1A]/30 hover:bg-[#FFF6A3] transition-colors cursor-pointer"
-            >
-              <UserPlus className="w-4 h-4" />
-              <span>Sign Up</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={handleListYourRack}
-              className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#F4E409] px-4 py-2 text-xs font-extrabold text-[#3D0710] transition hover:bg-[#3D0710] hover:text-[#F4E409] shadow-xs border border-[#6B0F1A]/20 cursor-pointer"
-            >
-              <Dumbbell className="w-4 h-4" />
-              <span>List Your Rack</span>
-            </button>
+    <header
+      className={`sticky top-0 z-40 transition-all duration-200 border-b border-[#F0E2E4] bg-[#FFFDF5]/95 backdrop-blur-md ${
+        scrolled ? "py-2.5 shadow-xs" : "py-3.5"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+        
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2.5 group focus:outline-none flex-shrink-0">
+          <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-[#F0E2E4] shadow-xs flex-shrink-0">
+            <Image
+              src="/images/logo.jpeg"
+              alt="Racks on Rent Logo"
+              fill
+              sizes="40px"
+              className="object-cover"
+            />
           </div>
-
-          {/* Mobile Right Controls (< 1024px) */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <button
-              type="button"
-              onClick={handleListYourRack}
-              className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-[#F4E409] text-[#3D0710] text-xs font-extrabold shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-colors cursor-pointer"
-            >
-              <Dumbbell className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">List Rack</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(true)}
-              aria-expanded={mobileMenuOpen}
-              aria-label="Open navigation menu"
-              className="p-2.5 rounded-xl text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/40 border border-[#F0E2E4] transition-colors cursor-pointer"
-            >
-              <Menu className="w-6 h-6" />
-            </button>
+          <div>
+            <span className="text-xl font-extrabold tracking-tight text-[#6B0F1A] block leading-none">
+              Racks<span className="text-[#6B0F1A]">on</span>Rent
+            </span>
+            <span className="text-[10px] font-bold text-[#6B0F1A] tracking-wider uppercase block mt-0.5">
+              Sublet Space. Share Success.
+            </span>
           </div>
+        </Link>
 
+        {/* Desktop Navigation (>= 1024px) */}
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/50 transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        {/* Desktop Action Button (>= 1024px) */}
+        <div className="hidden lg:flex items-center gap-2">
+          <button
+            type="button"
+            onClick={handleListYourRack}
+            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#F4E409] px-5 py-2.5 text-xs xl:text-sm font-extrabold text-[#3D0710] transition hover:bg-[#3D0710] hover:text-[#F4E409] shadow-xs border border-[#6B0F1A]/20 cursor-pointer"
+          >
+            <Dumbbell className="w-4 h-4" />
+            <span>List Your Rack</span>
+          </button>
         </div>
-      </header>
+
+        {/* Mobile Right Controls (< 1024px) */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <button
+            type="button"
+            onClick={handleListYourRack}
+            className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-[#F4E409] text-[#3D0710] text-xs font-extrabold shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-colors cursor-pointer"
+          >
+            <Dumbbell className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">List Rack</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(true)}
+            aria-expanded={mobileMenuOpen}
+            aria-label="Open navigation menu"
+            className="p-2.5 rounded-xl text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/40 border border-[#F0E2E4] transition-colors cursor-pointer"
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+        </div>
+
+      </div>
 
       {/* Solid Warm White Full-Screen Mobile Drawer (< 1024px) */}
       {mobileMenuOpen && (
@@ -247,28 +217,8 @@ export default function Header({ onSelectRole }: HeaderProps) {
             ))}
           </nav>
 
-          {/* Bottom Action CTA buttons inside Drawer */}
-          <div className="p-6 border-t border-[#F0E2E4] bg-[#FFF6A3]/30 space-y-3">
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                onClick={() => openAuthModal("login")}
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-[#6B0F1A] py-3 text-sm font-bold text-[#6B0F1A] hover:bg-[#FFF6A3]"
-              >
-                <LogIn className="w-4 h-4" />
-                <span>Login</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => openAuthModal("signup")}
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#6B0F1A] py-3 text-sm font-bold text-[#FFF6A3] hover:bg-[#3D0710]"
-              >
-                <UserPlus className="w-4 h-4" />
-                <span>Sign Up</span>
-              </button>
-            </div>
-
+          {/* Bottom Action CTA button inside Drawer */}
+          <div className="p-6 border-t border-[#F0E2E4] bg-[#FFF6A3]/30">
             <button
               type="button"
               onClick={handleListYourRack}
@@ -280,16 +230,6 @@ export default function Header({ onSelectRole }: HeaderProps) {
           </div>
         </div>
       )}
-
-      {/* Static Auth Modal */}
-      <AuthModal
-        isOpen={authModalState.isOpen}
-        type={authModalState.type}
-        onClose={() => setAuthModalState({ ...authModalState, isOpen: false })}
-        onSelectRole={(r) => {
-          if (onSelectRole) onSelectRole(r);
-        }}
-      />
-    </>
+    </header>
   );
 }
