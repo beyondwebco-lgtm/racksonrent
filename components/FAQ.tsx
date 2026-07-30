@@ -12,18 +12,18 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-white border-y border-[#D7EEFA]" id="faq">
+    <section className="py-16 sm:py-24 bg-[#FFFDF5] border-y border-[#F0E2E4]" id="faq">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex rounded-full bg-[#EAF7FF] px-4 py-1.5 text-sm font-semibold text-[#386FA4] border border-[#D7EEFA]">
+          <span className="inline-flex rounded-full bg-[#FFF6A3] px-4 py-1.5 text-sm font-bold text-[#6B0F1A] border border-[#F0E2E4]">
             Got Questions?
           </span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-[#133C55] md:text-5xl">
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#6B0F1A] md:text-5xl">
             Frequently Asked Questions
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#607D8B] md:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#5F5F5F] md:text-lg font-medium">
             Everything you need to know about the Racks on Rent platform and space sharing process.
           </p>
         </div>
@@ -37,8 +37,8 @@ export default function FAQ() {
                 key={faq.id}
                 className={`rounded-2xl border transition-all duration-200 shadow-xs overflow-hidden ${
                   isOpen
-                    ? "border-[#84D2F6] bg-[#F8FCFF] shadow-sm"
-                    : "border-[#D7EEFA] bg-white hover:border-[#84D2F6]/60"
+                    ? "border-[#6B0F1A] bg-[#FFF6A3]/30 shadow-sm"
+                    : "border-[#F0E2E4] bg-[#FFFDF5] hover:border-[#6B0F1A]/50"
                 }`}
               >
                 <button
@@ -47,12 +47,12 @@ export default function FAQ() {
                   aria-expanded={isOpen}
                   aria-controls={`faq-content-${faq.id}`}
                   onClick={() => toggleItem(faq.id)}
-                  className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left font-bold text-base sm:text-lg text-[#133C55] hover:text-[#386FA4] focus:outline-none transition-colors cursor-pointer"
+                  className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left font-black text-base sm:text-lg text-[#6B0F1A] hover:text-[#3D0710] focus:outline-none transition-colors cursor-pointer"
                 >
                   <span>{faq.question}</span>
                   <span
                     className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300 ${
-                      isOpen ? "rotate-180 bg-[#EAF7FF] text-[#59A5D8]" : "bg-[#EAF7FF] text-[#59A5D8]"
+                      isOpen ? "rotate-180 bg-[#6B0F1A] text-[#FFF6A3]" : "bg-[#FFF6A3] text-[#6B0F1A]"
                     }`}
                   >
                     <ChevronDown className="w-5 h-5" />
@@ -64,7 +64,7 @@ export default function FAQ() {
                     id={`faq-content-${faq.id}`}
                     role="region"
                     aria-labelledby={`faq-btn-${faq.id}`}
-                    className="px-5 pb-6 sm:px-6 pt-1 text-[#607D8B] text-base leading-relaxed border-t border-[#D7EEFA]/60 bg-[#F8FCFF]"
+                    className="px-5 pb-6 sm:px-6 pt-1 text-[#5F5F5F] text-base leading-relaxed border-t border-[#F0E2E4] bg-[#FFFDF5] font-medium"
                   >
                     {faq.answer}
                   </div>

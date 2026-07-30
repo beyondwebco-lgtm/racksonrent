@@ -4,27 +4,27 @@ import { COMPACT_SPACE_TYPES } from "@/data/spaceTypes";
 
 export default function SpaceTypes() {
   const iconMap: Record<string, React.ReactNode> = {
-    Layers: <Layers className="w-6 h-6 text-[#59A5D8]" />,
-    Grid: <Grid className="w-6 h-6 text-[#59A5D8]" />,
-    Store: <Store className="w-6 h-6 text-[#59A5D8]" />,
-    Coffee: <Coffee className="w-6 h-6 text-[#59A5D8]" />,
-    Gift: <Gift className="w-6 h-6 text-[#59A5D8]" />,
-    Box: <Box className="w-6 h-6 text-[#59A5D8]" />,
+    Layers: <Layers className="w-6 h-6 text-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors" />,
+    Grid: <Grid className="w-6 h-6 text-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors" />,
+    Store: <Store className="w-6 h-6 text-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors" />,
+    Coffee: <Coffee className="w-6 h-6 text-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors" />,
+    Gift: <Gift className="w-6 h-6 text-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors" />,
+    Box: <Box className="w-6 h-6 text-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors" />,
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-white border-y border-[#D7EEFA]" id="space-types">
+    <section className="py-16 sm:py-24 bg-[#FFF6A3]/30 border-y border-[#F0E2E4]" id="space-types">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex rounded-full bg-[#EAF7FF] px-4 py-1.5 text-sm font-semibold text-[#386FA4] border border-[#D7EEFA]">
+          <span className="inline-flex rounded-full bg-[#FFFDF5] px-4 py-1.5 text-sm font-bold text-[#6B0F1A] border border-[#F0E2E4]">
             Available Formats
           </span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-[#133C55] md:text-5xl">
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#6B0F1A] md:text-5xl">
             What Kind of Space Can Be Offered?
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#607D8B] md:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#5F5F5F] md:text-lg font-medium">
             Explore popular gym space options that suit display racks, shelves, counters, and kiosks.
           </p>
         </div>
@@ -34,16 +34,16 @@ export default function SpaceTypes() {
           {COMPACT_SPACE_TYPES.map((item) => (
             <div
               key={item.id}
-              className="rounded-3xl border border-[#D7EEFA] bg-white p-6 shadow-[0_12px_35px_rgba(89,165,216,0.08)] hover:shadow-[0_20px_50px_rgba(89,165,216,0.16)] transition-all hover:-translate-y-1 hover:border-[#84D2F6] flex flex-col justify-between group"
+              className="rounded-3xl border border-[#F0E2E4] bg-[#FFFDF5] p-6 shadow-[0_12px_35px_rgba(107,15,26,0.06)] hover:shadow-[0_20px_50px_rgba(107,15,26,0.14)] transition-all hover:-translate-y-1 hover:border-[#6B0F1A]/30 flex flex-col justify-between group"
             >
               <div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF7FF] text-[#59A5D8] group-hover:bg-[#386FA4] group-hover:text-white transition-colors mb-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFF6A3] text-[#6B0F1A] group-hover:bg-[#6B0F1A] transition-colors mb-4">
                   {iconMap[item.iconName]}
                 </div>
-                <h3 className="font-bold text-lg text-[#133C55] group-hover:text-[#386FA4] transition-colors mb-2">
+                <h3 className="font-extrabold text-lg text-[#6B0F1A] transition-colors mb-2">
                   {item.name}
                 </h3>
-                <p className="text-sm text-[#607D8B] leading-relaxed">
+                <p className="text-sm text-[#5F5F5F] leading-relaxed font-medium">
                   {item.description}
                 </p>
               </div>

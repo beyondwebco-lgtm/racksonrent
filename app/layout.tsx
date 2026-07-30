@@ -62,7 +62,7 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "Racks on Rent",
     "url": SITE_CONFIG.domain,
-    "logo": `${SITE_CONFIG.domain}/images/hero-gym.webp`,
+    "logo": `${SITE_CONFIG.domain}/images/hero-gym.png`,
     "description": "Sublet space. Share success. Connecting gym owners with nutrition and wellness businesses.",
     "telephone": "+917995424477",
     "email": "racksonrent@gmail.com"
@@ -79,7 +79,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-white text-[#345466] font-sans">
+      <body className="min-h-full flex flex-col bg-[#FFFDF5] text-[#1F1F1F] font-sans">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

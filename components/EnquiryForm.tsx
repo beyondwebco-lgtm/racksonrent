@@ -94,32 +94,32 @@ ${detailsText}`;
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-[#EAF7FF] border-t border-[#D7EEFA]" id="contact">
+    <section className="py-16 sm:py-24 bg-[#FFFDF5] border-t border-[#F0E2E4]" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-flex rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-[#386FA4] border border-[#D7EEFA]">
+          <span className="inline-flex rounded-full bg-[#FFF6A3] px-4 py-1.5 text-sm font-bold text-[#6B0F1A] border border-[#F0E2E4]">
             Get In Touch
           </span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-[#133C55] md:text-5xl">
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#6B0F1A] md:text-5xl">
             Tell Us What You Are Looking For
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#607D8B] md:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#5F5F5F] md:text-lg font-medium">
             Choose your role, enter a few details, and continue the conversation on WhatsApp.
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
           {/* Role Selector Tabs */}
-          <div className="flex flex-wrap items-center justify-center p-1.5 bg-white rounded-2xl mb-8 gap-1.5 border border-[#D7EEFA] shadow-xs">
+          <div className="flex flex-wrap items-center justify-center p-1.5 bg-[#FFF6A3]/30 rounded-2xl mb-8 gap-1.5 border border-[#F0E2E4] shadow-xs">
             <button
               type="button"
               onClick={() => handleRoleSelect("gym-owner")}
               className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                 role === "gym-owner"
-                  ? "bg-[#59A5D8] text-white shadow-xs"
-                  : "text-[#133C55] hover:bg-[#EAF7FF]"
+                  ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-xs"
+                  : "text-[#6B0F1A] hover:bg-[#FFF6A3]"
               }`}
             >
               <Dumbbell className="w-4 h-4" />
@@ -131,8 +131,8 @@ ${detailsText}`;
               onClick={() => handleRoleSelect("wellness")}
               className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                 role === "wellness"
-                  ? "bg-[#386FA4] text-white shadow-xs"
-                  : "text-[#133C55] hover:bg-[#EAF7FF]"
+                  ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-xs"
+                  : "text-[#6B0F1A] hover:bg-[#FFF6A3]"
               }`}
             >
               <Store className="w-4 h-4" />
@@ -144,8 +144,8 @@ ${detailsText}`;
               onClick={() => handleRoleSelect("general")}
               className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                 role === "general"
-                  ? "bg-[#59A5D8] text-white shadow-xs"
-                  : "text-[#133C55] hover:bg-[#EAF7FF]"
+                  ? "bg-[#6B0F1A] text-[#FFF6A3] shadow-xs"
+                  : "text-[#6B0F1A] hover:bg-[#FFF6A3]"
               }`}
             >
               <HelpCircle className="w-4 h-4" />
@@ -156,18 +156,18 @@ ${detailsText}`;
           {/* Form Box */}
           <form
             onSubmit={handleSubmit}
-            className="space-y-5 rounded-3xl border border-[#D7EEFA] bg-white p-6 sm:p-10 shadow-[0_12px_35px_rgba(89,165,216,0.08)]"
+            className="space-y-5 rounded-3xl border-2 border-[#F0E2E4] bg-[#FFFDF5] p-6 sm:p-10 shadow-[0_12px_35px_rgba(107,15,26,0.06)]"
           >
             {submitted && (
-              <div className="bg-[#EAF7FF] border border-[#84D2F6] text-[#133C55] p-4 rounded-2xl flex items-center gap-3 text-sm font-semibold">
-                <CheckCircle2 className="w-5 h-5 text-[#59A5D8] flex-shrink-0" />
+              <div className="bg-[#FFF6A3] border border-[#6B0F1A]/30 text-[#6B0F1A] p-4 rounded-2xl flex items-center gap-3 text-sm font-bold">
+                <CheckCircle2 className="w-5 h-5 text-[#6B0F1A] flex-shrink-0" />
                 <span>Opening WhatsApp with your enquiry details...</span>
               </div>
             )}
 
             {/* Common Field: Full Name */}
             <div>
-              <label className="block text-xs font-bold text-[#133C55] uppercase tracking-wider mb-1.5" htmlFor="fullName">
+              <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="fullName">
                 Full Name *
               </label>
               <input
@@ -177,17 +177,17 @@ ${detailsText}`;
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder="e.g. Rahul Sharma"
-                className={`w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition placeholder:text-[#607D8B]/70 focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm ${
+                className={`w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm ${
                   errors.fullName ? "border-red-500 bg-red-50/30" : ""
                 }`}
               />
-              {errors.fullName && <p className="text-xs text-red-500 mt-1 font-semibold">{errors.fullName}</p>}
+              {errors.fullName && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.fullName}</p>}
             </div>
 
             {/* Gym Owner specific field */}
             {role === "gym-owner" && (
               <div>
-                <label className="block text-xs font-bold text-[#133C55] uppercase tracking-wider mb-1.5" htmlFor="gymName">
+                <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="gymName">
                   Gym Name *
                 </label>
                 <input
@@ -197,18 +197,18 @@ ${detailsText}`;
                   value={formData.gymName}
                   onChange={handleChange}
                   placeholder="e.g. Iron Fitness Center"
-                  className={`w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition placeholder:text-[#607D8B]/70 focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm ${
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm ${
                     errors.gymName ? "border-red-500 bg-red-50/30" : ""
                   }`}
                 />
-                {errors.gymName && <p className="text-xs text-red-500 mt-1 font-semibold">{errors.gymName}</p>}
+                {errors.gymName && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.gymName}</p>}
               </div>
             )}
 
             {/* Wellness Business specific field */}
             {role === "wellness" && (
               <div>
-                <label className="block text-xs font-bold text-[#133C55] uppercase tracking-wider mb-1.5" htmlFor="brandName">
+                <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="brandName">
                   Brand or Business Name *
                 </label>
                 <input
@@ -218,18 +218,18 @@ ${detailsText}`;
                   value={formData.brandName}
                   onChange={handleChange}
                   placeholder="e.g. NutriFuel Organics"
-                  className={`w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition placeholder:text-[#607D8B]/70 focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm ${
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm ${
                     errors.brandName ? "border-red-500 bg-red-50/30" : ""
                   }`}
                 />
-                {errors.brandName && <p className="text-xs text-red-500 mt-1 font-semibold">{errors.brandName}</p>}
+                {errors.brandName && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.brandName}</p>}
               </div>
             )}
 
             {/* Phone & City Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-[#133C55] uppercase tracking-wider mb-1.5" htmlFor="phone">
+                <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="phone">
                   Phone Number *
                 </label>
                 <input
@@ -239,15 +239,15 @@ ${detailsText}`;
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="7995424477"
-                  className={`w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition placeholder:text-[#607D8B]/70 focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm ${
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm ${
                     errors.phone ? "border-red-500 bg-red-50/30" : ""
                   }`}
                 />
-                {errors.phone && <p className="text-xs text-red-500 mt-1 font-semibold">{errors.phone}</p>}
+                {errors.phone && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.phone}</p>}
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-[#133C55] uppercase tracking-wider mb-1.5" htmlFor="city">
+                <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="city">
                   City *
                 </label>
                 <input
@@ -257,18 +257,18 @@ ${detailsText}`;
                   value={formData.city}
                   onChange={handleChange}
                   placeholder="e.g. Hyderabad"
-                  className={`w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition placeholder:text-[#607D8B]/70 focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm ${
+                  className={`w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm ${
                     errors.city ? "border-red-500 bg-red-50/30" : ""
                   }`}
                 />
-                {errors.city && <p className="text-xs text-red-500 mt-1 font-semibold">{errors.city}</p>}
+                {errors.city && <p className="text-xs text-red-600 mt-1 font-semibold">{errors.city}</p>}
               </div>
             </div>
 
             {/* Gym Owner Space Field */}
             {role === "gym-owner" && (
               <div>
-                <label className="block text-xs font-bold text-[#133C55] uppercase tracking-wider mb-1.5" htmlFor="availableSpace">
+                <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="availableSpace">
                   Available Space Type
                 </label>
                 <select
@@ -276,7 +276,7 @@ ${detailsText}`;
                   name="availableSpace"
                   value={formData.availableSpace}
                   onChange={handleChange}
-                  className="w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm"
+                  className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
                 >
                   <option value="Product Rack">Product Rack</option>
                   <option value="Wall Shelf">Wall Shelf</option>
@@ -293,7 +293,7 @@ ${detailsText}`;
             {role === "wellness" && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-[#133C55] uppercase tracking-wider mb-1.5" htmlFor="category">
+                  <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="category">
                     Product / Service Category
                   </label>
                   <select
@@ -301,7 +301,7 @@ ${detailsText}`;
                     name="category"
                     value={formData.category}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm"
+                    className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
                   >
                     <option value="Protein & Supplements">Protein & Supplements</option>
                     <option value="Energy & Pre-Workout Drinks">Energy & Pre-Workout Drinks</option>
@@ -314,7 +314,7 @@ ${detailsText}`;
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#133C55] uppercase tracking-wider mb-1.5" htmlFor="requiredSpace">
+                  <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="requiredSpace">
                     Required Space Type
                   </label>
                   <select
@@ -322,7 +322,7 @@ ${detailsText}`;
                     name="requiredSpace"
                     value={formData.requiredSpace}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm"
+                    className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
                   >
                     <option value="Product Rack">Product Rack</option>
                     <option value="Wall Shelf">Wall Shelf</option>
@@ -338,7 +338,7 @@ ${detailsText}`;
 
             {/* Message Field */}
             <div>
-              <label className="block text-xs font-bold text-[#133C55] uppercase tracking-wider mb-1.5" htmlFor="message">
+              <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="message">
                 Short Message
               </label>
               <textarea
@@ -348,7 +348,7 @@ ${detailsText}`;
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Share any additional notes or questions..."
-                className="w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition placeholder:text-[#607D8B]/70 focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm"
+                className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
               />
             </div>
 
@@ -356,14 +356,14 @@ ${detailsText}`;
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#59A5D8] hover:bg-[#386FA4] text-white py-3.5 px-6 font-semibold text-base shadow-xs transition-all cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4E409] hover:bg-[#3D0710] text-[#3D0710] hover:text-[#F4E409] border border-[#6B0F1A]/20 py-3.5 px-6 font-extrabold text-base shadow-xs transition-all cursor-pointer"
               >
                 <MessageCircle className="w-5 h-5 fill-current" />
                 <span>Submit & Continue on WhatsApp</span>
               </button>
 
-              <p className="text-xs text-[#607D8B] text-center mt-3 flex items-center justify-center gap-1 font-medium">
-                <AlertCircle className="w-3.5 h-3.5 text-[#59A5D8]" />
+              <p className="text-xs text-[#5F5F5F] text-center mt-3 flex items-center justify-center gap-1 font-semibold">
+                <AlertCircle className="w-3.5 h-3.5 text-[#6B0F1A]" />
                 <span>Your information is used only to respond to your enquiry.</span>
               </p>
             </div>
