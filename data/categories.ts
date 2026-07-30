@@ -1,98 +1,73 @@
-export interface BusinessCategory {
+export interface CategoryItem {
   id: string;
-  title: string;
+  name: string;
   description: string;
   iconName: string;
   badge?: string;
 }
 
-export const BUSINESS_CATEGORIES: BusinessCategory[] = [
+export const POPULAR_CATEGORIES: CategoryItem[] = [
   {
-    id: "nutritionists",
-    title: "Nutritionists",
-    description: "Certified dietary experts offering diet charts and personalized consultations inside fitness hubs.",
+    id: "nutrition-supplements",
+    name: "Nutrition & Supplements",
+    description: "Whey protein, BCAAs, multivitamins, and creatine powders.",
     iconName: "Stethoscope",
-    badge: "Consultation"
-  },
-  {
-    id: "protein-supplements",
-    title: "Protein Supplement Brands",
-    description: "Whey, plant protein, BCAA, and recovery powders displayed right near workout zones.",
-    iconName: "Dumbbell",
     badge: "Popular"
   },
   {
-    id: "energy-drinks",
-    title: "Energy & Pre-Workout Brands",
-    description: "Electrolyte drinks, pre-workout formulas, and natural energy boosters for athletes.",
+    id: "health-beverages",
+    name: "Health Drinks & Beverages",
+    description: "Cold-pressed juices, electrolyte drinks, and kombucha.",
     iconName: "Zap",
+    badge: "Trending"
   },
   {
     id: "healthy-snacks",
-    title: "Healthy Snack Businesses",
-    description: "Protein bars, muesli, seed mixes, dry fruits, and guilt-free high-protein snacks.",
-    iconName: "Cookie",
+    name: "Healthy Snacks & Foods",
+    description: "Protein bars, muesli, dry fruits, and healthy cookies.",
+    iconName: "Cookie"
   },
   {
-    id: "fruit-bowls",
-    title: "Fruit Bowl Providers",
-    description: "Freshly cut seasonal fruit bowls and superfood mixes prepared for post-workout nutrition.",
-    iconName: "Apple",
+    id: "gym-apparel",
+    name: "Gym Apparel",
+    description: "Performance tees, gym hoodies, shorts, and activewear.",
+    iconName: "ShoppingBag"
   },
   {
-    id: "sprouts-salads",
-    title: "Sprouts & Salad Sellers",
-    description: "Organic sprouts, high-protein fresh salads, and clean eating boxes.",
-    iconName: "Leaf",
-  },
-  {
-    id: "diet-meal-plans",
-    title: "Diet Meal-Plan Services",
-    description: "Weekly & monthly curated keto, high-protein, or lean meal plan subscriptions.",
-    iconName: "Utensils",
-    badge: "Subscription"
-  },
-  {
-    id: "sports-nutrition",
-    title: "Sports Nutrition Companies",
-    description: "Endurance gels, intra-workout formulas, and specialized sports performance supplements.",
-    iconName: "Trophy",
+    id: "fitness-bands",
+    name: "Fitness Bands & Accessories",
+    description: "Resistance bands, lifting straps, and wrist wraps.",
+    iconName: "Dumbbell"
   },
   {
     id: "fitness-accessories",
-    title: "Fitness Accessory Brands",
-    description: "Lifting belts, wrist wraps, resistance bands, gym towels, and shaker bottles.",
-    iconName: "ShoppingBag",
+    name: "Fitness Accessories",
+    description: "Shaker bottles, gym bags, towels, and water jugs.",
+    iconName: "Trophy"
   },
   {
-    id: "organic-food",
-    title: "Organic Food Brands",
-    description: "Chemical-free cold-pressed oils, organic honey, oats, and superfood powders.",
-    iconName: "Sprout",
+    id: "fruit-salads",
+    name: "Fruit Bowls & Healthy Salads",
+    description: "Fresh fruit bowls, sprout salads, and post-workout bowls.",
+    iconName: "Apple"
   },
   {
-    id: "wellness-startups",
-    title: "Wellness Startups",
-    description: "Innovative health-tech apps, recovery gadgets, and modern wellness products.",
-    iconName: "Sparkles",
-    badge: "Innovative"
+    id: "protein-corners",
+    name: "Protein Shake Corners",
+    description: "Freshly blended protein shake and smoothie setups.",
+    iconName: "Utensils",
+    badge: "High Demand"
   },
   {
-    id: "health-product-sellers",
-    title: "Health Product Sellers",
-    description: "Daily vitamins, omega-3 capsules, immunity boosters, and Ayurvedic supplements.",
-    iconName: "HeartPulse",
+    id: "personal-care",
+    name: "Personal Care & Wellness",
+    description: "Pain relief sprays, muscle rubs, and organic soaps.",
+    iconName: "Sparkles"
   },
   {
-    id: "nutrition-consultation",
-    title: "Nutrition Consultation Providers",
-    description: "Body composition analysis, fat loss counselling, and custom fitness diet coaching.",
-    iconName: "UserCheck",
-  },
-  {
-    id: "hydration-products",
-    title: "Hydration Product Brands",
-    description: "Isotonic water, zero-sugar hydration mixes, and mineral-infused wellness drinks.",
-    iconName: "Droplets",
-  },
+    id: "more-categories",
+    name: "More Categories",
+    description: "Explore all health, wellness, and fitness product types.",
+    iconName: "Layers"
+  }
 ];

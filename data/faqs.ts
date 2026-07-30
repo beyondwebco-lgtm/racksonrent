@@ -4,7 +4,7 @@ export interface FAQItem {
   answer: string;
 }
 
-export const FIVE_FAQS: FAQItem[] = [
+export const EIGHT_FAQS: FAQItem[] = [
   {
     id: "faq-1",
     question: "What is Racks on Rent?",
@@ -23,11 +23,26 @@ export const FIVE_FAQS: FAQItem[] = [
   {
     id: "faq-4",
     question: "Is this an online marketplace?",
-    answer: "No. The website is currently an informational and enquiry platform."
+    answer: "No. The website is currently an informational and enquiry platform that facilitates direct business connections."
   },
   {
     id: "faq-5",
     question: "How do I get started?",
-    answer: "Select your role, complete the short enquiry form, and continue the conversation on WhatsApp."
+    answer: "Select your role, complete the short enquiry form, and continue the conversation directly on WhatsApp."
+  },
+  {
+    id: "faq-6",
+    question: "Does Racks on Rent handle payments?",
+    answer: "No. Racks on Rent is currently an enquiry and matching platform. Space terms and payments are handled directly between gym owners and brands."
+  },
+  {
+    id: "faq-7",
+    question: "What types of spaces can be listed?",
+    answer: "Product racks, wall shelves, reception counters, nutrition corners, sampling tables, and compact branded kiosks."
+  },
+  {
+    id: "faq-8",
+    question: "Which cities are currently supported?",
+    answer: "Racks on Rent supports gym space enquiries and wellness brand connections pan-India across major metro and tier-2 cities."
   }
 ];

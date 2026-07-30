@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -63,7 +64,7 @@ export default function RootLayout({
     "name": "Racks on Rent",
     "url": SITE_CONFIG.domain,
     "logo": `${SITE_CONFIG.domain}/images/hero-gym.png`,
-    "description": "Sublet space. Share success. Connecting gym owners with nutrition and wellness businesses.",
+    "description": "Sublet space. Share Success. Connecting gym owners with nutrition and wellness businesses.",
     "telephone": "+917995424477",
     "email": "racksonrent@gmail.com"
   };
@@ -80,6 +81,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#FFFDF5] text-[#1F1F1F] font-sans">
+        <TopBar />
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

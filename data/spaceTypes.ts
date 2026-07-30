@@ -43,3 +43,10 @@ export const COMPACT_SPACE_TYPES: SpaceTypeItem[] = [
     iconName: "Box",
   },
 ];
+
+export const RACK_SIZES = [
+  { id: "small", name: "Small", dimensions: "Up to 3x2 ft" },
+  { id: "medium", name: "Medium", dimensions: "3x2 ft to 6x3 ft" },
+  { id: "large", name: "Large", dimensions: "6x3 ft to 10x5 ft" },
+  { id: "custom", name: "Custom", dimensions: "Custom Floor Area" },
+];

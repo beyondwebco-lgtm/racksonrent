@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { CheckCircle2, Dumbbell, Store } from "lucide-react";
+import { Dumbbell, Store, TrendingUp, ShieldCheck, Lock, CheckCircle2 } from "lucide-react";
 
 interface HeroProps {
   onSelectRole?: (role: "gym-owner" | "wellness") => void;
@@ -19,73 +19,82 @@ export default function Hero({ onSelectRole }: HeroProps) {
     }
   };
 
+  const benefitItems = [
+    { text: "Extra Space. Extra Income.", icon: <TrendingUp className="w-4 h-4 text-[#6B0F1A]" /> },
+    { text: "Connect with Verified Brands.", icon: <ShieldCheck className="w-4 h-4 text-[#6B0F1A]" /> },
+    { text: "Safe, Secure & Trusted Platform.", icon: <Lock className="w-4 h-4 text-[#6B0F1A]" /> },
+    { text: "Hassle-Free & Transparent.", icon: <CheckCircle2 className="w-4 h-4 text-[#6B0F1A]" /> },
+  ];
+
   return (
-    <section className="relative pt-8 pb-16 lg:pt-16 lg:pb-24 bg-[radial-gradient(circle_at_80%_20%,rgba(107,15,26,0.08),transparent_40%),linear-gradient(180deg,#fffdf5_0%,#fff6a3_25%,#fffdf5_100%)] border-b border-[#F0E2E4]" id="hero">
+    <section className="relative pt-8 pb-12 lg:pt-16 lg:pb-20 bg-[radial-gradient(circle_at_80%_20%,rgba(107,15,26,0.08),transparent_40%),linear-gradient(180deg,#fffdf5_0%,#fff6a3_25%,#fffdf5_100%)] border-b border-[#F0E2E4]" id="hero">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
-          {/* Left Column */}
+          {/* Left Column (Text first on mobile) */}
           <div className="lg:col-span-7 space-y-6">
             <div>
               <span className="inline-flex items-center rounded-full bg-[#FFF6A3] px-4 py-1.5 text-xs sm:text-sm font-bold text-[#6B0F1A] border border-[#F0E2E4]">
-                For Gym Owners and Wellness Brands
+                For Gym Owners & Wellness Brands
               </span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-[#6B0F1A] leading-[1.15]">
               Turn Unused Gym Space{" "}
-              <span className="bg-[#F4E409] text-[#3D0710] px-2 py-0.5 rounded-xl inline-block mt-1">
+              <span className="bg-[#F4E409] text-[#3D0710] px-3 py-1 rounded-xl inline-block mt-1 border border-[#6B0F1A]/20">
                 Into Income
               </span>
-              <span className="block text-2xl sm:text-3xl lg:text-4xl text-[#6B0F1A] font-bold mt-3">
+              <span className="block text-xl sm:text-2xl lg:text-3xl text-[#6B0F1A] font-bold mt-3">
                 Place Wellness Products Where the Right Customers Already Are
               </span>
             </h1>
 
             <p className="text-base sm:text-lg text-[#5F5F5F] leading-relaxed max-w-2xl font-medium">
-              &ldquo;Racks on Rent connects gym owners with nutrition, fitness, and wellness businesses through simple rack and display-space opportunities.&rdquo;
+              Racks on Rent connects gym owners with nutrition, fitness, and wellness businesses through simple rack and display-space opportunities.
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            {/* 4 Small Benefit Items */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              {benefitItems.map((item, idx) => (
+                <div key={idx} className="flex items-center gap-2.5 bg-[#FFFDF5] p-2.5 rounded-xl border border-[#F0E2E4] shadow-2xs">
+                  <div className="p-1.5 rounded-lg bg-[#FFF6A3] flex-shrink-0">
+                    {item.icon}
+                  </div>
+                  <span className="text-xs sm:text-sm font-extrabold text-[#1F1F1F]">{item.text}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* 2 Primary CTAs with supporting labels */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
               <button
                 type="button"
                 onClick={() => handleRoleClick("gym-owner")}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4E409] border border-[#6B0F1A]/20 px-6 py-3.5 font-extrabold text-[#3D0710] shadow-xs transition-all hover:-translate-y-0.5 hover:bg-[#3D0710] hover:text-[#F4E409] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#F4E409] cursor-pointer text-base"
+                className="flex-1 inline-flex flex-col items-center justify-center gap-0.5 rounded-2xl bg-[#F4E409] border-2 border-[#6B0F1A]/20 px-6 py-3.5 text-[#3D0710] shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#3D0710] hover:text-[#F4E409] focus:outline-none cursor-pointer group"
               >
-                <Dumbbell className="w-5 h-5" />
-                <span>I Own a Gym</span>
+                <div className="flex items-center gap-2 text-base font-black">
+                  <Dumbbell className="w-5 h-5" />
+                  <span>I Own a Gym</span>
+                </div>
+                <span className="text-[11px] font-bold uppercase tracking-wider opacity-80">List Your Space</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => handleRoleClick("wellness")}
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#6B0F1A] bg-[#FFFDF5] px-6 py-3.5 font-bold text-[#6B0F1A] transition-all hover:bg-[#FFF6A3] cursor-pointer text-base"
+                className="flex-1 inline-flex flex-col items-center justify-center gap-0.5 rounded-2xl border-2 border-[#6B0F1A] bg-[#6B0F1A] px-6 py-3.5 text-[#FFF6A3] shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#3D0710] hover:text-[#F4E409] focus:outline-none cursor-pointer group"
               >
-                <Store className="w-5 h-5 text-[#6B0F1A]" />
-                <span>I Own a Wellness Brand</span>
+                <div className="flex items-center gap-2 text-base font-black">
+                  <Store className="w-5 h-5" />
+                  <span>I Own a Wellness Brand</span>
+                </div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#F4E409]">Find Space to Display</span>
               </button>
-            </div>
-
-            {/* Trust Points */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-[#F0E2E4]">
-              <div className="flex items-center gap-2 text-xs sm:text-sm text-[#1F1F1F] font-bold">
-                <CheckCircle2 className="w-4 h-4 text-[#6B0F1A] flex-shrink-0" />
-                <span>Simple enquiry process</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs sm:text-sm text-[#1F1F1F] font-bold">
-                <CheckCircle2 className="w-4 h-4 text-[#6B0F1A] flex-shrink-0" />
-                <span>No online account required</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs sm:text-sm text-[#1F1F1F] font-bold">
-                <CheckCircle2 className="w-4 h-4 text-[#6B0F1A] flex-shrink-0" />
-                <span>Direct business connection</span>
-              </div>
             </div>
           </div>
 
-          {/* Right Column Single Image */}
-          <div className="lg:col-span-5 relative mt-4 lg:mt-0">
+          {/* Right Column (Image below text on mobile) */}
+          <div className="lg:col-span-5 relative mt-6 lg:mt-0">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               <div className="rounded-[2rem] border-2 border-[#F0E2E4] bg-[#FFFDF5] p-3 shadow-[0_24px_70px_rgba(107,15,26,0.10)] relative overflow-hidden">
                 <div className="relative aspect-4/3 w-full rounded-2xl overflow-hidden bg-[#FFF6A3]/20">

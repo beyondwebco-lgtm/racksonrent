@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { FIVE_FAQS } from "@/data/faqs";
+import { EIGHT_FAQS } from "@/data/faqs";
 
 export default function FAQ() {
   const [openId, setOpenId] = useState<string | null>("faq-1");
@@ -28,9 +28,9 @@ export default function FAQ() {
           </p>
         </div>
 
-        {/* 5 Accessible FAQ Accordion */}
+        {/* 8 Accessible FAQ Accordion */}
         <div className="space-y-4 max-w-3xl mx-auto">
-          {FIVE_FAQS.map((faq) => {
+          {EIGHT_FAQS.map((faq) => {
             const isOpen = openId === faq.id;
             return (
               <div

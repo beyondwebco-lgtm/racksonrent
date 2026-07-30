@@ -3,12 +3,21 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, MessageCircle } from "lucide-react";
-import { SITE_CONFIG, NAV_LINKS } from "@/data/config";
+import { Menu, X, LogIn, UserPlus, Dumbbell } from "lucide-react";
+import { NAV_LINKS } from "@/data/config";
+import AuthModal from "@/components/AuthModal";
 
-export default function Header() {
+interface HeaderProps {
+  onSelectRole?: (role: "gym-owner" | "wellness") => void;
+}
+
+export default function Header({ onSelectRole }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [authModalState, setAuthModalState] = useState<{
+    isOpen: boolean;
+    type: "login" | "signup";
+  }>({ isOpen: false, type: "login" });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,17 +72,33 @@ export default function Header() {
     }
   };
 
+  const handleListYourRack = () => {
+    closeMenu();
+    if (onSelectRole) {
+      onSelectRole("gym-owner");
+    }
+    const element = document.getElementById("contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const openAuthModal = (type: "login" | "signup") => {
+    closeMenu();
+    setAuthModalState({ isOpen: true, type });
+  };
+
   return (
     <>
       <header
         className={`sticky top-0 z-40 transition-all duration-200 border-b border-[#F0E2E4] bg-[#FFFDF5]/95 backdrop-blur-md ${
-          scrolled ? "py-3 shadow-xs" : "py-4"
+          scrolled ? "py-2.5 shadow-xs" : "py-3.5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group focus:outline-none">
+          <Link href="/" className="flex items-center gap-2.5 group focus:outline-none flex-shrink-0">
             <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-[#F0E2E4] shadow-xs flex-shrink-0">
               <Image
                 src="/images/logo.jpeg"
@@ -93,44 +118,60 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation (>= 768px) */}
-          <nav className="hidden md:flex items-center gap-1">
+          {/* Desktop Navigation (>= 1024px) */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="px-3.5 py-2 rounded-xl text-sm font-bold text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/40 transition-colors"
+                className="px-3 py-2 rounded-xl text-xs xl:text-sm font-bold text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/50 transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* Desktop CTA (>= 768px) */}
-          <div className="hidden md:flex items-center gap-3">
-            <a
-              href={SITE_CONFIG.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4E409] px-5 py-2.5 text-sm font-extrabold text-[#3D0710] transition hover:bg-[#3D0710] hover:text-[#F4E409] shadow-xs border border-[#6B0F1A]/20"
+          {/* Desktop Action Buttons (>= 1024px) */}
+          <div className="hidden lg:flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => openAuthModal("login")}
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-[#6B0F1A] hover:bg-[#FFF6A3]/60 transition-colors cursor-pointer"
             >
-              <MessageCircle className="w-4 h-4 fill-current" />
-              <span>Enquire on WhatsApp</span>
-            </a>
+              <LogIn className="w-4 h-4" />
+              <span>Login</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => openAuthModal("signup")}
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-[#6B0F1A] border border-[#6B0F1A]/30 hover:bg-[#FFF6A3] transition-colors cursor-pointer"
+            >
+              <UserPlus className="w-4 h-4" />
+              <span>Sign Up</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={handleListYourRack}
+              className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#F4E409] px-4 py-2 text-xs font-extrabold text-[#3D0710] transition hover:bg-[#3D0710] hover:text-[#F4E409] shadow-xs border border-[#6B0F1A]/20 cursor-pointer"
+            >
+              <Dumbbell className="w-4 h-4" />
+              <span>List Your Rack</span>
+            </button>
           </div>
 
-          {/* Mobile Right Controls (< 768px) */}
-          <div className="flex items-center gap-2 md:hidden">
-            <a
-              href={SITE_CONFIG.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp Enquiry"
-              className="p-2.5 rounded-full bg-[#F4E409] text-[#3D0710] shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-colors"
+          {/* Mobile Right Controls (< 1024px) */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              type="button"
+              onClick={handleListYourRack}
+              className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-[#F4E409] text-[#3D0710] text-xs font-extrabold shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-colors cursor-pointer"
             >
-              <MessageCircle className="w-5 h-5 fill-current" />
-            </a>
+              <Dumbbell className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">List Rack</span>
+            </button>
 
             <button
               type="button"
@@ -146,10 +187,10 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Solid Warm White Full-Screen Mobile Drawer (< 768px) */}
+      {/* Solid Warm White Full-Screen Mobile Drawer (< 1024px) */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-50 bg-[#FFFDF5] md:hidden flex flex-col justify-between overflow-y-auto"
+          className="fixed inset-0 z-50 bg-[#FFFDF5] lg:hidden flex flex-col justify-between overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-label="Navigation Menu"
@@ -181,16 +222,6 @@ export default function Header() {
             </Link>
 
             <div className="flex items-center gap-2">
-              <a
-                href={SITE_CONFIG.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp Enquiry"
-                className="p-2.5 rounded-full bg-[#F4E409] text-[#3D0710] shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-colors"
-              >
-                <MessageCircle className="w-5 h-5 fill-current" />
-              </a>
-
               <button
                 type="button"
                 onClick={closeMenu}
@@ -203,34 +234,62 @@ export default function Header() {
           </div>
 
           {/* Navigation Links */}
-          <nav className="p-6 space-y-3 flex-1">
+          <nav className="p-6 space-y-2 flex-1">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="block px-5 py-3.5 rounded-2xl font-bold text-xl text-[#6B0F1A] hover:bg-[#FFF6A3]/40 transition-colors"
+                className="block px-4 py-3 rounded-xl font-bold text-lg text-[#6B0F1A] hover:bg-[#FFF6A3]/40 transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* Bottom WhatsApp CTA inside Drawer */}
-          <div className="p-6 border-t border-[#F0E2E4] bg-[#FFF6A3]/30">
-            <a
-              href={SITE_CONFIG.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={closeMenu}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4E409] py-4 text-base font-extrabold text-[#3D0710] shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-colors"
+          {/* Bottom Action CTA buttons inside Drawer */}
+          <div className="p-6 border-t border-[#F0E2E4] bg-[#FFF6A3]/30 space-y-3">
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={() => openAuthModal("login")}
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-[#6B0F1A] py-3 text-sm font-bold text-[#6B0F1A] hover:bg-[#FFF6A3]"
+              >
+                <LogIn className="w-4 h-4" />
+                <span>Login</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => openAuthModal("signup")}
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#6B0F1A] py-3 text-sm font-bold text-[#FFF6A3] hover:bg-[#3D0710]"
+              >
+                <UserPlus className="w-4 h-4" />
+                <span>Sign Up</span>
+              </button>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleListYourRack}
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4E409] py-3.5 text-base font-extrabold text-[#3D0710] shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-colors"
             >
-              <MessageCircle className="w-5 h-5 fill-current" />
-              <span>Enquire on WhatsApp</span>
-            </a>
+              <Dumbbell className="w-5 h-5" />
+              <span>List Your Rack</span>
+            </button>
           </div>
         </div>
       )}
+
+      {/* Static Auth Modal */}
+      <AuthModal
+        isOpen={authModalState.isOpen}
+        type={authModalState.type}
+        onClose={() => setAuthModalState({ ...authModalState, isOpen: false })}
+        onSelectRole={(r) => {
+          if (onSelectRole) onSelectRole(r);
+        }}
+      />
     </>
   );
 }

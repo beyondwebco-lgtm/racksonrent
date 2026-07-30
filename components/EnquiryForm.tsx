@@ -8,10 +8,16 @@ type RoleType = "gym-owner" | "wellness" | "general";
 
 interface EnquiryFormProps {
   selectedRole?: RoleType;
+  initialSearchValues?: {
+    location?: string;
+    spaceType?: string;
+    rackSize?: string;
+    category?: string;
+  };
   onRoleChange?: (role: RoleType) => void;
 }
 
-export default function EnquiryForm({ selectedRole = "gym-owner", onRoleChange }: EnquiryFormProps) {
+export default function EnquiryForm({ selectedRole = "gym-owner", initialSearchValues, onRoleChange }: EnquiryFormProps) {
   const [internalRole, setInternalRole] = useState<RoleType | null>(null);
 
   const role = internalRole ?? selectedRole;
@@ -21,10 +27,11 @@ export default function EnquiryForm({ selectedRole = "gym-owner", onRoleChange }
     gymName: "",
     brandName: "",
     phone: "",
-    city: "",
-    availableSpace: "Product Rack",
-    requiredSpace: "Product Rack",
-    category: "Protein & Supplements",
+    city: initialSearchValues?.location || "",
+    availableSpace: initialSearchValues?.spaceType || "Product Rack",
+    requiredSpace: initialSearchValues?.spaceType || "Product Rack",
+    rackSize: initialSearchValues?.rackSize || "Small",
+    category: initialSearchValues?.category || "Nutrition & Supplements",
     message: "",
   });
 
@@ -55,7 +62,7 @@ export default function EnquiryForm({ selectedRole = "gym-owner", onRoleChange }
     if (role === "gym-owner" && !formData.gymName.trim()) newErrors.gymName = "Gym Name is required";
     if (role === "wellness" && !formData.brandName.trim()) newErrors.brandName = "Brand Name is required";
     if (!formData.phone.trim()) newErrors.phone = "Phone Number is required";
-    if (!formData.city.trim()) newErrors.city = "City is required";
+    if (!formData.city.trim() && !initialSearchValues?.location) newErrors.city = "City is required";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -64,18 +71,24 @@ export default function EnquiryForm({ selectedRole = "gym-owner", onRoleChange }
     e.preventDefault();
     if (!validate()) return;
 
+    const activeCity = formData.city || initialSearchValues?.location || "";
+    const activeSpaceType = formData.availableSpace || initialSearchValues?.spaceType || "Product Rack";
+    const activeRequiredSpace = formData.requiredSpace || initialSearchValues?.spaceType || "Product Rack";
+    const activeRackSize = formData.rackSize || initialSearchValues?.rackSize || "Small";
+    const activeCategory = formData.category || initialSearchValues?.category || "Nutrition & Supplements";
+
     let roleText = "Gym Owner";
     let detailsText = "";
 
     if (role === "gym-owner") {
       roleText = "Gym Owner";
-      detailsText = `Name: ${formData.fullName}\nGym Name: ${formData.gymName}\nPhone: ${formData.phone}\nCity: ${formData.city}\nAvailable Space: ${formData.availableSpace}\nMessage: ${formData.message || "N/A"}`;
+      detailsText = `Name: ${formData.fullName}\nGym Name: ${formData.gymName}\nPhone: ${formData.phone}\nCity: ${activeCity}\nAvailable Space: ${activeSpaceType}\nRack Size: ${activeRackSize}\nMessage: ${formData.message || "N/A"}`;
     } else if (role === "wellness") {
       roleText = "Wellness Business";
-      detailsText = `Name: ${formData.fullName}\nBrand Name: ${formData.brandName}\nPhone: ${formData.phone}\nCity: ${formData.city}\nProduct Category: ${formData.category}\nRequired Space: ${formData.requiredSpace}\nMessage: ${formData.message || "N/A"}`;
+      detailsText = `Name: ${formData.fullName}\nBrand Name: ${formData.brandName}\nPhone: ${formData.phone}\nCity: ${activeCity}\nProduct Category: ${activeCategory}\nRequired Space: ${activeRequiredSpace}\nPreferred Rack Size: ${activeRackSize}\nMessage: ${formData.message || "N/A"}`;
     } else {
       roleText = "General Enquiry";
-      detailsText = `Name: ${formData.fullName}\nPhone: ${formData.phone}\nCity: ${formData.city}\nMessage: ${formData.message || "N/A"}`;
+      detailsText = `Name: ${formData.fullName}\nPhone: ${formData.phone}\nCity: ${activeCity}\nMessage: ${formData.message || "N/A"}`;
     }
 
     const messageText = `Hello Racks on Rent,
@@ -254,7 +267,7 @@ ${detailsText}`;
                   id="city"
                   name="city"
                   type="text"
-                  value={formData.city}
+                  value={formData.city || initialSearchValues?.location || ""}
                   onChange={handleChange}
                   placeholder="e.g. Hyderabad"
                   className={`w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition placeholder:text-[#5F5F5F]/70 focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm ${
@@ -265,62 +278,17 @@ ${detailsText}`;
               </div>
             </div>
 
-            {/* Gym Owner Space Field */}
+            {/* Gym Owner Space & Size Fields */}
             {role === "gym-owner" && (
-              <div>
-                <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="availableSpace">
-                  Available Space Type
-                </label>
-                <select
-                  id="availableSpace"
-                  name="availableSpace"
-                  value={formData.availableSpace}
-                  onChange={handleChange}
-                  className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
-                >
-                  <option value="Product Rack">Product Rack</option>
-                  <option value="Wall Shelf">Wall Shelf</option>
-                  <option value="Reception Counter">Reception Counter</option>
-                  <option value="Nutrition Corner">Nutrition Corner</option>
-                  <option value="Sampling Table">Sampling Table</option>
-                  <option value="Small Kiosk">Small Kiosk</option>
-                  <option value="Other Floor Space">Other Floor Space</option>
-                </select>
-              </div>
-            )}
-
-            {/* Wellness Business Category & Space Fields */}
-            {role === "wellness" && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="category">
-                    Product / Service Category
+                  <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="availableSpace">
+                    Available Space Type
                   </label>
                   <select
-                    id="category"
-                    name="category"
-                    value={formData.category}
-                    onChange={handleChange}
-                    className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
-                  >
-                    <option value="Protein & Supplements">Protein & Supplements</option>
-                    <option value="Energy & Pre-Workout Drinks">Energy & Pre-Workout Drinks</option>
-                    <option value="Healthy Snacks & Protein Bars">Healthy Snacks & Protein Bars</option>
-                    <option value="Diet Meal Plans">Diet Meal Plans</option>
-                    <option value="Fitness Accessories">Fitness Accessories</option>
-                    <option value="Nutrition Consultation">Nutrition Consultation</option>
-                    <option value="Other Health Product">Other Health Product</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="requiredSpace">
-                    Required Space Type
-                  </label>
-                  <select
-                    id="requiredSpace"
-                    name="requiredSpace"
-                    value={formData.requiredSpace}
+                    id="availableSpace"
+                    name="availableSpace"
+                    value={formData.availableSpace || initialSearchValues?.spaceType || "Product Rack"}
                     onChange={handleChange}
                     className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
                   >
@@ -331,6 +299,93 @@ ${detailsText}`;
                     <option value="Sampling Table">Sampling Table</option>
                     <option value="Small Kiosk">Small Kiosk</option>
                     <option value="Other Floor Space">Other Floor Space</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="rackSize">
+                    Rack Size
+                  </label>
+                  <select
+                    id="rackSize"
+                    name="rackSize"
+                    value={formData.rackSize || initialSearchValues?.rackSize || "Small"}
+                    onChange={handleChange}
+                    className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
+                  >
+                    <option value="Small">Small (Up to 3x2 ft)</option>
+                    <option value="Medium">Medium (3x2 ft to 6x3 ft)</option>
+                    <option value="Large">Large (6x3 ft to 10x5 ft)</option>
+                    <option value="Custom">Custom Floor Area</option>
+                  </select>
+                </div>
+              </div>
+            )}
+
+            {/* Wellness Business Category, Space & Size Fields */}
+            {role === "wellness" && (
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="category">
+                      Product / Service Category
+                    </label>
+                    <select
+                      id="category"
+                      name="category"
+                      value={formData.category || initialSearchValues?.category || "Nutrition & Supplements"}
+                      onChange={handleChange}
+                      className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
+                    >
+                      <option value="Nutrition & Supplements">Nutrition & Supplements</option>
+                      <option value="Health Drinks & Beverages">Health Drinks & Beverages</option>
+                      <option value="Healthy Snacks & Foods">Healthy Snacks & Foods</option>
+                      <option value="Gym Apparel">Gym Apparel</option>
+                      <option value="Fitness Bands & Accessories">Fitness Bands & Accessories</option>
+                      <option value="Fitness Accessories">Fitness Accessories</option>
+                      <option value="Fruit Bowls & Healthy Salads">Fruit Bowls & Healthy Salads</option>
+                      <option value="Protein Shake Corners">Protein Shake Corners</option>
+                      <option value="Personal Care & Wellness">Personal Care & Wellness</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="requiredSpace">
+                      Required Space Type
+                    </label>
+                    <select
+                      id="requiredSpace"
+                      name="requiredSpace"
+                      value={formData.requiredSpace || initialSearchValues?.spaceType || "Product Rack"}
+                      onChange={handleChange}
+                      className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
+                    >
+                      <option value="Product Rack">Product Rack</option>
+                      <option value="Wall Shelf">Wall Shelf</option>
+                      <option value="Reception Counter">Reception Counter</option>
+                      <option value="Nutrition Corner">Nutrition Corner</option>
+                      <option value="Sampling Table">Sampling Table</option>
+                      <option value="Small Kiosk">Small Kiosk</option>
+                      <option value="Other Floor Space">Other Floor Space</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-[#6B0F1A] uppercase tracking-wider mb-1.5" htmlFor="rackSize">
+                    Preferred Rack Size
+                  </label>
+                  <select
+                    id="rackSize"
+                    name="rackSize"
+                    value={formData.rackSize || initialSearchValues?.rackSize || "Small"}
+                    onChange={handleChange}
+                    className="w-full rounded-xl border border-[#F0E2E4] bg-[#FFFDF5] px-4 py-3 text-[#1F1F1F] outline-none transition focus:border-[#6B0F1A] focus:ring-4 focus:ring-[#FFF6A3] text-sm"
+                  >
+                    <option value="Small">Small (Up to 3x2 ft)</option>
+                    <option value="Medium">Medium (3x2 ft to 6x3 ft)</option>
+                    <option value="Large">Large (6x3 ft to 10x5 ft)</option>
+                    <option value="Custom">Custom Floor Area</option>
                   </select>
                 </div>
               </div>

@@ -11,11 +11,16 @@ export const SITE_CONFIG = {
   email: "racksonrent@gmail.com",
   mailtoLink: "mailto:racksonrent@gmail.com",
   address: "India",
+  topBarTextLeft: "For Gym Owners & Wellness Brands",
+  topBarTextCenter: "Verified Spaces. Trusted Partners.",
 };
 
 export const NAV_LINKS = [
   { label: "Home", href: "#hero" },
   { label: "How It Works", href: "#how-it-works" },
+  { label: "Categories", href: "#categories" },
   { label: "Benefits", href: "#benefits" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "FAQs", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
