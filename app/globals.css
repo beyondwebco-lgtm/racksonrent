@@ -74,6 +74,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Hero Video Entrance Animation */
+@keyframes heroVideoEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 /* Subtle One-Time Attention Pulse */
 @keyframes ctaAttentionPulse {
   0%, 100% {
@@ -108,6 +120,11 @@ h1, h2, h3, h4, h5, h6 {
   animation: ctaEntrance 700ms cubic-bezier(0.22, 1, 0.36, 1) 220ms forwards;
 }
 
+.animate-hero-video-entrance {
+  opacity: 0;
+  animation: heroVideoEntrance 1000ms cubic-bezier(0.22, 1, 0.36, 1) 250ms forwards;
+}
+
 .animate-cta-pulse-group {
   animation: ctaAttentionPulse 800ms cubic-bezier(0.22, 1, 0.36, 1) 1600ms 1 forwards;
 }
@@ -121,6 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (prefers-reduced-motion: reduce) {
   .animate-cta-btn-1,
   .animate-cta-btn-2,
+  .animate-hero-video-entrance,
   .animate-cta-pulse-group,
   .animate-accent-line {
     animation: none !important;

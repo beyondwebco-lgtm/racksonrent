@@ -13,7 +13,7 @@ export const HERO_STATS = [
   },
   {
     id: "earnings",
-    number: "₹ Lakhs+",
+    number: "₹ 5 Lakhs+",
     label: "Earnings Generated",
     iconName: "TrendingUp"
   }

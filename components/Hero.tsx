@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
+import React, { useState, useEffect, useRef } from "react";
 import { Dumbbell, Store, TrendingUp, ShieldCheck, Lock, CheckCircle2 } from "lucide-react";
 
 interface HeroProps {
@@ -11,6 +10,8 @@ interface HeroProps {
 export default function Hero({ onSelectRole }: HeroProps) {
   const [btn1Pos, setBtn1Pos] = useState({ x: 0, y: 0 });
   const [btn2Pos, setBtn2Pos] = useState({ x: 0, y: 0 });
+  const [scrollY, setScrollY] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleRoleClick = (role: "gym-owner" | "wellness") => {
     if (onSelectRole) {
@@ -49,6 +50,39 @@ export default function Hero({ onSelectRole }: HeroProps) {
   const handleMouseLeaveBtn2 = () => {
     setBtn2Pos({ x: 0, y: 0 });
   };
+
+  // IntersectionObserver to manage video playback efficiently
+  useEffect(() => {
+    const videoEl = videoRef.current;
+    if (!videoEl) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoEl.play().catch(() => {});
+          } else {
+            videoEl.pause();
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(videoEl);
+    return () => observer.disconnect();
+  }, []);
+
+  // Parallax scroll listener for video content
+  useEffect(() => {
+    const handleScroll = () => {
+      if (typeof window !== "undefined" && window.innerWidth >= 768 && window.scrollY < 800) {
+        setScrollY(window.scrollY);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const benefitItems = [
     { text: "Extra Space. Extra Income.", icon: <TrendingUp className="w-4 h-4 text-[#6B0F1A]" /> },
@@ -166,25 +200,36 @@ export default function Hero({ onSelectRole }: HeroProps) {
             </div>
           </div>
 
-          {/* Right Column (Image below text on mobile) */}
+          {/* Right Column (Video in existing rounded frame) */}
           <div className="lg:col-span-5 relative mt-6 lg:mt-0">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="rounded-[2rem] border-2 border-[#F0E2E4] bg-[#FFFDF5] p-3 shadow-[0_24px_70px_rgba(107,15,26,0.10)] relative overflow-hidden">
+              <div className="animate-hero-video-entrance rounded-[2rem] border-2 border-[#F0E2E4] bg-[#FFFDF5] p-3 shadow-[0_24px_70px_rgba(107,15,26,0.10)] relative overflow-hidden transition-all duration-350 hover:scale-[1.015] hover:shadow-[0_28px_80px_rgba(107,15,26,0.18)] hover:border-[#F4E409]/60 group">
                 <div className="relative aspect-4/3 w-full rounded-2xl overflow-hidden bg-[#FFF6A3]/20">
-                  <Image
-                    src="/images/hero-gym.png"
-                    alt="Modern gym with clean nutrition product display rack"
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                </div>
-                
-                {/* Overlay Badge */}
-                <div className="absolute bottom-6 right-6 bg-[#3D0710] text-[#FFF6A3] px-4 py-2 rounded-full border border-[#F4E409]/40 shadow-md flex items-center gap-2 text-xs font-extrabold">
-                  <span className="w-2 h-2 rounded-full bg-[#F4E409] animate-ping" />
-                  <span>Extra Space. Extra Opportunity.</span>
+                  <video
+                    ref={videoRef}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    aria-label="Video showing a wellness product display rack inside a modern gym"
+                    poster="/images/hero-gym.png"
+                    preload="metadata"
+                    className="w-full h-full object-cover transition-transform duration-300 ease-out"
+                    style={{
+                      transform: `translateY(${scrollY * 0.05}px) scale(${1 + Math.min(scrollY * 0.00006, 0.025)})`,
+                    }}
+                  >
+                    <source src="/videos/hero-gym.mp4" type="video/mp4" />
+                  </video>
+                  
+                  {/* Subtle Dark Bottom Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
+
+                  {/* Overlay Badge */}
+                  <div className="absolute bottom-6 right-6 bg-[#3D0710] text-[#FFF6A3] px-4 py-2 rounded-full border border-[#F4E409]/40 shadow-md flex items-center gap-2 text-xs font-extrabold z-10">
+                    <span className="w-2 h-2 rounded-full bg-[#F4E409] animate-ping" />
+                    <span>Extra Space. Extra Opportunity.</span>
+                  </div>
                 </div>
               </div>
             </div>
