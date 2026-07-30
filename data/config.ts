@@ -19,8 +19,7 @@ export const NAV_LINKS = [
   { label: "Home", href: "#hero" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Categories", href: "#categories" },
-  { label: "Benefits", href: "#benefits" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Why Choose Us", href: "#why-choose-us" },
   { label: "FAQs", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];

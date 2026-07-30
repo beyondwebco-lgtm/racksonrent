@@ -5,12 +5,8 @@ import Hero from "@/components/Hero";
 import HeroStats from "@/components/HeroStats";
 import SpaceSearch from "@/components/SpaceSearch";
 import PopularCategories from "@/components/PopularCategories";
-import RoleSelection from "@/components/RoleSelection";
 import HowItWorks from "@/components/HowItWorks";
-import SpaceTypes from "@/components/SpaceTypes";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import Benefits from "@/components/Benefits";
-import Pricing from "@/components/Pricing";
 import EnquiryForm from "@/components/EnquiryForm";
 import FAQ from "@/components/FAQ";
 import TrustStrip from "@/components/TrustStrip";
@@ -44,12 +40,8 @@ export default function HomePage() {
       <HeroStats />
       <SpaceSearch onSearch={handleSearchSelect} />
       <PopularCategories />
-      <RoleSelection onSelectRole={handleRoleSelect} />
       <HowItWorks />
-      <SpaceTypes />
       <WhyChooseUs />
-      <Benefits />
-      <Pricing onSelectRole={handleRoleSelect} />
       <EnquiryForm
         selectedRole={selectedRole}
         initialSearchValues={searchValues}
