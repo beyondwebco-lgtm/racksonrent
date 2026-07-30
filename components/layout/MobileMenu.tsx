@@ -39,29 +39,29 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <div className="fixed inset-0 z-50 lg:hidden flex flex-col">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-[#102A3A]/70 backdrop-blur-sm transition-opacity"
+        className="fixed inset-0 bg-[#133C55]/40 backdrop-blur-xs transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Drawer */}
-      <div className="relative w-full max-w-sm ml-auto bg-[#133C55] text-white h-full shadow-2xl flex flex-col z-50 overflow-y-auto">
+      <div className="relative w-full max-w-sm ml-auto bg-white text-[#133C55] h-full shadow-2xl flex flex-col z-50 overflow-y-auto border-l border-[#D7EEFA]">
         {/* Top bar inside drawer */}
-        <div className="p-5 flex items-center justify-between border-b border-[#386FA4]/30">
+        <div className="p-5 flex items-center justify-between border-b border-[#D7EEFA]">
           <div className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-lg bg-[#386FA4] flex items-center justify-center font-black text-white text-lg shadow-md">
+            <div className="w-9 h-9 rounded-xl bg-[#EAF7FF] flex items-center justify-center font-black text-[#59A5D8] text-lg shadow-xs">
               R
             </div>
             <div>
-              <span className="font-extrabold text-white text-lg tracking-tight block">Racks on Rent</span>
-              <span className="text-[10px] text-[#84D2F6] uppercase tracking-wider block -mt-1 font-semibold">Sublet Space. Share Success.</span>
+              <span className="font-extrabold text-[#133C55] text-lg tracking-tight block">Racks on Rent</span>
+              <span className="text-[10px] text-[#59A5D8] uppercase tracking-wider block -mt-1 font-semibold">Sublet Space. Share Success.</span>
             </div>
           </div>
           <button
             type="button"
             onClick={onClose}
             aria-label="Close menu"
-            className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-[#386FA4]/50 transition-colors focus:outline-none"
+            className="p-2 rounded-lg text-[#607D8B] hover:text-[#133C55] hover:bg-[#EAF7FF] transition-colors focus:outline-none cursor-pointer"
           >
             <X className="w-6 h-6" />
           </button>
@@ -74,7 +74,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               key={link.href}
               href={link.href}
               onClick={onClose}
-              className="block px-4 py-3 rounded-xl font-medium text-slate-200 hover:text-white hover:bg-[#386FA4] transition-all text-base"
+              className="block px-4 py-3 rounded-xl font-medium text-[#133C55] hover:text-[#59A5D8] hover:bg-[#EAF7FF] transition-all text-base"
             >
               {link.label}
             </Link>
@@ -82,12 +82,12 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         </nav>
 
         {/* Footer CTAs in Drawer */}
-        <div className="p-6 border-t border-[#386FA4]/30 bg-[#0d2a3d] space-y-3">
+        <div className="p-6 border-t border-[#D7EEFA] bg-[#F8FCFF] space-y-3">
           <Button
             href={CONTACT_INFO.whatsappLink}
             variant="primary"
             size="md"
-            className="w-full justify-center gap-2"
+            className="w-full justify-center gap-2 rounded-full bg-[#59A5D8] hover:bg-[#386FA4]"
           >
             <MessageCircle className="w-5 h-5 fill-current" />
             Enquire on WhatsApp
@@ -95,11 +95,11 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
           <Button
             href={CONTACT_INFO.telLink}
-            variant="outline"
+            variant="secondary"
             size="md"
-            className="w-full justify-center gap-2 border-white/20 text-white hover:bg-white/10"
+            className="w-full justify-center gap-2 rounded-full border-[#84D2F6] text-[#133C55] hover:bg-[#EAF7FF]"
           >
-            <Phone className="w-4 h-4" />
+            <Phone className="w-4 h-4 text-[#59A5D8]" />
             Call {CONTACT_INFO.phoneDisplay}
           </Button>
         </div>

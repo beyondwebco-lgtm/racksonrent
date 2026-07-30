@@ -2,16 +2,14 @@ import React from "react";
 import { Quote } from "lucide-react";
 import Container from "../layout/Container";
 import SectionHeading from "../ui/SectionHeading";
-import Badge from "../ui/Badge";
 import { SAMPLE_TESTIMONIALS } from "@/data/testimonials";
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-16 sm:py-24 bg-[#F7FAFC] border-b border-[#D8E3EC]" id="testimonials">
+    <section className="py-16 sm:py-24 bg-[#EAF7FF] border-b border-[#D7EEFA]" id="testimonials">
       <Container>
         <SectionHeading
           badge="Sample Feedback"
-          badgeVariant="brand"
           title="What Gym Owners & Brands Say"
           subtitle="Placeholder testimonials illustrating how gym owners and wellness businesses view space subletting opportunities."
         />
@@ -20,31 +18,31 @@ export default function TestimonialsSection() {
           {SAMPLE_TESTIMONIALS.map((item) => (
             <div
               key={item.id}
-              className="rounded-2xl border border-[#59A5D8]/25 bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative group"
+              className="rounded-3xl border border-[#D7EEFA] bg-white p-8 shadow-[0_12px_35px_rgba(89,165,216,0.08)] hover:shadow-[0_20px_50px_rgba(89,165,216,0.16)] transition-all duration-300 hover:-translate-y-1 hover:border-[#84D2F6] flex flex-col justify-between relative group"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-10 h-10 rounded-2xl bg-[#84D2F6]/20 text-[#133C55] flex items-center justify-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#EAF7FF] text-[#59A5D8]">
                     <Quote className="w-5 h-5" />
                   </div>
-                  <Badge variant="slate" className="text-[11px] font-bold">
+                  <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-[#EAF7FF] text-[#386FA4]">
                     Sample Content
-                  </Badge>
+                  </span>
                 </div>
 
-                <p className="text-sm sm:text-base text-[#102A3A] leading-relaxed italic mb-6">
+                <p className="text-sm sm:text-base text-[#345466] leading-relaxed italic mb-6">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#EEF3F7] flex items-center justify-between">
+              <div className="pt-4 border-t border-[#D7EEFA]/60 flex items-center justify-between">
                 <div>
                   <h3 className="font-bold text-sm text-[#133C55]">
                     {item.authorTitle}
                   </h3>
-                  <p className="text-xs text-[#5F7483]">{item.location}</p>
+                  <p className="text-xs text-[#607D8B]">{item.location}</p>
                 </div>
-                <span className="text-[10px] font-bold px-2.5 py-1 rounded bg-[#84D2F6]/20 text-[#133C55]">
+                <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#EAF7FF] text-[#386FA4]">
                   {item.category}
                 </span>
               </div>

@@ -27,44 +27,44 @@ export default function ForWellnessBusinessesPage() {
   ];
 
   return (
-    <div className="py-12 sm:py-20 space-y-16">
+    <div className="py-12 sm:py-20 space-y-16 bg-white">
       {/* Hero Section */}
       <section>
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <Badge variant="green">For Nutrition & Wellness Brands</Badge>
-              <h1 className="text-3xl sm:text-5xl font-black text-[#031B3D] tracking-tight">
-                Grow Your Brand Where <span className="text-[#157A3D]">Fitness Customers Already Are.</span>
+              <Badge>For Nutrition & Wellness Brands</Badge>
+              <h1 className="text-3xl sm:text-5xl font-black text-[#133C55] tracking-tight">
+                Grow Your Brand Where <span className="text-[#386FA4]">Fitness Customers Already Are.</span>
               </h1>
-              <p className="text-base sm:text-lg text-[#5C6470] leading-relaxed">
+              <p className="text-base sm:text-lg text-[#607D8B] leading-relaxed">
                 Bypass expensive retail leases. Display your protein powders, energy drinks, healthy snacks, or diet plans inside active gyms where health-conscious customers spend time daily.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                <Button href="#find-opportunity" variant="primary" size="lg">
+                <Button href="#find-opportunity" variant="primary" size="lg" className="rounded-full bg-[#386FA4] hover:bg-[#133C55] text-white">
                   Find a Gym Opportunity
                 </Button>
-                <Button href="/opportunities" variant="outline" size="lg">
+                <Button href="/opportunities" variant="secondary" size="lg" className="rounded-full border-[#84D2F6] bg-white text-[#133C55] hover:bg-[#EAF7FF]">
                   Explore Sample Cards
                 </Button>
               </div>
             </div>
 
-            <div className="lg:col-span-5 bg-[#031B3D] text-white p-8 rounded-3xl border border-slate-800 shadow-2xl space-y-4">
+            <div className="lg:col-span-5 rounded-3xl border border-[#D7EEFA] bg-[#EAF7FF] p-8 shadow-[0_12px_35px_rgba(89,165,216,0.08)] space-y-4">
               <div className="flex items-center gap-3">
-                <div className="p-3 rounded-2xl bg-[#FF6500] text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#386FA4]">
                   <Store className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-lg text-white">Brand Preparation Checklist</h3>
-                  <p className="text-xs text-slate-300">Information needed for matching</p>
+                  <h3 className="font-extrabold text-lg text-[#133C55]">Brand Preparation Checklist</h3>
+                  <p className="text-xs text-[#607D8B]">Information needed for matching</p>
                 </div>
               </div>
 
               <div className="space-y-2.5 pt-2">
                 {brandChecklist.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-200 font-medium">
-                    <CheckCircle2 className="w-4 h-4 text-[#25D366] flex-shrink-0" />
+                  <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-[#345466] font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-[#386FA4] flex-shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -78,16 +78,15 @@ export default function ForWellnessBusinessesPage() {
       <CategoriesSection />
 
       {/* Form Section Anchor */}
-      <section id="find-opportunity" className="scroll-mt-24">
+      <section id="find-opportunity" className="scroll-mt-24 py-16 bg-[#EAF7FF] border-t border-[#D7EEFA]">
         <Container>
           <SectionHeading
             badge="Brand Enquiry"
-            badgeVariant="orange"
             title="Enquire for Available Gym Spaces"
             subtitle="Submit your brand profile and target city to explore available gym display opportunities."
           />
 
-          <Suspense fallback={<div className="text-center py-8 text-slate-400">Loading form...</div>}>
+          <Suspense fallback={<div className="text-center py-8 text-[#607D8B]">Loading form...</div>}>
             <ContactFormContainer initialTab="wellness" />
           </Suspense>
         </Container>

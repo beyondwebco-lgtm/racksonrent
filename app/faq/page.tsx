@@ -14,16 +14,16 @@ export const metadata: Metadata = {
 
 export default function FAQPage() {
   return (
-    <div className="py-12 sm:py-20 space-y-16">
+    <div className="py-12 sm:py-20 space-y-16 bg-white">
       {/* Header */}
       <section>
         <Container>
           <div className="max-w-3xl mx-auto text-center space-y-4">
-            <Badge variant="orange">Knowledge Base</Badge>
-            <h1 className="text-3xl sm:text-5xl font-black text-[#031B3D] tracking-tight">
-              Frequently Asked <span className="text-[#FF6500]">Questions.</span>
+            <Badge>Knowledge Base</Badge>
+            <h1 className="text-3xl sm:text-5xl font-black text-[#133C55] tracking-tight">
+              Frequently Asked <span className="text-[#59A5D8]">Questions.</span>
             </h1>
-            <p className="text-base sm:text-lg text-[#5C6470] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#607D8B] leading-relaxed">
               Clear answers to your questions about listing gym space, displaying health products, enquiry processes, and business terms.
             </p>
           </div>
@@ -33,21 +33,21 @@ export default function FAQPage() {
       <FAQSection showTitle={false} />
 
       {/* Still have questions banner */}
-      <section>
+      <section className="bg-white py-12">
         <Container>
-          <div className="bg-[#031B3D] text-white rounded-3xl p-8 sm:p-12 border border-slate-800 text-center space-y-6 max-w-4xl mx-auto shadow-2xl">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+          <div className="rounded-3xl p-8 sm:p-12 border border-[#D7EEFA] bg-[#EAF7FF] text-center space-y-6 max-w-4xl mx-auto shadow-md">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#133C55]">
               Still Have Questions?
             </h2>
-            <p className="text-base text-slate-300 max-w-xl mx-auto">
+            <p className="text-base text-[#607D8B] max-w-xl mx-auto">
               Our business support team is available on WhatsApp and phone to answer all your custom queries.
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-              <Button href={CONTACT_INFO.whatsappLink} variant="whatsapp" size="lg" className="gap-2">
+              <Button href={CONTACT_INFO.whatsappLink} variant="primary" size="lg" className="gap-2 rounded-full bg-[#59A5D8] hover:bg-[#386FA4] text-white">
                 <MessageCircle className="w-5 h-5 fill-current" />
                 Ask on WhatsApp
               </Button>
-              <Button href="/contact" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+              <Button href="/contact" variant="secondary" size="lg" className="rounded-full border-[#84D2F6] bg-white text-[#133C55] hover:bg-[#F8FCFF]">
                 Submit Contact Form
               </Button>
             </div>

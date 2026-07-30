@@ -27,44 +27,44 @@ export default function ForGymOwnersPage() {
   ];
 
   return (
-    <div className="py-12 sm:py-20 space-y-16">
+    <div className="py-12 sm:py-20 space-y-16 bg-white">
       {/* Hero Section */}
       <section>
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <Badge variant="orange">For Gym Owners & Managers</Badge>
-              <h1 className="text-3xl sm:text-5xl font-black text-[#031B3D] tracking-tight">
-                Make Your Gym Space <span className="text-[#FF6500]">Work Harder.</span>
+              <Badge>For Gym Owners & Managers</Badge>
+              <h1 className="text-3xl sm:text-5xl font-black text-[#133C55] tracking-tight">
+                Make Your Gym Space <span className="text-[#59A5D8]">Work Harder.</span>
               </h1>
-              <p className="text-base sm:text-lg text-[#5C6470] leading-relaxed">
+              <p className="text-base sm:text-lg text-[#607D8B] leading-relaxed">
                 Turn unused reception counters, display shelves, corners, or wall spaces into a reliable monthly income source by connecting with verified wellness brands.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                <Button href="#submit-space" variant="primary" size="lg">
+                <Button href="#submit-space" variant="primary" size="lg" className="rounded-full bg-[#59A5D8] hover:bg-[#386FA4] text-white">
                   Submit Your Gym Space
                 </Button>
-                <Button href="/opportunities" variant="outline" size="lg">
+                <Button href="/opportunities" variant="secondary" size="lg" className="rounded-full border-[#84D2F6] bg-white text-[#133C55] hover:bg-[#EAF7FF]">
                   View Sample Layouts
                 </Button>
               </div>
             </div>
 
-            <div className="lg:col-span-5 bg-white p-8 rounded-3xl border border-[#E5E7EB] shadow-xl space-y-4">
+            <div className="lg:col-span-5 rounded-3xl border border-[#D7EEFA] bg-white p-8 shadow-[0_12px_35px_rgba(89,165,216,0.08)] space-y-4">
               <div className="flex items-center gap-3">
-                <div className="p-3 rounded-2xl bg-[#062A5E] text-[#FFC928]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF7FF] text-[#59A5D8]">
                   <Dumbbell className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-lg text-[#031B3D]">Monetization Checklist</h3>
-                  <p className="text-xs text-[#5C6470]">Details to prepare for listing</p>
+                  <h3 className="font-extrabold text-lg text-[#133C55]">Monetization Checklist</h3>
+                  <p className="text-xs text-[#607D8B]">Details to prepare for listing</p>
                 </div>
               </div>
 
               <div className="space-y-2.5 pt-2">
                 {checklistItems.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-[#121826] font-medium">
-                    <CheckCircle2 className="w-4 h-4 text-[#157A3D] flex-shrink-0" />
+                  <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-[#345466] font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-[#59A5D8] flex-shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -78,16 +78,15 @@ export default function ForGymOwnersPage() {
       <SpaceTypesSection />
 
       {/* Form Anchor */}
-      <section id="submit-space" className="scroll-mt-24">
+      <section id="submit-space" className="scroll-mt-24 py-16 bg-[#EAF7FF] border-t border-[#D7EEFA]">
         <Container>
           <SectionHeading
             badge="Register Gym Space"
-            badgeVariant="navy"
             title="Submit Your Gym Space Details"
             subtitle="Share your gym's available space details with our team to start receiving brand subletting enquiries."
           />
           
-          <Suspense fallback={<div className="text-center py-8 text-slate-400">Loading form...</div>}>
+          <Suspense fallback={<div className="text-center py-8 text-[#607D8B]">Loading form...</div>}>
             <ContactFormContainer initialTab="gym-owner" />
           </Suspense>
         </Container>

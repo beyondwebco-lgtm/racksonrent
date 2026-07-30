@@ -11,16 +11,16 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="py-12 sm:py-20 space-y-16">
+    <div className="py-12 sm:py-20 space-y-16 bg-white">
       {/* Header */}
       <section>
         <Container>
           <div className="max-w-3xl mx-auto text-center space-y-4">
-            <Badge variant="orange">Direct Contact</Badge>
-            <h1 className="text-3xl sm:text-5xl font-black text-[#031B3D] tracking-tight">
-              Get in Touch with <span className="text-[#FF6500]">Racks on Rent.</span>
+            <Badge>Direct Contact</Badge>
+            <h1 className="text-3xl sm:text-5xl font-black text-[#133C55] tracking-tight">
+              Get in Touch with <span className="text-[#59A5D8]">Racks on Rent.</span>
             </h1>
-            <p className="text-base sm:text-lg text-[#5C6470] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#607D8B] leading-relaxed">
               Connect with our team to list your gym space, showcase your nutrition brand, or discuss partnerships.
             </p>
           </div>

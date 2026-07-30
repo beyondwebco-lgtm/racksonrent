@@ -70,15 +70,15 @@ I am interested in listing my gym space on your platform.
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 bg-white p-6 sm:p-8 rounded-2xl border border-[#D8E3EC] shadow-sm">
-      <div className="border-b border-[#EEF3F7] pb-4 mb-2">
+    <form onSubmit={handleSubmit} className="space-y-5 rounded-3xl border border-[#D7EEFA] bg-white p-6 sm:p-8 shadow-[0_12px_35px_rgba(89,165,216,0.08)]">
+      <div className="border-b border-[#D7EEFA] pb-4 mb-2">
         <h3 className="text-xl font-extrabold text-[#133C55]">Gym Owner Space Registration</h3>
-        <p className="text-xs sm:text-sm text-[#5F7483]">Share your gym space details to explore subletting revenue opportunities.</p>
+        <p className="text-xs sm:text-sm text-[#607D8B]">Share your gym space details to explore subletting revenue opportunities.</p>
       </div>
 
       {submitted && (
-        <div className="bg-[#84D2F6]/20 border border-[#59A5D8]/40 text-[#133C55] p-4 rounded-xl flex items-center gap-3 text-sm font-medium">
-          <CheckCircle2 className="w-5 h-5 text-[#386FA4] flex-shrink-0" />
+        <div className="bg-[#EAF7FF] border border-[#84D2F6] text-[#133C55] p-4 rounded-2xl flex items-center gap-3 text-sm font-medium">
+          <CheckCircle2 className="w-5 h-5 text-[#59A5D8] flex-shrink-0" />
           <span>Opening WhatsApp with your filled enquiry details...</span>
         </div>
       )}
@@ -95,8 +95,8 @@ I am interested in listing my gym space on your platform.
             value={formData.fullName}
             onChange={handleChange}
             placeholder="e.g. Rahul Sharma"
-            className={`w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-[#386FA4] ${
-              errors.fullName ? "border-red-500 bg-red-50/30" : "border-[#D8E3EC] bg-[#F7FAFC]"
+            className={`w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition placeholder:text-[#607D8B]/70 focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm ${
+              errors.fullName ? "border-red-500 bg-red-50/30" : ""
             }`}
           />
           {errors.fullName && <p className="text-xs text-red-500 mt-1 font-medium">{errors.fullName}</p>}
@@ -113,8 +113,8 @@ I am interested in listing my gym space on your platform.
             value={formData.gymName}
             onChange={handleChange}
             placeholder="e.g. Iron Fitness Center"
-            className={`w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-[#386FA4] ${
-              errors.gymName ? "border-red-500 bg-red-50/30" : "border-[#D8E3EC] bg-[#F7FAFC]"
+            className={`w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition placeholder:text-[#607D8B]/70 focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm ${
+              errors.gymName ? "border-red-500 bg-red-50/30" : ""
             }`}
           />
           {errors.gymName && <p className="text-xs text-red-500 mt-1 font-medium">{errors.gymName}</p>}
@@ -133,8 +133,8 @@ I am interested in listing my gym space on your platform.
             value={formData.phone}
             onChange={handleChange}
             placeholder="7995424477"
-            className={`w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-[#386FA4] ${
-              errors.phone ? "border-red-500 bg-red-50/30" : "border-[#D8E3EC] bg-[#F7FAFC]"
+            className={`w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition placeholder:text-[#607D8B]/70 focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm ${
+              errors.phone ? "border-red-500 bg-red-50/30" : ""
             }`}
           />
           {errors.phone && <p className="text-xs text-red-500 mt-1 font-medium">{errors.phone}</p>}
@@ -151,8 +151,8 @@ I am interested in listing my gym space on your platform.
             value={formData.email}
             onChange={handleChange}
             placeholder="gymowner@example.com"
-            className={`w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-[#386FA4] ${
-              errors.email ? "border-red-500 bg-red-50/30" : "border-[#D8E3EC] bg-[#F7FAFC]"
+            className={`w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition placeholder:text-[#607D8B]/70 focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm ${
+              errors.email ? "border-red-500 bg-red-50/30" : ""
             }`}
           />
           {errors.email && <p className="text-xs text-red-500 mt-1 font-medium">{errors.email}</p>}
@@ -169,8 +169,8 @@ I am interested in listing my gym space on your platform.
             value={formData.city}
             onChange={handleChange}
             placeholder="e.g. Hyderabad"
-            className={`w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-[#386FA4] ${
-              errors.city ? "border-red-500 bg-red-50/30" : "border-[#D8E3EC] bg-[#F7FAFC]"
+            className={`w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition placeholder:text-[#607D8B]/70 focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm ${
+              errors.city ? "border-red-500 bg-red-50/30" : ""
             }`}
           />
           {errors.city && <p className="text-xs text-red-500 mt-1 font-medium">{errors.city}</p>}
@@ -187,7 +187,7 @@ I am interested in listing my gym space on your platform.
             name="spaceType"
             value={formData.spaceType}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-[#D8E3EC] bg-[#F7FAFC] text-sm focus:outline-none focus:ring-2 focus:ring-[#386FA4]"
+            className="w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm"
           >
             <option value="Product Racks">Product Racks</option>
             <option value="Wall Shelves">Wall Shelves</option>
@@ -211,7 +211,7 @@ I am interested in listing my gym space on your platform.
             value={formData.approxSize}
             onChange={handleChange}
             placeholder="e.g. 6 ft x 2 ft"
-            className="w-full px-4 py-3 rounded-xl border border-[#D8E3EC] bg-[#F7FAFC] text-sm focus:outline-none focus:ring-2 focus:ring-[#386FA4]"
+            className="w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition placeholder:text-[#607D8B]/70 focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm"
           />
         </div>
 
@@ -226,7 +226,7 @@ I am interested in listing my gym space on your platform.
             value={formData.expectedRent}
             onChange={handleChange}
             placeholder="e.g. Negotiable / ₹5,000"
-            className="w-full px-4 py-3 rounded-xl border border-[#D8E3EC] bg-[#F7FAFC] text-sm focus:outline-none focus:ring-2 focus:ring-[#386FA4]"
+            className="w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition placeholder:text-[#607D8B]/70 focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm"
           />
         </div>
       </div>
@@ -242,7 +242,7 @@ I am interested in listing my gym space on your platform.
           value={formData.message}
           onChange={handleChange}
           placeholder="Mention peak hours, gym member strength, or preferred brand types..."
-          className="w-full px-4 py-3 rounded-xl border border-[#D8E3EC] bg-[#F7FAFC] text-sm focus:outline-none focus:ring-2 focus:ring-[#386FA4]"
+          className="w-full rounded-xl border border-[#D7EEFA] bg-white px-4 py-3 text-[#133C55] outline-none transition placeholder:text-[#607D8B]/70 focus:border-[#59A5D8] focus:ring-4 focus:ring-[#84D2F6]/20 text-sm"
         />
       </div>
 
@@ -251,12 +251,12 @@ I am interested in listing my gym space on your platform.
           type="submit"
           variant="primary"
           size="lg"
-          className="w-full justify-center gap-2 bg-[#386FA4] hover:bg-[#133C55]"
+          className="w-full justify-center gap-2 rounded-full bg-[#59A5D8] hover:bg-[#386FA4] text-white font-semibold"
         >
-          <MessageCircle className="w-5 h-5 fill-current text-[#84D2F6]" />
+          <MessageCircle className="w-5 h-5 fill-current" />
           Submit & Send via WhatsApp
         </Button>
-        <p className="text-[11px] text-[#5F7483] text-center mt-2 flex items-center justify-center gap-1">
+        <p className="text-[11px] text-[#607D8B] text-center mt-2 flex items-center justify-center gap-1">
           <AlertCircle className="w-3.5 h-3.5 text-[#59A5D8]" />
           Submitting opens WhatsApp with your prefilled enquiry data.
         </p>

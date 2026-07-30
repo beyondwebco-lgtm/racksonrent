@@ -29,17 +29,17 @@ export default function ContactFormContainer({ initialTab = "gym-owner" }: Conta
   return (
     <div className="max-w-4xl mx-auto">
       {/* User Type Tab Selector */}
-      <div className="flex flex-wrap items-center justify-center p-1.5 bg-[#EEF3F7] rounded-2xl mb-8 gap-1.5 border border-[#D8E3EC] shadow-inner">
+      <div className="flex flex-wrap items-center justify-center p-1.5 bg-white rounded-2xl mb-8 gap-1.5 border border-[#D7EEFA] shadow-xs">
         <button
           type="button"
           onClick={() => setActiveTab("gym-owner")}
           className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all duration-200 cursor-pointer ${
             currentTab === "gym-owner"
-              ? "bg-[#133C55] text-white shadow-md"
-              : "text-[#102A3A] hover:bg-white/60"
+              ? "bg-[#59A5D8] text-white shadow-xs"
+              : "text-[#133C55] hover:bg-[#EAF7FF]"
           }`}
         >
-          <Dumbbell className="w-4 h-4 text-[#84D2F6]" />
+          <Dumbbell className="w-4 h-4" />
           <span>I am a Gym Owner</span>
         </button>
 
@@ -48,11 +48,11 @@ export default function ContactFormContainer({ initialTab = "gym-owner" }: Conta
           onClick={() => setActiveTab("wellness")}
           className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all duration-200 cursor-pointer ${
             currentTab === "wellness"
-              ? "bg-[#386FA4] text-white shadow-md"
-              : "text-[#102A3A] hover:bg-white/60"
+              ? "bg-[#386FA4] text-white shadow-xs"
+              : "text-[#133C55] hover:bg-[#EAF7FF]"
           }`}
         >
-          <Store className="w-4 h-4 text-[#84D2F6]" />
+          <Store className="w-4 h-4" />
           <span>I Run a Wellness Business</span>
         </button>
 
@@ -61,11 +61,11 @@ export default function ContactFormContainer({ initialTab = "gym-owner" }: Conta
           onClick={() => setActiveTab("general")}
           className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all duration-200 cursor-pointer ${
             currentTab === "general"
-              ? "bg-[#59A5D8] text-white shadow-md"
-              : "text-[#102A3A] hover:bg-white/60"
+              ? "bg-[#59A5D8] text-white shadow-xs"
+              : "text-[#133C55] hover:bg-[#EAF7FF]"
           }`}
         >
-          <HelpCircle className="w-4 h-4 text-white" />
+          <HelpCircle className="w-4 h-4" />
           <span>General Enquiry</span>
         </button>
       </div>

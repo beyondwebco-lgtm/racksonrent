@@ -15,16 +15,16 @@ export const metadata: Metadata = {
 
 export default function OpportunitiesPage() {
   return (
-    <div className="py-12 sm:py-20 space-y-16">
+    <div className="py-12 sm:py-20 space-y-16 bg-white">
       {/* Header */}
       <section>
         <Container>
           <div className="max-w-3xl mx-auto text-center space-y-4">
-            <Badge variant="yellow">Sample Showcase</Badge>
-            <h1 className="text-3xl sm:text-5xl font-black text-[#031B3D] tracking-tight">
-              Example Gym Space <span className="text-[#FF6500]">Opportunities.</span>
+            <Badge>Sample Showcase</Badge>
+            <h1 className="text-3xl sm:text-5xl font-black text-[#133C55] tracking-tight">
+              Example Gym Space <span className="text-[#59A5D8]">Opportunities.</span>
             </h1>
-            <p className="text-base sm:text-lg text-[#5C6470] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#607D8B] leading-relaxed">
               Demonstrating the types of display racks, counters, kiosks, and sampling setups created through Racks on Rent.
             </p>
           </div>
@@ -35,16 +35,16 @@ export default function OpportunitiesPage() {
       <SpaceTypesSection />
 
       {/* CTA Box */}
-      <section>
+      <section className="bg-white py-12">
         <Container>
-          <div className="bg-[#031B3D] text-white rounded-3xl p-8 sm:p-12 border border-slate-800 text-center space-y-6 max-w-4xl mx-auto shadow-2xl">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+          <div className="rounded-3xl p-8 sm:p-12 border border-[#D7EEFA] bg-[#EAF7FF] text-center space-y-6 max-w-4xl mx-auto shadow-md">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#133C55]">
               Looking for Opportunities in Your Locality?
             </h2>
-            <p className="text-base text-slate-300 max-w-2xl mx-auto">
+            <p className="text-base text-[#607D8B] max-w-2xl mx-auto">
               Our team matches gym owners and health brands based on city, target audience, and space requirements.
             </p>
-            <Button href={CONTACT_INFO.whatsappLink} variant="whatsapp" size="lg" className="gap-2">
+            <Button href={CONTACT_INFO.whatsappLink} variant="primary" size="lg" className="gap-2 rounded-full bg-[#59A5D8] hover:bg-[#386FA4] text-white">
               <MessageCircle className="w-5 h-5 fill-current" />
               Inquire Live Opportunities on WhatsApp
             </Button>

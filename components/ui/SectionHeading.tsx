@@ -3,21 +3,17 @@ import Badge from "./Badge";
 
 interface SectionHeadingProps {
   badge?: string;
-  badgeVariant?: "navy" | "orange" | "green" | "yellow" | "slate" | "brand";
   title: string;
   subtitle?: string;
   align?: "left" | "center" | "right";
-  darkBackground?: boolean;
   className?: string;
 }
 
 export default function SectionHeading({
   badge,
-  badgeVariant = "brand",
   title,
   subtitle,
   align = "center",
-  darkBackground = false,
   className = "",
 }: SectionHeadingProps) {
   const alignmentClasses = {
@@ -30,14 +26,14 @@ export default function SectionHeading({
     <div className={`flex flex-col max-w-3xl mb-12 sm:mb-16 ${alignmentClasses[align]} ${className}`}>
       {badge && (
         <div className="mb-3">
-          <Badge variant={badgeVariant}>{badge}</Badge>
+          <Badge>{badge}</Badge>
         </div>
       )}
-      <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight ${darkBackground ? "text-white" : "text-[#133C55]"}`}>
+      <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-[#133C55] md:text-4xl lg:text-5xl">
         {title}
       </h2>
       {subtitle && (
-        <p className={`mt-4 text-base sm:text-lg leading-relaxed ${darkBackground ? "text-slate-200" : "text-[#5F7483]"}`}>
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#607D8B] md:text-lg">
           {subtitle}
         </p>
       )}

@@ -9,21 +9,19 @@ import { CONTACT_INFO } from "@/data/navigation";
 
 export default function OpportunitiesSection() {
   return (
-    <section className="py-16 sm:py-24 bg-[#133C55] text-white" id="opportunities">
+    <section className="py-16 sm:py-24 bg-white" id="opportunities">
       <Container>
         <SectionHeading
           badge="Sample Showcase"
-          badgeVariant="brand"
           title="Example Gym Space Opportunities"
           subtitle="Explore mock examples of gym spaces that can be configured through the Racks on Rent model."
-          darkBackground
         />
 
         {/* Static Content Disclaimer Notice */}
-        <div className="max-w-3xl mx-auto mb-10 bg-[#102A3A]/80 border border-[#59A5D8]/40 p-4 sm:p-5 rounded-2xl flex items-start gap-3.5 text-slate-200 text-sm leading-relaxed shadow-inner">
-          <AlertCircle className="w-5 h-5 text-[#84D2F6] flex-shrink-0 mt-0.5" />
+        <div className="max-w-3xl mx-auto mb-10 bg-[#EAF7FF] border border-[#D7EEFA] p-4 sm:p-5 rounded-2xl flex items-start gap-3.5 text-[#345466] text-sm leading-relaxed shadow-xs">
+          <AlertCircle className="w-5 h-5 text-[#59A5D8] flex-shrink-0 mt-0.5" />
           <p>
-            <strong className="text-white">Demonstration Notice:</strong> These examples demonstrate the kinds of gym-space opportunities that can be created through Racks on Rent. Contact our team to discuss current live opportunities in your city.
+            <strong className="text-[#133C55]">Demonstration Notice:</strong> These examples demonstrate the kinds of gym-space opportunities that can be created through Racks on Rent. Contact our team to discuss current live opportunities in your city.
           </p>
         </div>
 
@@ -36,32 +34,32 @@ export default function OpportunitiesSection() {
             return (
               <div
                 key={item.id}
-                className="bg-[#102A3A] rounded-2xl p-6 border border-[#59A5D8]/30 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1.5"
+                className="rounded-3xl border border-[#D7EEFA] bg-white p-6 shadow-[0_12px_35px_rgba(89,165,216,0.08)] hover:shadow-[0_20px_50px_rgba(89,165,216,0.16)] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 hover:border-[#84D2F6]"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <Badge variant="brand" className="text-xs bg-[#84D2F6]/20 text-[#84D2F6] border-[#84D2F6]/30">
+                    <Badge className="text-xs">
                       {item.badgeText}
                     </Badge>
-                    <span className="text-xs font-semibold text-slate-300 flex items-center gap-1">
-                      <MapPin className="w-3.5 h-3.5 text-[#84D2F6]" />
+                    <span className="text-xs font-semibold text-[#607D8B] flex items-center gap-1">
+                      <MapPin className="w-3.5 h-3.5 text-[#59A5D8]" />
                       {item.location.split("(")[0]}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white group-hover:text-[#84D2F6] transition-colors mb-2">
+                  <h3 className="text-xl font-bold text-[#133C55] group-hover:text-[#386FA4] transition-colors mb-2">
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-slate-200 leading-relaxed mb-6">
+                  <p className="text-sm text-[#607D8B] leading-relaxed mb-6">
                     {item.description}
                   </p>
 
-                  <div className="space-y-2.5 text-xs text-slate-200 bg-[#133C55]/80 p-4 rounded-xl border border-[#386FA4]/40 mb-6">
+                  <div className="space-y-2.5 text-xs text-[#345466] bg-[#F8FCFF] p-4 rounded-2xl border border-[#D7EEFA] mb-6">
                     <div className="flex items-start gap-2">
-                      <Layers className="w-4 h-4 text-[#84D2F6] flex-shrink-0 mt-0.5" />
+                      <Layers className="w-4 h-4 text-[#59A5D8] flex-shrink-0 mt-0.5" />
                       <div>
-                        <span className="font-semibold text-white">Space Type: </span>
+                        <span className="font-semibold text-[#133C55]">Space Type: </span>
                         <span>{item.spaceType}</span>
                       </div>
                     </div>
@@ -69,15 +67,15 @@ export default function OpportunitiesSection() {
                     <div className="flex items-start gap-2">
                       <Maximize2 className="w-4 h-4 text-[#59A5D8] flex-shrink-0 mt-0.5" />
                       <div>
-                        <span className="font-semibold text-white">Approx Size: </span>
+                        <span className="font-semibold text-[#133C55]">Approx Size: </span>
                         <span>{item.approxSize}</span>
                       </div>
                     </div>
 
                     <div className="flex items-start gap-2">
-                      <Tag className="w-4 h-4 text-[#84D2F6] flex-shrink-0 mt-0.5" />
+                      <Tag className="w-4 h-4 text-[#59A5D8] flex-shrink-0 mt-0.5" />
                       <div>
-                        <span className="font-semibold text-white">Suitable For: </span>
+                        <span className="font-semibold text-[#133C55]">Suitable For: </span>
                         <span>{item.suitableFor}</span>
                       </div>
                     </div>
@@ -88,7 +86,7 @@ export default function OpportunitiesSection() {
                   href={waLink}
                   variant="primary"
                   size="md"
-                  className="w-full justify-center gap-2 bg-[#386FA4] hover:bg-[#59A5D8] text-white"
+                  className="w-full justify-center gap-2 rounded-full bg-[#59A5D8] hover:bg-[#386FA4] text-white"
                 >
                   <MessageCircle className="w-4 h-4 fill-current" />
                   Ask About This Opportunity
