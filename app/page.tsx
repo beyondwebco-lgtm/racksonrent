@@ -1,36 +1,33 @@
-import React from "react";
-import HeroSection from "@/components/sections/HeroSection";
-import BenefitsStrip from "@/components/sections/BenefitsStrip";
-import UserTypesSection from "@/components/sections/UserTypesSection";
-import HowItWorksSection from "@/components/sections/HowItWorksSection";
-import CategoriesSection from "@/components/sections/CategoriesSection";
-import SpaceTypesSection from "@/components/sections/SpaceTypesSection";
-import OpportunitiesSection from "@/components/sections/OpportunitiesSection";
-import ServicesSection from "@/components/sections/ServicesSection";
-import ProfitComparisonSection from "@/components/sections/ProfitComparisonSection";
-import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
-import CustomerJourneyVisualSection from "@/components/sections/CustomerJourneyVisualSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import FAQSection from "@/components/sections/FAQSection";
-import ContactSection from "@/components/sections/ContactSection";
+"use client";
+
+import React, { useState } from "react";
+import Hero from "@/components/Hero";
+import RoleSelection from "@/components/RoleSelection";
+import HowItWorks from "@/components/HowItWorks";
+import Benefits from "@/components/Benefits";
+import SpaceTypes from "@/components/SpaceTypes";
+import EnquiryForm from "@/components/EnquiryForm";
+import FAQ from "@/components/FAQ";
 
 export default function HomePage() {
+  const [selectedRole, setSelectedRole] = useState<"gym-owner" | "wellness" | "general">("gym-owner");
+
+  const handleRoleSelect = (role: "gym-owner" | "wellness") => {
+    setSelectedRole(role);
+  };
+
   return (
-    <div className="space-y-0">
-      <HeroSection />
-      <BenefitsStrip />
-      <UserTypesSection />
-      <HowItWorksSection />
-      <CategoriesSection />
-      <SpaceTypesSection />
-      <OpportunitiesSection />
-      <ServicesSection />
-      <ProfitComparisonSection />
-      <WhyChooseUsSection />
-      <CustomerJourneyVisualSection />
-      <TestimonialsSection />
-      <FAQSection />
-      <ContactSection />
-    </div>
+    <>
+      <Hero onSelectRole={handleRoleSelect} />
+      <RoleSelection onSelectRole={handleRoleSelect} />
+      <HowItWorks />
+      <Benefits />
+      <SpaceTypes />
+      <EnquiryForm
+        selectedRole={selectedRole}
+        onRoleChange={(r) => setSelectedRole(r)}
+      />
+      <FAQ />
+    </>
   );
 }

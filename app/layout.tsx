@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { SITE_CONFIG } from "@/data/config";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -18,12 +13,10 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.racksonrent.com"),
-  title: {
-    default: "Racks on Rent | Gym Space for Nutrition and Wellness Businesses",
-    template: "%s | Racks on Rent"
-  },
-  description: "Racks on Rent connects gym owners with nutrition, fitness, and wellness businesses looking for product racks, counters, kiosks, and promotional space inside gyms.",
+  metadataBase: new URL(SITE_CONFIG.domain),
+  title: "Racks on Rent | Gym Space for Wellness Brands",
+  description:
+    "Racks on Rent connects gym owners with nutrition, fitness, and wellness businesses looking for simple display-space opportunities inside gyms.",
   keywords: [
     "Racks on Rent",
     "Gym space sublet",
@@ -34,26 +27,17 @@ export const metadata: Metadata = {
     "Fitness business opportunity",
     "Gym monetization"
   ],
-  authors: [{ name: "Racks on Rent", url: "https://www.racksonrent.com" }],
+  authors: [{ name: "Racks on Rent", url: SITE_CONFIG.domain }],
   creator: "Racks on Rent",
   publisher: "Racks on Rent",
-  formatDetection: {
-    telephone: true,
-    email: true,
-    address: true,
-  },
   openGraph: {
-    title: "Racks on Rent | Sublet Space. Share Success.",
-    description: "Turn gym space into income. Turn your brand into a gym experience. Connect gym owners with nutrition & wellness brands.",
-    url: "https://www.racksonrent.com",
+    title: "Racks on Rent | Gym Space for Wellness Brands",
+    description:
+      "Racks on Rent connects gym owners with nutrition, fitness, and wellness businesses looking for simple display-space opportunities inside gyms.",
+    url: SITE_CONFIG.domain,
     siteName: "Racks on Rent",
     locale: "en_IN",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Racks on Rent | Gym Space for Nutrition and Wellness Businesses",
-    description: "Connect gym owners with nutrition, fitness, and wellness businesses looking for display racks and counters inside active gyms.",
   },
   robots: {
     index: true,
@@ -77,22 +61,17 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Racks on Rent",
-    "url": "https://www.racksonrent.com",
-    "logo": "https://www.racksonrent.com/images/logo.png",
+    "url": SITE_CONFIG.domain,
+    "logo": `${SITE_CONFIG.domain}/images/hero-gym.webp`,
     "description": "Sublet space. Share success. Connecting gym owners with nutrition and wellness businesses.",
     "telephone": "+917995424477",
-    "email": "racksonrent@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "IN"
-    },
-    "sameAs": []
+    "email": "racksonrent@gmail.com"
   };
 
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${manrope.variable} h-full antialiased`}
+      className={`${manrope.variable} h-full antialiased`}
     >
       <head>
         <script
@@ -100,7 +79,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-white text-[#345466]">
+      <body className="min-h-full flex flex-col bg-white text-[#345466] font-sans">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

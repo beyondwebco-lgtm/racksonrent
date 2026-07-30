@@ -1,26 +1,13 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
+import { SITE_CONFIG } from "@/data/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.racksonrent.com';
-  const lastModified = new Date();
-
-  const routes = [
-    '',
-    '/about',
-    '/for-gym-owners',
-    '/for-wellness-businesses',
-    '/how-it-works',
-    '/opportunities',
-    '/services',
-    '/faq',
-    '/contact',
-    '/privacy-policy',
+  return [
+    {
+      url: SITE_CONFIG.domain,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1.0,
+    },
   ];
-
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified,
-    changeFrequency: route === '' ? 'daily' : 'weekly',
-    priority: route === '' ? 1.0 : 0.8,
-  }));
 }

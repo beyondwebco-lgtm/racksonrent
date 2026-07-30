@@ -1,11 +1,12 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
+import { SITE_CONFIG } from "@/data/config";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
+      userAgent: "*",
+      allow: "/",
     },
-    sitemap: 'https://www.racksonrent.com/sitemap.xml',
+    sitemap: `${SITE_CONFIG.domain}/sitemap.xml`,
   };
 }
