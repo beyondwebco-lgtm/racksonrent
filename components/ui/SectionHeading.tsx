@@ -3,7 +3,7 @@ import Badge from "./Badge";
 
 interface SectionHeadingProps {
   badge?: string;
-  badgeVariant?: "navy" | "orange" | "green" | "yellow" | "slate";
+  badgeVariant?: "navy" | "orange" | "green" | "yellow" | "slate" | "brand";
   title: string;
   subtitle?: string;
   align?: "left" | "center" | "right";
@@ -13,7 +13,7 @@ interface SectionHeadingProps {
 
 export default function SectionHeading({
   badge,
-  badgeVariant = "orange",
+  badgeVariant = "brand",
   title,
   subtitle,
   align = "center",
@@ -33,11 +33,11 @@ export default function SectionHeading({
           <Badge variant={badgeVariant}>{badge}</Badge>
         </div>
       )}
-      <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight ${darkBackground ? "text-white" : "text-[#031B3D]"}`}>
+      <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight ${darkBackground ? "text-white" : "text-[#133C55]"}`}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`mt-4 text-base sm:text-lg leading-relaxed ${darkBackground ? "text-slate-300" : "text-[#5C6470]"}`}>
+        <p className={`mt-4 text-base sm:text-lg leading-relaxed ${darkBackground ? "text-slate-200" : "text-[#5F7483]"}`}>
           {subtitle}
         </p>
       )}

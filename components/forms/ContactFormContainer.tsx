@@ -29,43 +29,43 @@ export default function ContactFormContainer({ initialTab = "gym-owner" }: Conta
   return (
     <div className="max-w-4xl mx-auto">
       {/* User Type Tab Selector */}
-      <div className="flex flex-wrap items-center justify-center p-1.5 bg-slate-200/80 rounded-2xl mb-8 gap-1.5 border border-slate-300/60 shadow-inner">
+      <div className="flex flex-wrap items-center justify-center p-1.5 bg-[#EEF3F7] rounded-2xl mb-8 gap-1.5 border border-[#D8E3EC] shadow-inner">
         <button
           type="button"
           onClick={() => setActiveTab("gym-owner")}
-          className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all duration-200 ${
+          className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all duration-200 cursor-pointer ${
             currentTab === "gym-owner"
-              ? "bg-[#062A5E] text-white shadow-md"
-              : "text-[#031B3D] hover:bg-white/60"
+              ? "bg-[#133C55] text-white shadow-md"
+              : "text-[#102A3A] hover:bg-white/60"
           }`}
         >
-          <Dumbbell className="w-4 h-4 text-[#FFC928]" />
+          <Dumbbell className="w-4 h-4 text-[#84D2F6]" />
           <span>I am a Gym Owner</span>
         </button>
 
         <button
           type="button"
           onClick={() => setActiveTab("wellness")}
-          className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all duration-200 ${
+          className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all duration-200 cursor-pointer ${
             currentTab === "wellness"
-              ? "bg-[#FF6500] text-white shadow-md"
-              : "text-[#031B3D] hover:bg-white/60"
+              ? "bg-[#386FA4] text-white shadow-md"
+              : "text-[#102A3A] hover:bg-white/60"
           }`}
         >
-          <Store className="w-4 h-4" />
+          <Store className="w-4 h-4 text-[#84D2F6]" />
           <span>I Run a Wellness Business</span>
         </button>
 
         <button
           type="button"
           onClick={() => setActiveTab("general")}
-          className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all duration-200 ${
+          className={`flex-1 min-w-[140px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all duration-200 cursor-pointer ${
             currentTab === "general"
-              ? "bg-[#157A3D] text-white shadow-md"
-              : "text-[#031B3D] hover:bg-white/60"
+              ? "bg-[#59A5D8] text-white shadow-md"
+              : "text-[#102A3A] hover:bg-white/60"
           }`}
         >
-          <HelpCircle className="w-4 h-4" />
+          <HelpCircle className="w-4 h-4 text-white" />
           <span>General Enquiry</span>
         </button>
       </div>

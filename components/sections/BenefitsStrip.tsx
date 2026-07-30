@@ -5,10 +5,10 @@ import { VALUE_STRIP_BENEFITS } from "@/data/benefits";
 
 export default function BenefitsStrip() {
   const iconMap: Record<string, React.ReactNode> = {
-    TrendingUp: <TrendingUp className="w-6 h-6 text-[#FF6500]" />,
-    Eye: <Eye className="w-6 h-6 text-[#062A5E]" />,
-    DollarSign: <DollarSign className="w-6 h-6 text-[#157A3D]" />,
-    Handshake: <Handshake className="w-6 h-6 text-[#FFC928]" />,
+    TrendingUp: <TrendingUp className="w-6 h-6 text-[#386FA4]" />,
+    Eye: <Eye className="w-6 h-6 text-[#133C55]" />,
+    DollarSign: <DollarSign className="w-6 h-6 text-[#59A5D8]" />,
+    Handshake: <Handshake className="w-6 h-6 text-[#386FA4]" />,
   };
 
   return (
@@ -18,16 +18,16 @@ export default function BenefitsStrip() {
           {VALUE_STRIP_BENEFITS.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl p-6 shadow-xl border border-[#E5E7EB] hover:border-[#FF6500]/50 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group"
+              className="rounded-2xl border border-[#59A5D8]/25 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-[#386FA4]/40 hover:shadow-lg flex flex-col justify-between group"
             >
               <div>
-                <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  {iconMap[item.iconName] || <TrendingUp className="w-6 h-6 text-[#FF6500]" />}
+                <div className="w-12 h-12 rounded-xl bg-[#84D2F6]/20 border border-[#84D2F6]/40 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  {iconMap[item.iconName] || <TrendingUp className="w-6 h-6 text-[#386FA4]" />}
                 </div>
-                <h3 className="font-bold text-lg text-[#031B3D] group-hover:text-[#FF6500] transition-colors mb-2">
+                <h3 className="font-bold text-lg text-[#133C55] group-hover:text-[#386FA4] transition-colors mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-[#5C6470] leading-relaxed">
+                <p className="text-sm text-[#5F7483] leading-relaxed">
                   {item.description}
                 </p>
               </div>

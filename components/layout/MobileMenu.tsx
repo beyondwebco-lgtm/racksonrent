@@ -39,29 +39,29 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <div className="fixed inset-0 z-50 lg:hidden flex flex-col">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"
+        className="fixed inset-0 bg-[#102A3A]/70 backdrop-blur-sm transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Drawer */}
-      <div className="relative w-full max-w-sm ml-auto bg-[#031B3D] text-white h-full shadow-2xl flex flex-col z-50 overflow-y-auto">
+      <div className="relative w-full max-w-sm ml-auto bg-[#133C55] text-white h-full shadow-2xl flex flex-col z-50 overflow-y-auto">
         {/* Top bar inside drawer */}
-        <div className="p-5 flex items-center justify-between border-b border-slate-800">
+        <div className="p-5 flex items-center justify-between border-b border-[#386FA4]/30">
           <div className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-lg bg-[#FF6500] flex items-center justify-center font-black text-white text-lg shadow-md">
+            <div className="w-9 h-9 rounded-lg bg-[#386FA4] flex items-center justify-center font-black text-white text-lg shadow-md">
               R
             </div>
             <div>
               <span className="font-extrabold text-white text-lg tracking-tight block">Racks on Rent</span>
-              <span className="text-[10px] text-[#FFC928] uppercase tracking-wider block -mt-1 font-semibold">Sublet Space. Share Success.</span>
+              <span className="text-[10px] text-[#84D2F6] uppercase tracking-wider block -mt-1 font-semibold">Sublet Space. Share Success.</span>
             </div>
           </div>
           <button
             type="button"
             onClick={onClose}
             aria-label="Close menu"
-            className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors focus:outline-none"
+            className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-[#386FA4]/50 transition-colors focus:outline-none"
           >
             <X className="w-6 h-6" />
           </button>
@@ -74,7 +74,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               key={link.href}
               href={link.href}
               onClick={onClose}
-              className="block px-4 py-3 rounded-xl font-medium text-slate-200 hover:text-white hover:bg-[#062A5E] transition-all text-base"
+              className="block px-4 py-3 rounded-xl font-medium text-slate-200 hover:text-white hover:bg-[#386FA4] transition-all text-base"
             >
               {link.label}
             </Link>
@@ -82,10 +82,10 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         </nav>
 
         {/* Footer CTAs in Drawer */}
-        <div className="p-6 border-t border-slate-800 bg-[#02142e] space-y-3">
+        <div className="p-6 border-t border-[#386FA4]/30 bg-[#0d2a3d] space-y-3">
           <Button
             href={CONTACT_INFO.whatsappLink}
-            variant="whatsapp"
+            variant="primary"
             size="md"
             className="w-full justify-center gap-2"
           >

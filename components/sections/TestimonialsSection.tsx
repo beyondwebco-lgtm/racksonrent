@@ -7,11 +7,11 @@ import { SAMPLE_TESTIMONIALS } from "@/data/testimonials";
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-16 sm:py-24 bg-[#F7F8FA] border-b border-[#E5E7EB]" id="testimonials">
+    <section className="py-16 sm:py-24 bg-[#F7FAFC] border-b border-[#D8E3EC]" id="testimonials">
       <Container>
         <SectionHeading
           badge="Sample Feedback"
-          badgeVariant="navy"
+          badgeVariant="brand"
           title="What Gym Owners & Brands Say"
           subtitle="Placeholder testimonials illustrating how gym owners and wellness businesses view space subletting opportunities."
         />
@@ -20,11 +20,11 @@ export default function TestimonialsSection() {
           {SAMPLE_TESTIMONIALS.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-3xl p-8 border border-[#E5E7EB] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative group"
+              className="rounded-2xl border border-[#59A5D8]/25 bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative group"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-10 h-10 rounded-2xl bg-[#062A5E]/10 text-[#062A5E] flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-2xl bg-[#84D2F6]/20 text-[#133C55] flex items-center justify-center">
                     <Quote className="w-5 h-5" />
                   </div>
                   <Badge variant="slate" className="text-[11px] font-bold">
@@ -32,19 +32,19 @@ export default function TestimonialsSection() {
                   </Badge>
                 </div>
 
-                <p className="text-sm sm:text-base text-[#121826] leading-relaxed italic mb-6">
+                <p className="text-sm sm:text-base text-[#102A3A] leading-relaxed italic mb-6">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div className="pt-4 border-t border-[#EEF3F7] flex items-center justify-between">
                 <div>
-                  <h3 className="font-bold text-sm text-[#031B3D]">
+                  <h3 className="font-bold text-sm text-[#133C55]">
                     {item.authorTitle}
                   </h3>
-                  <p className="text-xs text-slate-500">{item.location}</p>
+                  <p className="text-xs text-[#5F7483]">{item.location}</p>
                 </div>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 text-[#062A5E]">
+                <span className="text-[10px] font-bold px-2.5 py-1 rounded bg-[#84D2F6]/20 text-[#133C55]">
                   {item.category}
                 </span>
               </div>

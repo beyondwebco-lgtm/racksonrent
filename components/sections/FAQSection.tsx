@@ -13,12 +13,12 @@ export default function FAQSection({ limit, showTitle = true }: FAQSectionProps)
   const displayItems = limit ? FAQ_ITEMS.slice(0, limit) : FAQ_ITEMS;
 
   return (
-    <section className="py-16 sm:py-24 bg-white border-y border-[#E5E7EB]" id="faq">
+    <section className="py-16 sm:py-24 bg-white border-y border-[#D8E3EC]" id="faq">
       <Container>
         {showTitle && (
           <SectionHeading
             badge="Got Questions?"
-            badgeVariant="orange"
+            badgeVariant="brand"
             title="Frequently Asked Questions"
             subtitle="Find answers to common questions about listing gym spaces, displaying wellness products, and inquiring with Racks on Rent."
           />

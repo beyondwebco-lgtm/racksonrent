@@ -9,28 +9,28 @@ import { SERVICES_SUPPORTED } from "@/data/services";
 
 export default function ServicesSection() {
   const iconMap: Record<string, React.ReactNode> = {
-    Milk: <Milk className="w-5 h-5 text-blue-500" />,
-    Zap: <Zap className="w-5 h-5 text-amber-500" />,
-    Apple: <Apple className="w-5 h-5 text-red-500" />,
-    Leaf: <Leaf className="w-5 h-5 text-emerald-600" />,
-    BookOpen: <BookOpen className="w-5 h-5 text-indigo-600" />,
-    Utensils: <Utensils className="w-5 h-5 text-orange-500" />,
-    HeartPulse: <HeartPulse className="w-5 h-5 text-[#FF6500]" />,
-    Cookie: <Cookie className="w-5 h-5 text-amber-700" />,
-    Trophy: <Trophy className="w-5 h-5 text-[#FFC928]" />,
-    Gift: <Gift className="w-5 h-5 text-purple-600" />,
-    UserCheck: <UserCheck className="w-5 h-5 text-[#157A3D]" />,
-    ShoppingBag: <ShoppingBag className="w-5 h-5 text-[#062A5E]" />,
-    Layers: <Layers className="w-5 h-5 text-teal-600" />,
-    Megaphone: <Megaphone className="w-5 h-5 text-[#FF6500]" />,
+    Milk: <Milk className="w-5 h-5 text-[#386FA4]" />,
+    Zap: <Zap className="w-5 h-5 text-[#59A5D8]" />,
+    Apple: <Apple className="w-5 h-5 text-[#386FA4]" />,
+    Leaf: <Leaf className="w-5 h-5 text-[#133C55]" />,
+    BookOpen: <BookOpen className="w-5 h-5 text-[#386FA4]" />,
+    Utensils: <Utensils className="w-5 h-5 text-[#59A5D8]" />,
+    HeartPulse: <HeartPulse className="w-5 h-5 text-[#133C55]" />,
+    Cookie: <Cookie className="w-5 h-5 text-[#386FA4]" />,
+    Trophy: <Trophy className="w-5 h-5 text-[#59A5D8]" />,
+    Gift: <Gift className="w-5 h-5 text-[#133C55]" />,
+    UserCheck: <UserCheck className="w-5 h-5 text-[#386FA4]" />,
+    ShoppingBag: <ShoppingBag className="w-5 h-5 text-[#59A5D8]" />,
+    Layers: <Layers className="w-5 h-5 text-[#133C55]" />,
+    Megaphone: <Megaphone className="w-5 h-5 text-[#386FA4]" />,
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-white border-y border-[#E5E7EB]" id="services">
+    <section className="py-16 sm:py-24 bg-white border-y border-[#D8E3EC]" id="services">
       <Container>
         <SectionHeading
           badge="Product & Service Support"
-          badgeVariant="green"
+          badgeVariant="brand"
           title="Services Supported Through Racks on Rent"
           subtitle="From ready-to-drink protein shakes to diet consultations, discover what products and services fit naturally inside gyms."
         />
@@ -39,17 +39,17 @@ export default function ServicesSection() {
           {SERVICES_SUPPORTED.map((service) => (
             <div
               key={service.id}
-              className="bg-[#F7F8FA] rounded-2xl p-6 border border-[#E5E7EB] hover:border-[#062A5E] hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between group"
+              className="rounded-2xl border border-[#59A5D8]/25 bg-[#F7FAFC] p-6 hover:border-[#386FA4]/40 hover:bg-white transition-all duration-300 shadow-xs hover:shadow-md flex flex-col justify-between group"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-xs">
+                <div className="w-10 h-10 rounded-xl bg-[#84D2F6]/20 border border-[#84D2F6]/40 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   {iconMap[service.iconName]}
                 </div>
 
-                <h3 className="font-bold text-base text-[#031B3D] group-hover:text-[#062A5E] transition-colors mb-2">
+                <h3 className="font-bold text-base text-[#102A3A] group-hover:text-[#386FA4] transition-colors mb-2">
                   {service.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#5C6470] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#5F7483] leading-relaxed">
                   {service.description}
                 </p>
               </div>

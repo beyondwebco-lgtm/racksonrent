@@ -22,20 +22,20 @@ export default function Button({
   type = "button",
   disabled = false,
 }: ButtonProps) {
-  const baseStyles = "inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-xl text-center cursor-pointer";
+  const baseStyles = "inline-flex items-center justify-center font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#59A5D8] focus-visible:ring-offset-2 rounded-xl text-center cursor-pointer";
   
   const sizeStyles = {
     sm: "px-4 py-2 text-sm",
     md: "px-5 py-2.5 text-base",
-    lg: "px-7 py-3.5 text-lg",
+    lg: "px-6 py-3.5 text-lg",
   };
 
   const variantStyles = {
-    primary: "bg-[#FF6500] hover:bg-[#E05800] text-white shadow-md hover:shadow-lg focus:ring-[#FF6500] active:scale-[0.98]",
-    secondary: "bg-[#062A5E] hover:bg-[#031B3D] text-white shadow-md focus:ring-[#062A5E] active:scale-[0.98]",
-    outline: "border-2 border-[#062A5E] text-[#062A5E] hover:bg-[#062A5E] hover:text-white focus:ring-[#062A5E]",
-    whatsapp: "bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-md hover:shadow-lg focus:ring-[#25D366] active:scale-[0.98]",
-    ghost: "bg-transparent text-[#121826] hover:bg-slate-200/60 focus:ring-slate-400",
+    primary: "bg-[#386FA4] hover:bg-[#133C55] text-white shadow-md hover:shadow-lg active:scale-[0.98]",
+    secondary: "border border-[#386FA4] bg-white text-[#133C55] hover:bg-[#84D2F6]/20 shadow-xs",
+    outline: "border border-[#59A5D8] text-[#133C55] hover:bg-[#386FA4] hover:text-white",
+    whatsapp: "bg-[#386FA4] hover:bg-[#133C55] text-white shadow-md hover:shadow-lg active:scale-[0.98]",
+    ghost: "bg-transparent text-[#102A3A] hover:bg-[#EEF3F7]",
   };
 
   const combinedStyles = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${disabled ? "opacity-60 cursor-not-allowed pointer-events-none" : ""} ${className}`;

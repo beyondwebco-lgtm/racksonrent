@@ -11,24 +11,24 @@ import { CONTACT_INFO } from "@/data/navigation";
 
 export default function WhyChooseUsSection() {
   const iconMap: Record<string, React.ReactNode> = {
-    Target: <Target className="w-5 h-5 text-[#FF6500]" />,
-    ShieldCheck: <ShieldCheck className="w-5 h-5 text-[#062A5E]" />,
-    BadgePercent: <BadgePercent className="w-5 h-5 text-[#157A3D]" />,
-    Users: <Users className="w-5 h-5 text-amber-500" />,
-    HeartHandshake: <HeartHandshake className="w-5 h-5 text-[#25D366]" />,
-    MessageSquare: <MessageSquare className="w-5 h-5 text-[#FF6500]" />,
-    Maximize: <Maximize className="w-5 h-5 text-[#062A5E]" />,
-    MapPin: <MapPin className="w-5 h-5 text-red-500" />,
-    PieChart: <PieChart className="w-5 h-5 text-indigo-600" />,
-    Rocket: <Rocket className="w-5 h-5 text-[#FF6500]" />,
+    Target: <Target className="w-5 h-5 text-[#386FA4]" />,
+    ShieldCheck: <ShieldCheck className="w-5 h-5 text-[#133C55]" />,
+    BadgePercent: <BadgePercent className="w-5 h-5 text-[#59A5D8]" />,
+    Users: <Users className="w-5 h-5 text-[#386FA4]" />,
+    HeartHandshake: <HeartHandshake className="w-5 h-5 text-[#133C55]" />,
+    MessageSquare: <MessageSquare className="w-5 h-5 text-[#59A5D8]" />,
+    Maximize: <Maximize className="w-5 h-5 text-[#386FA4]" />,
+    MapPin: <MapPin className="w-5 h-5 text-[#133C55]" />,
+    PieChart: <PieChart className="w-5 h-5 text-[#59A5D8]" />,
+    Rocket: <Rocket className="w-5 h-5 text-[#386FA4]" />,
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-white border-y border-[#E5E7EB]" id="why-choose-us">
+    <section className="py-16 sm:py-24 bg-white border-y border-[#D8E3EC]" id="why-choose-us">
       <Container>
         <SectionHeading
           badge="Platform Advantages"
-          badgeVariant="navy"
+          badgeVariant="brand"
           title="Why Choose Racks on Rent?"
           subtitle="Designed specifically for fitness environments to empower gym owners and accelerate health product startups."
         />
@@ -37,16 +37,16 @@ export default function WhyChooseUsSection() {
           {WHY_CHOOSE_US_REASONS.map((reason) => (
             <div
               key={reason.id}
-              className="bg-[#F7F8FA] rounded-2xl p-5 border border-[#E5E7EB] hover:border-[#062A5E] hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between group"
+              className="rounded-2xl border border-[#59A5D8]/25 bg-[#F7FAFC] p-5 hover:border-[#386FA4]/40 hover:bg-white transition-all duration-300 shadow-xs hover:shadow-md flex flex-col justify-between group"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 rounded-xl bg-[#84D2F6]/20 border border-[#84D2F6]/40 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                   {iconMap[reason.iconName]}
                 </div>
-                <h3 className="font-bold text-sm text-[#031B3D] group-hover:text-[#FF6500] transition-colors mb-1.5">
+                <h3 className="font-bold text-sm text-[#102A3A] group-hover:text-[#386FA4] transition-colors mb-1.5">
                   {reason.title}
                 </h3>
-                <p className="text-xs text-[#5C6470] leading-relaxed">
+                <p className="text-xs text-[#5F7483] leading-relaxed">
                   {reason.description}
                 </p>
               </div>
@@ -55,11 +55,11 @@ export default function WhyChooseUsSection() {
         </div>
 
         {/* Trust Banner */}
-        <div className="relative rounded-3xl bg-gradient-to-r from-[#031B3D] via-[#062A5E] to-[#031B3D] text-white p-8 sm:p-12 shadow-2xl border border-slate-800 text-center overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF6500]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="relative rounded-3xl bg-[#133C55] text-white p-8 sm:p-12 shadow-2xl border border-[#59A5D8]/30 text-center overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#84D2F6]/10 rounded-full blur-3xl pointer-events-none" />
           <div className="relative z-10 max-w-3xl mx-auto space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF6500]/20 text-[#FFC928] border border-[#FF6500]/30 text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-4 h-4 text-[#FFC928]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#84D2F6]/20 text-[#84D2F6] border border-[#84D2F6]/30 text-xs font-bold uppercase tracking-wider">
+              <Sparkles className="w-4 h-4 text-[#84D2F6]" />
               Trust Guarantee
             </div>
 
@@ -67,16 +67,16 @@ export default function WhyChooseUsSection() {
               {TRUST_BANNER.headline}
             </h3>
 
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal">
               {TRUST_BANNER.subtext}
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
                 href={CONTACT_INFO.whatsappLink}
-                variant="whatsapp"
+                variant="primary"
                 size="lg"
-                className="gap-2 shadow-xl shadow-green-900/30"
+                className="gap-2 bg-[#386FA4] hover:bg-[#59A5D8] text-white"
               >
                 <MessageCircle className="w-5 h-5 fill-current" />
                 {TRUST_BANNER.ctaText}
