@@ -45,7 +45,8 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     name: "Health Drinks & Beverages",
     description: "Cold-pressed juices, electrolyte drinks, and kombucha.",
     iconName: "Zap",
-    image: "/spaces/healthy-food-corner.png"
+    image: "/spaces/health-beverages.png",
+    badge: "Fresh"
   },
   {
     id: "fitness-bands",
@@ -59,14 +60,14 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     name: "Fruit Bowls & Healthy Salads",
     description: "Fresh fruit bowls, sprout salads, and post-workout bowls.",
     iconName: "Apple",
-    image: "/spaces/healthy-food-corner.png"
+    image: "/spaces/fruit-salads.png"
   },
   {
     id: "protein-corners",
     name: "Protein Shake Corners",
     description: "Freshly blended protein shake and smoothie setups.",
     iconName: "Utensils",
-    image: "/spaces/nutrition-centre.png",
+    image: "/spaces/protein-corners.png",
     badge: "High Demand"
   },
   {
