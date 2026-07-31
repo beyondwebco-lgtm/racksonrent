@@ -108,20 +108,20 @@ export default function Header({ onSelectRole }: HeaderProps) {
           </div>
 
           {/* Separate Horizontal Logo Lockup */}
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center min-w-[200px] lg:min-w-[250px]">
             {/* Main Brand Title: Racks on Rent */}
-            <div className="flex items-baseline font-black tracking-tight leading-none text-xl sm:text-2xl lg:text-[27px] xl:text-[29px]">
-              <span className="text-[#6B0F1A] font-extrabold italic">Racks</span>
-              <span className="text-[#F4E409] font-serif text-base sm:text-lg lg:text-xl mx-0.5 font-bold italic lowercase">on</span>
-              <span className="text-[#F4E409] font-extrabold italic">Rent</span>
+            <div className="flex items-baseline font-black tracking-tighter leading-none text-2xl sm:text-3xl lg:text-4xl xl:text-[42px]">
+              <span className="text-[#6B0F1A] font-black italic transform scale-y-110 origin-bottom">Racks</span>
+              <span className="text-[#F4E409] font-bold italic lowercase mx-1" style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "0.8em" }}>on</span>
+              <span className="text-[#F4E409] font-black italic transform scale-y-110 origin-bottom">Rent</span>
             </div>
 
             {/* Tagline: — SUBLET SPACE. SHARE SUCCESS. — */}
-            <div className="flex items-center gap-1 mt-1 text-[8.5px] sm:text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-extrabold uppercase tracking-wider leading-none whitespace-nowrap">
-              <span className="h-[1.5px] w-2.5 sm:w-3.5 bg-[#6B0F1A] inline-block" />
+            <div className="flex items-center justify-between gap-1 mt-1 text-[9px] sm:text-[10px] lg:text-[11px] xl:text-xs font-black uppercase tracking-[0.2em] leading-none whitespace-nowrap">
+              <span className="h-[2px] w-3 sm:w-4 lg:w-5 bg-[#6B0F1A] inline-block" />
               <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
               <span className="text-[#F4E409]">SHARE SUCCESS.</span>
-              <span className="h-[1.5px] w-2.5 sm:w-3.5 bg-[#6B0F1A] inline-block" />
+              <span className="h-[2px] w-3 sm:w-4 lg:w-5 bg-[#6B0F1A] inline-block" />
             </div>
           </div>
         </Link>
@@ -201,16 +201,16 @@ export default function Header({ onSelectRole }: HeaderProps) {
                 />
               </div>
               <div className="flex flex-col justify-center">
-                <div className="flex items-baseline font-black tracking-tight leading-none text-lg sm:text-xl">
-                  <span className="text-[#6B0F1A] font-extrabold italic">Racks</span>
-                  <span className="text-[#F4E409] font-serif text-sm mx-0.5 font-bold italic lowercase">on</span>
-                  <span className="text-[#F4E409] font-extrabold italic">Rent</span>
+                <div className="flex items-baseline font-black tracking-tighter leading-none text-2xl sm:text-3xl">
+                  <span className="text-[#6B0F1A] font-black italic transform scale-y-110 origin-bottom">Racks</span>
+                  <span className="text-[#F4E409] font-bold italic lowercase mx-1" style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "0.8em" }}>on</span>
+                  <span className="text-[#F4E409] font-black italic transform scale-y-110 origin-bottom">Rent</span>
                 </div>
-                <div className="flex items-center gap-1 mt-0.5 text-[8px] font-extrabold uppercase tracking-wider leading-none">
-                  <span className="h-[1px] w-2 bg-[#6B0F1A] inline-block" />
+                <div className="flex items-center gap-1 mt-1 text-[9px] font-black uppercase tracking-[0.15em] leading-none whitespace-nowrap">
+                  <span className="h-[2px] w-3 bg-[#6B0F1A] inline-block" />
                   <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
                   <span className="text-[#F4E409]">SHARE SUCCESS.</span>
-                  <span className="h-[1px] w-2 bg-[#6B0F1A] inline-block" />
+                  <span className="h-[2px] w-3 bg-[#6B0F1A] inline-block" />
                 </div>
               </div>
             </Link>

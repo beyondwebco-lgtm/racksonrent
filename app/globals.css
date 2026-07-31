@@ -11,6 +11,7 @@
   --color-soft-border: #F0E2E4;
 
   --font-manrope: var(--font-manrope), sans-serif;
+  --font-playfair: var(--font-playfair), Georgia, serif;
 }
 
 :root {
