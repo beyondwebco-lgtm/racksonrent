@@ -88,14 +88,14 @@ export default function Header({ onSelectRole }: HeaderProps) {
         
         {/* Prominently Enlarged Logo & Brand Name */}
         <Link href="/" className="flex items-center gap-3 group focus:outline-none flex-shrink-0">
-          <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 shadow-md flex-shrink-0 bg-white">
+          <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 shadow-md flex-shrink-0 bg-white p-1">
             <Image
               src="/images/logo.jpeg"
               alt="Racks on Rent Logo"
               fill
               sizes="(max-width: 640px) 56px, 64px"
               priority
-              className="object-cover"
+              className="object-contain"
             />
           </div>
           <div>
@@ -173,13 +173,13 @@ export default function Header({ onSelectRole }: HeaderProps) {
               onClick={closeMenu}
               className="flex items-center gap-3 focus:outline-none"
             >
-              <div className="relative w-12 h-12 rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 shadow-md flex-shrink-0 bg-white">
+              <div className="relative w-12 h-12 rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 shadow-md flex-shrink-0 bg-white p-1">
                 <Image
                   src="/images/logo.jpeg"
                   alt="Racks on Rent Logo"
                   fill
                   sizes="48px"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <div>

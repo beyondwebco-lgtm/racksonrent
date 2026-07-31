@@ -13,13 +13,13 @@ export default function Footer() {
           
           {/* Prominently Enlarged Brand Logo */}
           <div className="flex items-center gap-3">
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-[#F4E409]/60 shadow-md flex-shrink-0 bg-white">
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-[#F4E409]/60 shadow-md flex-shrink-0 bg-white p-1">
               <Image
                 src="/images/logo.jpeg"
                 alt="Racks on Rent Logo"
                 fill
                 sizes="(max-width: 640px) 56px, 64px"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
             <div>
