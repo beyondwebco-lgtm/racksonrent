@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Background Studio Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F4F4F6" />
+      <stop offset="100%" stop-color="#E2E2E6" />
+    </radialGradient>
+    
+    <!-- Ground Shadows -->
+    <radialGradient id="groundShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(15, 15, 25, 0.35)" />
+      <stop offset="60%" stop-color="rgba(15, 15, 25, 0.10)" />
+      <stop offset="100%" stop-color="rgba(15, 15, 25, 0.0)" />
+    </radialGradient>
+
+    <!-- Metallic Dumbbell Chrome & Rubber Gradients -->
+    <linearGradient id="chromeHandle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9E9E9E" />
+      <stop offset="25%" stop-color="#E0E0E0" />
+      <stop offset="50%" stop-color="#FFFFFF" />
+      <stop offset="75%" stop-color="#BDBDBD" />
+      <stop offset="100%" stop-color="#757575" />
+    </linearGradient>
+
+    <linearGradient id="hexRubber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#333338" />
+      <stop offset="50%" stop-color="#1A1A1E" />
+      <stop offset="100%" stop-color="#0A0A0C" />
+    </linearGradient>
+
+    <!-- Resistance Band Yellow Gradient -->
+    <linearGradient id="yellowBand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF176" />
+      <stop offset="40%" stop-color="#F4E409" />
+      <stop offset="100%" stop-color="#C6A700" />
+    </linearGradient>
+  </defs>
+
+  <!-- Studio Background -->
+  <rect width="1024" height="1024" fill="url(#bgGrad)" />
+
+  <!-- Studio Soft Ground Shadows -->
+  <ellipse cx="440" cy="710" rx="300" ry="75" fill="url(#groundShadow)" />
+  <ellipse cx="620" cy="620" rx="260" ry="60" fill="url(#groundShadow)" opacity="0.7" />
+
+  <!-- Resistance Band (Coiled Yellow Loop) -->
+  <g id="resistance-band" transform="translate(180, 480) rotate(-18)">
+    <path d="M 50 120 C 150 -20, 450 -20, 520 100 C 580 200, 320 280, 180 250 C 70 230, -20 180, 50 120 Z" 
+          fill="none" stroke="url(#yellowBand)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 50 120 C 150 -20, 450 -20, 520 100 C 580 200, 320 280, 180 250 C 70 230, -20 180, 50 120 Z" 
+          fill="none" stroke="#FFFFFF" stroke-width="6" opacity="0.4" stroke-linecap="round" />
+  </g>
+
+  <!-- Rear Dumbbell (Tilted Angle) -->
+  <g id="rear-dumbbell" transform="translate(420, 320) rotate(42)">
+    <!-- Chrome Handle -->
+    <rect x="180" y="80" width="200" height="40" rx="6" fill="url(#chromeHandle)" />
+    <!-- Left Hex Weight -->
+    <polygon points="80,10 180,10 220,100 180,190 80,190 40,100" fill="url(#hexRubber)" stroke="#424242" stroke-width="2" />
+    <!-- Right Hex Weight -->
+    <polygon points="380,10 480,10 520,100 480,190 380,190 340,100" fill="url(#hexRubber)" stroke="#424242" stroke-width="2" />
+  </g>
+
+  <!-- Front Main Dumbbell (Primary Focus) -->
+  <g id="front-dumbbell" transform="translate(250, 460) rotate(-12)">
+    <!-- Chrome Handle with Knurling Textures -->
+    <rect x="190" y="85" width="220" height="50" rx="8" fill="url(#chromeHandle)" stroke="#757575" stroke-width="2" />
+    <!-- Knurling texture lines -->
+    <line x1="230" y1="85" x2="230" y2="135" stroke="#616161" stroke-width="3" stroke-dasharray="4 4" />
+    <line x1="370" y1="85" x2="370" y2="135" stroke="#616161" stroke-width="3" stroke-dasharray="4 4" />
+
+    <!-- Left Hex Head -->
+    <g>
+      <polygon points="90,10 190,10 240,110 190,210 90,210 40,110" fill="url(#hexRubber)" stroke="#424242" stroke-width="3" />
+      <polygon points="100,25 180,25 220,110 180,195 100,195 60,110" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="3" />
+      <!-- Weight Engraving Number "10 KG" -->
+      <text x="140" y="120" font-family="sans-serif" font-weight="900" font-size="28" fill="#757575" text-anchor="middle">10</text>
+    </g>
+
+    <!-- Right Hex Head -->
+    <g>
+      <polygon points="410,10 510,10 560,110 510,210 410,210 360,110" fill="url(#hexRubber)" stroke="#424242" stroke-width="3" />
+      <polygon points="420,25 500,25 540,110 500,195 420,195 380,110" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="3" />
+      <text x="460" y="120" font-family="sans-serif" font-weight="900" font-size="28" fill="#757575" text-anchor="middle">10</text>
+    </g>
+  </g>
+</svg>

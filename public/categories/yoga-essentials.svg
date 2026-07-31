@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Background Studio Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F4F4F6" />
+      <stop offset="100%" stop-color="#E2E2E6" />
+    </radialGradient>
+    
+    <!-- Ground Shadow -->
+    <radialGradient id="groundShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(20, 20, 30, 0.30)" />
+      <stop offset="60%" stop-color="rgba(20, 20, 30, 0.08)" />
+      <stop offset="100%" stop-color="rgba(20, 20, 30, 0.0)" />
+    </radialGradient>
+
+    <!-- Teal Mat Texture Gradient -->
+    <linearGradient id="tealMat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#26A69A" />
+      <stop offset="50%" stop-color="#00897B" />
+      <stop offset="100%" stop-color="#004D40" />
+    </linearGradient>
+
+    <!-- Cork Block Texture Gradient -->
+    <linearGradient id="corkBlock" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D7CCC8" />
+      <stop offset="50%" stop-color="#BCAAA4" />
+      <stop offset="100%" stop-color="#8D6E63" />
+    </linearGradient>
+  </defs>
+
+  <!-- Studio Background -->
+  <rect width="1024" height="1024" fill="url(#bgGrad)" />
+
+  <!-- Studio Soft Ground Shadows -->
+  <ellipse cx="512" cy="730" rx="360" ry="85" fill="url(#groundShadow)" />
+
+  <!-- High-Density Cork Yoga Block (Beside Mat) -->
+  <g id="cork-yoga-block" transform="translate(560, 440) rotate(-14)">
+    <polygon points="0,60 180,0 320,60 140,120" fill="#D7CCC8" stroke="#A1887F" stroke-width="2" />
+    <polygon points="0,60 140,120 140,240 0,180" fill="url(#corkBlock)" stroke="#8D6E63" stroke-width="2" />
+    <polygon points="140,120 320,60 320,180 140,240" fill="#8D6E63" stroke="#5D4037" stroke-width="2" />
+  </g>
+
+  <!-- Rolled Teal Yoga Mat (Main Subject) -->
+  <g id="rolled-yoga-mat" transform="translate(180, 310) rotate(16)">
+    <!-- Main Cylinder Body -->
+    <rect x="80" y="80" width="540" height="180" rx="20" fill="url(#tealMat)" stroke="#004D40" stroke-width="3" />
+    
+    <!-- Rolled End Spiral (Left Face) -->
+    <ellipse cx="80" cy="170" rx="45" ry="90" fill="#00796B" stroke="#004D40" stroke-width="4" />
+    <ellipse cx="80" cy="170" rx="32" ry="65" fill="#004D40" stroke="#26A69A" stroke-width="3" />
+    <ellipse cx="80" cy="170" rx="18" ry="38" fill="#80CBC4" stroke="#004D40" stroke-width="2" />
+
+    <!-- Specular Highlight on Mat Cylinder -->
+    <rect x="120" y="90" width="460" height="25" fill="#FFFFFF" opacity="0.35" rx="12" />
+
+    <!-- Black Carrying Harness Straps -->
+    <rect x="220" y="70" width="30" height="200" rx="6" fill="#212121" stroke="#424242" stroke-width="2" />
+    <rect x="460" y="70" width="30" height="200" rx="6" fill="#212121" stroke="#424242" stroke-width="2" />
+    <!-- Connecting Strap Handle -->
+    <path d="M 235 70 C 235 -20, 475 -20, 475 70" fill="none" stroke="#212121" stroke-width="16" stroke-linecap="round" />
+  </g>
+</svg>

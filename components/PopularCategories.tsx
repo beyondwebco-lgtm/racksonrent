@@ -3,16 +3,6 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import {
-  Stethoscope,
-  Zap,
-  Cookie,
-  ShoppingBag,
-  Dumbbell,
-  Trophy,
-  Apple,
-  Utensils,
-  Sparkles,
-  Layers,
   ArrowRight,
   ChevronLeft,
   ChevronRight,
@@ -27,19 +17,6 @@ export default function PopularCategories() {
   const [hasDragged, setHasDragged] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeftPos, setScrollLeftPos] = useState(0);
-
-  const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-    Stethoscope,
-    Zap,
-    Cookie,
-    ShoppingBag,
-    Dumbbell,
-    Trophy,
-    Apple,
-    Utensils,
-    Sparkles,
-    Layers,
-  };
 
   const updateScrollButtons = useCallback(() => {
     if (scrollRef.current) {
@@ -169,61 +146,32 @@ export default function PopularCategories() {
             }`}
           >
             {POPULAR_CATEGORIES.map((cat: CategoryItem) => {
-              const IconComponent = iconMap[cat.iconName] || Layers;
               return (
                 <button
                   type="button"
                   key={cat.id}
                   onClick={handleCategoryClick}
-                  className="category-card flex-shrink-0 w-[82vw] max-w-[300px] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)] snap-start text-left rounded-3xl border-2 border-[#6B0F1A]/20 bg-[#FFFDF5] p-3.5 shadow-[0_8px_25px_rgba(107,15,26,0.08)] hover:shadow-[0_18px_45px_rgba(107,15,26,0.18)] hover:border-[#6B0F1A] transition-all hover:-translate-y-1 flex flex-col justify-between group cursor-pointer relative overflow-hidden h-full"
+                  className="category-card flex-shrink-0 w-[82vw] max-w-[290px] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)] snap-start text-left rounded-3xl border-2 border-[#6B0F1A]/15 bg-[#FFFDF5] p-4 shadow-[0_8px_25px_rgba(107,15,26,0.06)] hover:shadow-[0_18px_45px_rgba(107,15,26,0.16)] hover:border-[#6B0F1A] transition-all hover:-translate-y-1 flex flex-col justify-between group cursor-pointer relative overflow-hidden h-full"
                 >
                   <div>
-                    {/* Featured Category Image with Overlay Logo */}
-                    <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden border border-[#F0E2E4] bg-[#3D0710] mb-4 group-hover:scale-[1.02] transition-transform">
+                    {/* Clean Studio Product Image Container (1:1 Aspect Ratio) */}
+                    <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-[#F8F8FA] border border-[#F0E2E4] p-3 mb-4 flex items-center justify-center group-hover:bg-[#F2F1F5] transition-colors">
                       <Image
                         src={cat.image}
-                        alt={cat.name}
-                        fill
-                        sizes="(max-width: 640px) 280px, 300px"
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        alt={cat.alt}
+                        width={600}
+                        height={600}
+                        loading="lazy"
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
-
-                      {/* Brand Logo Badge Top-Left */}
-                      <div className="absolute top-2.5 left-2.5 bg-[#3D0710]/90 backdrop-blur-md rounded-xl p-1 border border-[#F4E409]/60 shadow-md flex items-center gap-1.5 pr-2.5 z-10">
-                        <div className="relative w-5 h-5 rounded-lg overflow-hidden bg-white flex-shrink-0">
-                          <Image
-                            src="/images/logo.png"
-                            alt="Logo"
-                            fill
-                            sizes="20px"
-                            className="object-contain p-0.5"
-                          />
-                        </div>
-                        <span className="text-[10px] font-black text-[#FFF6A3] tracking-wide">
-                          RACKS ON RENT
-                        </span>
-                      </div>
-
-                      {/* Category Badge Top-Right */}
-                      {cat.badge && (
-                        <span className="absolute top-2.5 right-2.5 text-[10px] font-extrabold bg-[#F4E409] text-[#3D0710] px-2.5 py-0.5 rounded-full border border-[#6B0F1A]/20 shadow-md z-10">
-                          {cat.badge}
-                        </span>
-                      )}
                     </div>
 
                     <div className="px-1">
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <div className="p-1.5 rounded-lg bg-[#FFF6A3] text-[#6B0F1A]">
-                          <IconComponent className="w-4 h-4" />
-                        </div>
-                        <h3 className="font-extrabold text-base text-[#6B0F1A] leading-snug group-hover:text-[#3D0710] transition-colors">
-                          {cat.name}
-                        </h3>
-                      </div>
+                      <h3 className="font-extrabold text-base text-[#6B0F1A] leading-snug group-hover:text-[#3D0710] transition-colors mb-1">
+                        {cat.name}
+                      </h3>
 
-                      <p className="text-xs text-[#5F5F5F] leading-relaxed font-medium line-clamp-2 pl-0.5">
+                      <p className="text-xs text-[#5F5F5F] leading-relaxed font-medium line-clamp-2">
                         {cat.description}
                       </p>
                     </div>

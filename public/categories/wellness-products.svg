@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Background Studio Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F4F4F6" />
+      <stop offset="100%" stop-color="#E2E2E6" />
+    </radialGradient>
+    
+    <!-- Ground Shadow -->
+    <radialGradient id="groundShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(20, 20, 30, 0.32)" />
+      <stop offset="60%" stop-color="rgba(20, 20, 30, 0.08)" />
+      <stop offset="100%" stop-color="rgba(20, 20, 30, 0.0)" />
+    </radialGradient>
+
+    <!-- Stainless Steel Bottle Gradient -->
+    <linearGradient id="steelBottle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#BDBDBD" />
+      <stop offset="25%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#E0E0E0" />
+      <stop offset="100%" stop-color="#9E9E9E" />
+    </linearGradient>
+
+    <!-- Massage Ball Gradient -->
+    <radialGradient id="massageBall" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#F4E409" />
+      <stop offset="60%" stop-color="#F57F17" />
+      <stop offset="100%" stop-color="#E65100" />
+    </radialGradient>
+
+    <!-- Rolled Towel Gradient -->
+    <linearGradient id="towelSoft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#801522" />
+      <stop offset="50%" stop-color="#6B0F1A" />
+      <stop offset="100%" stop-color="#3D0710" />
+    </linearGradient>
+  </defs>
+
+  <!-- Studio Background -->
+  <rect width="1024" height="1024" fill="url(#bgGrad)" />
+
+  <!-- Studio Soft Ground Shadows -->
+  <ellipse cx="512" cy="740" rx="360" ry="85" fill="url(#groundShadow)" />
+
+  <!-- Rolled Microfibre Workout Towel (Left Base Item) -->
+  <g id="rolled-towel" transform="translate(230, 480) rotate(-12)">
+    <rect x="0" y="0" width="340" height="160" rx="25" fill="url(#towelSoft)" stroke="#3D0710" stroke-width="2" />
+    <!-- Spiral Rolled End (Left End) -->
+    <ellipse cx="0" cy="80" rx="30" ry="80" fill="#4A0A12" stroke="#801522" stroke-width="3" />
+    <ellipse cx="0" cy="80" rx="18" ry="50" fill="#6B0F1A" stroke="#FFF6A3" stroke-width="2" />
+    <!-- Towel Rib Textures -->
+    <line x1="60" y1="5" x2="60" y2="155" stroke="rgba(255,255,255,0.15)" stroke-width="4" />
+    <line x1="120" y1="5" x2="120" y2="155" stroke="rgba(255,255,255,0.15)" stroke-width="4" />
+    <line x1="180" y1="5" x2="180" y2="155" stroke="rgba(255,255,255,0.15)" stroke-width="4" />
+    <line x1="240" y1="5" x2="240" y2="155" stroke="rgba(255,255,255,0.15)" stroke-width="4" />
+  </g>
+
+  <!-- Reusable Stainless Steel Water Bottle (Center Standing Item) -->
+  <g id="steel-water-bottle" transform="translate(450, 240)">
+    <!-- Main Cylinder Body -->
+    <path d="M 25,110 L 25,450 A 85,25 0 0,0 195,450 L 195,110 Z" fill="url(#steelBottle)" stroke="#9E9E9E" stroke-width="2" />
+    <ellipse cx="110" cy="450" rx="85" ry="22" fill="url(#steelBottle)" />
+
+    <!-- Tapered Neck & Cap -->
+    <path d="M 25,110 C 25,70 65,55 65,50 L 65,30 L 155,30 L 155,50 C 155,55 195,70 195,110 Z" fill="url(#steelBottle)" />
+    
+    <!-- Bamboo / Black Insulated Screw Cap -->
+    <rect x="60" y="5" width="100" height="30" rx="8" fill="#212121" stroke="#424242" stroke-width="2" />
+    <!-- Carry Loop Handle -->
+    <path d="M 90,5 Q 110,-25 130,5" fill="none" stroke="#212121" stroke-width="8" stroke-linecap="round" />
+
+    <!-- Specular Reflection Highlight -->
+    <rect x="50" y="115" width="22" height="330" fill="#FFFFFF" opacity="0.75" rx="8" />
+  </g>
+
+  <!-- Trigger-Point Massage Ball (Right Front Item) -->
+  <g id="massage-ball" transform="translate(620, 560)">
+    <circle cx="90" cy="90" r="85" fill="url(#massageBall)" stroke="#E65100" stroke-width="2" />
+    <!-- Spiky Nub / Texture Spheres -->
+    <circle cx="65" cy="50" r="10" fill="#FFF176" opacity="0.6" />
+    <circle cx="115" cy="55" r="10" fill="#FFF176" opacity="0.6" />
+    <circle cx="50" cy="95" r="10" fill="#FFF176" opacity="0.6" />
+    <circle cx="90" cy="90" r="10" fill="#FFF176" opacity="0.6" />
+    <circle cx="130" cy="95" r="10" fill="#FFF176" opacity="0.6" />
+    <circle cx="70" cy="135" r="10" fill="#FFF176" opacity="0.6" />
+    <circle cx="115" cy="130" r="10" fill="#FFF176" opacity="0.6" />
+  </g>
+</svg>

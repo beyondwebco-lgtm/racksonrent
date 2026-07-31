@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Background Studio Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F5F4F0" />
+      <stop offset="100%" stop-color="#EBE9E2" />
+    </radialGradient>
+    
+    <!-- Soft Ground Shadow -->
+    <radialGradient id="groundShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(40, 30, 20, 0.28)" />
+      <stop offset="50%" stop-color="rgba(40, 30, 20, 0.10)" />
+      <stop offset="100%" stop-color="rgba(40, 30, 20, 0.0)" />
+    </radialGradient>
+
+    <!-- Inner Bowl Depth Shadow -->
+    <radialGradient id="bowlInnerShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="rgba(0,0,0,0)" />
+      <stop offset="100%" stop-color="rgba(0,0,0,0.18)" />
+    </radialGradient>
+    
+    <!-- Bowl Surface Specular -->
+    <linearGradient id="bowlShine" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#F7F6F2" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#E2DFD7" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Berry Gradient -->
+    <radialGradient id="blueberry" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#6B7AFF" />
+      <stop offset="40%" stop-color="#2D3B8E" />
+      <stop offset="100%" stop-color="#121842" />
+    </radialGradient>
+
+    <radialGradient id="strawberry" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FF5252" />
+      <stop offset="60%" stop-color="#D32F2F" />
+      <stop offset="100%" stop-color="#7B1FA2" />
+    </radialGradient>
+    
+    <radialGradient id="kiwi" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#AED581" />
+      <stop offset="70%" stop-color="#7CB342" />
+      <stop offset="100%" stop-color="#33691E" />
+    </radialGradient>
+    
+    <radialGradient id="mango" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFE082" />
+      <stop offset="60%" stop-color="#FFB300" />
+      <stop offset="100%" stop-color="#E65100" />
+    </radialGradient>
+
+    <linearGradient id="almond" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D7CCC8" />
+      <stop offset="50%" stop-color="#A1887F" />
+      <stop offset="100%" stop-color="#4E342E" />
+    </linearGradient>
+  </defs>
+
+  <!-- Studio Background -->
+  <rect width="1024" height="1024" fill="url(#bgGrad)" />
+
+  <!-- Studio Soft Contact Shadow -->
+  <ellipse cx="512" cy="740" rx="360" ry="85" fill="url(#groundShadow)" />
+
+  <!-- Ceramic Bowl Outer Base -->
+  <ellipse cx="512" cy="512" rx="340" ry="240" fill="url(#bowlShine)" stroke="#E0DDD5" stroke-width="4" />
+  <ellipse cx="512" cy="505" rx="330" ry="225" fill="#FFFFFF" />
+  <ellipse cx="512" cy="505" rx="310" ry="205" fill="#FAF8F5" />
+  <ellipse cx="512" cy="505" rx="310" ry="205" fill="url(#bowlInnerShadow)" />
+
+  <!-- Bowl Contents (Healthy Fruit Pieces & Nuts) -->
+  <g id="fruit-contents">
+    <!-- Mango Cubes Layer -->
+    <rect x="360" y="380" width="70" height="65" rx="15" fill="url(#mango)" transform="rotate(-12 395 412)" />
+    <rect x="420" y="440" width="65" height="60" rx="14" fill="url(#mango)" transform="rotate(18 452 470)" />
+    <rect x="540" y="390" width="75" height="70" rx="16" fill="url(#mango)" transform="rotate(8 577 425)" />
+    <rect x="600" y="460" width="60" height="58" rx="12" fill="url(#mango)" transform="rotate(-22 630 489)" />
+
+    <!-- Kiwi Slices -->
+    <g transform="translate(340, 470) rotate(-15)">
+      <ellipse cx="50" cy="40" rx="55" ry="42" fill="url(#kiwi)" />
+      <ellipse cx="50" cy="40" rx="20" ry="15" fill="#F1F8E9" />
+      <!-- Seeds -->
+      <circle cx="35" cy="35" r="2.5" fill="#1B5E20" />
+      <circle cx="42" cy="28" r="2.5" fill="#1B5E20" />
+      <circle cx="55" cy="26" r="2.5" fill="#1B5E20" />
+      <circle cx="64" cy="32" r="2.5" fill="#1B5E20" />
+      <circle cx="65" cy="45" r="2.5" fill="#1B5E20" />
+      <circle cx="58" cy="52" r="2.5" fill="#1B5E20" />
+      <circle cx="44" cy="51" r="2.5" fill="#1B5E20" />
+    </g>
+
+    <g transform="translate(480, 485) rotate(25)">
+      <ellipse cx="50" cy="40" rx="58" ry="44" fill="url(#kiwi)" />
+      <ellipse cx="50" cy="40" rx="22" ry="16" fill="#F1F8E9" />
+      <circle cx="35" cy="35" r="2.5" fill="#1B5E20" />
+      <circle cx="42" cy="28" r="2.5" fill="#1B5E20" />
+      <circle cx="55" cy="26" r="2.5" fill="#1B5E20" />
+      <circle cx="64" cy="32" r="2.5" fill="#1B5E20" />
+      <circle cx="65" cy="45" r="2.5" fill="#1B5E20" />
+      <circle cx="58" cy="52" r="2.5" fill="#1B5E20" />
+    </g>
+
+    <!-- Strawberries Slices -->
+    <path d="M 450,350 Q 510,320 540,370 Q 530,440 470,430 Q 430,400 450,350 Z" fill="url(#strawberry)" />
+    <circle cx="480" cy="370" r="2" fill="#FFEB3B" opacity="0.8" />
+    <circle cx="500" cy="390" r="2" fill="#FFEB3B" opacity="0.8" />
+    <circle cx="470" cy="395" r="2" fill="#FFEB3B" opacity="0.8" />
+
+    <path d="M 290,420 Q 350,390 380,440 Q 360,500 310,490 Q 270,460 290,420 Z" fill="url(#strawberry)" />
+    <circle cx="320" cy="440" r="2" fill="#FFEB3B" opacity="0.8" />
+    <circle cx="340" cy="460" r="2" fill="#FFEB3B" opacity="0.8" />
+
+    <!-- Blueberries Scattered -->
+    <circle cx="430" cy="370" r="22" fill="url(#blueberry)" />
+    <circle cx="425" cy="365" r="5" fill="#9FA8DA" opacity="0.6" />
+
+    <circle cx="510" cy="430" r="24" fill="url(#blueberry)" />
+    <circle cx="504" cy="424" r="6" fill="#9FA8DA" opacity="0.6" />
+
+    <circle cx="580" cy="470" r="20" fill="url(#blueberry)" />
+    <circle cx="575" cy="465" r="5" fill="#9FA8DA" opacity="0.6" />
+
+    <circle cx="390" cy="520" r="21" fill="url(#blueberry)" />
+    <circle cx="385" cy="515" r="5" fill="#9FA8DA" opacity="0.6" />
+
+    <circle cx="630" cy="415" r="23" fill="url(#blueberry)" />
+    <circle cx="624" cy="409" r="6" fill="#9FA8DA" opacity="0.6" />
+
+    <!-- Almonds & Nuts -->
+    <path d="M 470,520 Q 500,490 530,525 Q 510,555 470,520 Z" fill="url(#almond)" transform="rotate(-15 500 522)" />
+    <path d="M 570,530 Q 600,500 630,535 Q 610,565 570,530 Z" fill="url(#almond)" transform="rotate(35 600 532)" />
+    <path d="M 330,370 Q 360,340 390,375 Q 370,405 330,370 Z" fill="url(#almond)" transform="rotate(40 360 372)" />
+  </g>
+
+  <!-- Ceramic Bowl Rim Specular Highlight -->
+  <ellipse cx="512" cy="302" rx="310" ry="12" fill="#FFFFFF" opacity="0.7" />
+</svg>

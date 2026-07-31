@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Background Studio Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F5F5F7" />
+      <stop offset="100%" stop-color="#E4E4E8" />
+    </radialGradient>
+    
+    <!-- Soft Ground Shadow -->
+    <radialGradient id="groundShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(30, 30, 40, 0.28)" />
+      <stop offset="60%" stop-color="rgba(30, 30, 40, 0.08)" />
+      <stop offset="100%" stop-color="rgba(30, 30, 40, 0.0)" />
+    </radialGradient>
+
+    <!-- Supplement Tub White Shading Gradients -->
+    <linearGradient id="tubBody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E6E6E6" />
+      <stop offset="25%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#FAF9F6" />
+      <stop offset="100%" stop-color="#D9D9D9" />
+    </linearGradient>
+
+    <linearGradient id="tubLid" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#333333" />
+      <stop offset="30%" stop-color="#555555" />
+      <stop offset="60%" stop-color="#222222" />
+      <stop offset="100%" stop-color="#111111" />
+    </linearGradient>
+
+    <linearGradient id="silverRim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#BDBDBD" />
+      <stop offset="40%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#757575" />
+    </linearGradient>
+
+    <linearGradient id="scoopPlastic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5F5F5" />
+      <stop offset="60%" stop-color="#E0E0E0" />
+      <stop offset="100%" stop-color="#BDBDBD" />
+    </linearGradient>
+  </defs>
+
+  <!-- Studio Background -->
+  <rect width="1024" height="1024" fill="url(#bgGrad)" />
+
+  <!-- Studio Soft Ground Shadow -->
+  <ellipse cx="512" cy="740" rx="340" ry="75" fill="url(#groundShadow)" />
+
+  <!-- Main Supplement Container (Tub) -->
+  <g id="supplement-tub" transform="translate(332, 230)">
+    <!-- Main Body Base -->
+    <path d="M 30,120 L 30,440 A 150,40 0 0,0 330,440 L 330,120 Z" fill="url(#tubBody)" stroke="#E0E0E0" stroke-width="2" />
+    <!-- Tub Bottom Edge Shadow -->
+    <ellipse cx="180" cy="440" rx="150" ry="38" fill="url(#tubBody)" stroke="#CCCCCC" stroke-width="2" />
+    
+    <!-- Metallic Silver Neck Ring -->
+    <rect x="50" y="95" width="260" height="28" rx="6" fill="url(#silverRim)" />
+
+    <!-- Screw Cap Lid -->
+    <ellipse cx="180" cy="60" rx="160" ry="35" fill="url(#tubLid)" />
+    <path d="M 20,60 L 20,100 A 160,35 0 0,0 340,100 L 340,60 Z" fill="url(#tubLid)" />
+    <ellipse cx="180" cy="100" rx="160" ry="35" fill="none" stroke="#444444" stroke-width="3" />
+    <!-- Vertical Ribs on Lid -->
+    <line x1="60" y1="65" x2="60" y2="98" stroke="#666666" stroke-width="3" />
+    <line x1="100" y1="72" x2="100" y2="104" stroke="#666666" stroke-width="3" />
+    <line x1="140" y1="76" x2="140" y2="107" stroke="#666666" stroke-width="3" />
+    <line x1="180" y1="77" x2="180" y2="108" stroke="#666666" stroke-width="3" />
+    <line x1="220" y1="76" x2="220" y2="107" stroke="#666666" stroke-width="3" />
+    <line x1="260" y1="72" x2="260" y2="104" stroke="#666666" stroke-width="3" />
+
+    <!-- Specular Highlight on Tub Body -->
+    <rect x="90" y="125" width="40" height="315" fill="#FFFFFF" opacity="0.6" rx="10" />
+  </g>
+
+  <!-- Measuring Scoop Beside Container -->
+  <g id="supplement-scoop" transform="translate(560, 600) rotate(-22)">
+    <!-- Scoop Handle -->
+    <rect x="0" y="30" width="180" height="24" rx="12" fill="url(#scoopPlastic)" stroke="#BDBDBD" stroke-width="1.5" />
+    <!-- Scoop Cup -->
+    <ellipse cx="180" cy="42" rx="45" ry="36" fill="url(#scoopPlastic)" stroke="#9E9E9E" stroke-width="2" />
+    <!-- Scoop Powder Overflow -->
+    <ellipse cx="180" cy="38" rx="40" ry="30" fill="#FAFAFA" />
+    <ellipse cx="180" cy="38" rx="36" ry="26" fill="#F5F5F5" />
+  </g>
+</svg>

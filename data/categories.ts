@@ -4,84 +4,72 @@ export interface CategoryItem {
   description: string;
   iconName: string;
   image: string;
-  badge?: string;
+  alt: string;
 }
 
 export const POPULAR_CATEGORIES: CategoryItem[] = [
   {
     id: "healthy-snacks",
-    name: "Healthy Snacks & Foods",
-    description: "Protein bars, muesli, dry fruits, and healthy cookies.",
+    name: "Healthy Snacks",
+    description: "Protein bars, organic muesli, dry fruits, and healthy snacks.",
     iconName: "Cookie",
-    image: "/spaces/healthy-snacks.png",
-    badge: "Popular"
+    image: "/categories/healthy-snacks.svg",
+    alt: "Healthy fruit bowl for healthy snacks"
   },
   {
     id: "gym-apparel",
     name: "Gym Apparel",
     description: "Performance tees, gym hoodies, shorts, and activewear.",
     iconName: "ShoppingBag",
-    image: "/spaces/gym-apparel.png",
-    badge: "Trending"
+    image: "/categories/gym-apparel.svg",
+    alt: "Folded gym apparel set"
   },
   {
     id: "fitness-accessories",
     name: "Fitness Accessories",
-    description: "Shaker bottles, gym bags, towels, and workout gear.",
+    description: "Dumbbells, resistance bands, lifting straps, and accessories.",
     iconName: "Trophy",
-    image: "/spaces/fitness-accessories.png",
-    badge: "Top Seller"
+    image: "/categories/fitness-accessories.svg",
+    alt: "Dumbbells and resistance band fitness accessories"
   },
   {
-    id: "nutrition-supplements",
-    name: "Nutrition & Supplements",
-    description: "Whey protein, BCAAs, multivitamins, and creatine powders.",
+    id: "supplements",
+    name: "Supplements",
+    description: "Multivitamins, BCAAs, creatine, and daily wellness supplements.",
     iconName: "Stethoscope",
-    image: "/spaces/nutrition-centre.png",
-    badge: "Popular"
+    image: "/categories/supplements.svg",
+    alt: "Unbranded supplement container"
   },
   {
-    id: "health-beverages",
-    name: "Health Drinks & Beverages",
-    description: "Cold-pressed juices, electrolyte drinks, and kombucha.",
-    iconName: "Zap",
-    image: "/spaces/health-beverages.png",
-    badge: "Fresh"
-  },
-  {
-    id: "fitness-bands",
-    name: "Fitness Technology & Wearables",
-    description: "Smartwatches, heart-rate monitors, and fitness trackers.",
-    iconName: "Dumbbell",
-    image: "/spaces/fitness-tech.png"
-  },
-  {
-    id: "fruit-salads",
-    name: "Fruit Bowls & Healthy Salads",
-    description: "Fresh fruit bowls, sprout salads, and post-workout bowls.",
-    iconName: "Apple",
-    image: "/spaces/fruit-salads.png"
-  },
-  {
-    id: "protein-corners",
-    name: "Protein Shake Corners",
-    description: "Freshly blended protein shake and smoothie setups.",
+    id: "protein-products",
+    name: "Protein Products",
+    description: "Whey protein powders, shaker bottles, and protein shakes.",
     iconName: "Utensils",
-    image: "/spaces/protein-corners.png",
-    badge: "High Demand"
+    image: "/categories/protein-products.svg",
+    alt: "Protein jar and shaker bottle"
   },
   {
-    id: "personal-care",
-    name: "Personal Care & Wellness",
-    description: "Pain relief sprays, muscle rubs, and organic soaps.",
-    iconName: "Sparkles",
-    image: "/spaces/personal-care.png"
+    id: "sportswear",
+    name: "Sportswear",
+    description: "Athletic jerseys, track suits, and high-performance sportswear.",
+    iconName: "Dumbbell",
+    image: "/categories/sportswear.svg",
+    alt: "Folded sportswear outfit"
   },
   {
-    id: "more-categories",
-    name: "Physiotherapy & Recovery",
-    description: "Rehabilitation, injury recovery, and mobility spaces.",
+    id: "yoga-essentials",
+    name: "Yoga Essentials",
+    description: "Textured yoga mats, foam blocks, and yoga accessories.",
     iconName: "Layers",
-    image: "/spaces/physiotherapy-recovery.png"
+    image: "/categories/yoga-essentials.svg",
+    alt: "Yoga mat and yoga block"
+  },
+  {
+    id: "wellness-products",
+    name: "Wellness Products",
+    description: "Water bottles, massage tools, and personal care recovery kits.",
+    iconName: "Sparkles",
+    image: "/categories/wellness-products.svg",
+    alt: "Wellness accessory kit"
   }
 ];
