@@ -305,7 +305,8 @@ export default function GymSpaceShowcase({
 
             {/* Right Column: Featured Category Image */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 bg-[#2A050B] shadow-[0_16px_40px_rgba(107,15,26,0.15)] aspect-4/5 w-full max-w-lg mx-auto group flex items-center justify-center p-1.5">
+              <div className="relative rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 bg-[#3D0710] shadow-[0_16px_40px_rgba(107,15,26,0.15)] aspect-4/5 w-full max-w-lg mx-auto group flex items-center justify-center p-1.5">
+
                 <Image
                   key={activeCategory.id}
                   src={activeCategory.image}

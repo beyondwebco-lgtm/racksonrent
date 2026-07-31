@@ -155,7 +155,8 @@ export default function PopularCategories() {
                 >
                   <div>
                     {/* Clean Studio Product Photo Container (1:1 Aspect Ratio) */}
-                    <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-[#F8F8FA] border border-[#F0E2E4] mb-4 flex items-center justify-center group-hover:scale-[1.02] transition-transform">
+                    <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-[#FFFDF5] border border-[#F0E2E4] mb-4 flex items-center justify-center group-hover:scale-[1.02] transition-transform">
+
                       <Image
                         src={cat.image}
                         alt={cat.alt}

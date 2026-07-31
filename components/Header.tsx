@@ -112,15 +112,15 @@ export default function Header({ onSelectRole }: HeaderProps) {
             {/* Main Brand Title: Racks on Rent */}
             <div className="flex items-baseline font-black tracking-tight leading-none text-xl sm:text-2xl lg:text-[27px] xl:text-[29px]">
               <span className="text-[#6B0F1A] font-extrabold italic">Racks</span>
-              <span className="text-[#C69C00] font-serif text-base sm:text-lg lg:text-xl mx-0.5 font-bold italic lowercase">on</span>
-              <span className="text-[#D9A500] font-extrabold italic">Rent</span>
+              <span className="text-[#F4E409] font-serif text-base sm:text-lg lg:text-xl mx-0.5 font-bold italic lowercase">on</span>
+              <span className="text-[#F4E409] font-extrabold italic">Rent</span>
             </div>
 
             {/* Tagline: — SUBLET SPACE. SHARE SUCCESS. — */}
             <div className="flex items-center gap-1 mt-1 text-[8.5px] sm:text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-extrabold uppercase tracking-wider leading-none whitespace-nowrap">
               <span className="h-[1.5px] w-2.5 sm:w-3.5 bg-[#6B0F1A] inline-block" />
               <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
-              <span className="text-[#C69C00]">SHARE SUCCESS.</span>
+              <span className="text-[#F4E409]">SHARE SUCCESS.</span>
               <span className="h-[1.5px] w-2.5 sm:w-3.5 bg-[#6B0F1A] inline-block" />
             </div>
           </div>
@@ -203,13 +203,13 @@ export default function Header({ onSelectRole }: HeaderProps) {
               <div className="flex flex-col justify-center">
                 <div className="flex items-baseline font-black tracking-tight leading-none text-lg sm:text-xl">
                   <span className="text-[#6B0F1A] font-extrabold italic">Racks</span>
-                  <span className="text-[#C69C00] font-serif text-sm mx-0.5 font-bold italic lowercase">on</span>
-                  <span className="text-[#D9A500] font-extrabold italic">Rent</span>
+                  <span className="text-[#F4E409] font-serif text-sm mx-0.5 font-bold italic lowercase">on</span>
+                  <span className="text-[#F4E409] font-extrabold italic">Rent</span>
                 </div>
                 <div className="flex items-center gap-1 mt-0.5 text-[8px] font-extrabold uppercase tracking-wider leading-none">
                   <span className="h-[1px] w-2 bg-[#6B0F1A] inline-block" />
                   <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
-                  <span className="text-[#C69C00]">SHARE SUCCESS.</span>
+                  <span className="text-[#F4E409]">SHARE SUCCESS.</span>
                   <span className="h-[1px] w-2 bg-[#6B0F1A] inline-block" />
                 </div>
               </div>
