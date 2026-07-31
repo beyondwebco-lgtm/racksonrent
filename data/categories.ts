@@ -5,71 +5,94 @@ export interface CategoryItem {
   iconName: string;
   image: string;
   alt: string;
+  badge?: string;
 }
 
 export const POPULAR_CATEGORIES: CategoryItem[] = [
   {
     id: "healthy-snacks",
-    name: "Healthy Snacks",
-    description: "Protein bars, organic muesli, dry fruits, and healthy snacks.",
+    name: "Healthy Snacks & Foods",
+    description: "Protein bars, muesli, dry fruits, and healthy cookies.",
     iconName: "Cookie",
-    image: "/categories/healthy-snacks.jpg",
-    alt: "Healthy fruit bowl for healthy snacks"
+    image: "/spaces/healthy-snacks.png",
+    alt: "Healthy Snacks & Foods display",
+    badge: "Popular",
   },
   {
     id: "gym-apparel",
     name: "Gym Apparel",
     description: "Performance tees, gym hoodies, shorts, and activewear.",
     iconName: "ShoppingBag",
-    image: "/categories/gym-apparel.jpg",
-    alt: "Folded gym apparel set"
+    image: "/spaces/gym-apparel.png",
+    alt: "Gym Apparel display",
+    badge: "Trending",
   },
   {
     id: "fitness-accessories",
     name: "Fitness Accessories",
-    description: "Dumbbells, resistance bands, lifting straps, and accessories.",
+    description: "Shaker bottles, gym bags, towels, and workout gear.",
     iconName: "Trophy",
-    image: "/categories/fitness-accessories.jpg",
-    alt: "Dumbbells and resistance band fitness accessories"
+    image: "/spaces/fitness-accessories.png",
+    alt: "Fitness Accessories display",
+    badge: "Top Seller",
   },
   {
-    id: "supplements",
-    name: "Supplements",
-    description: "Multivitamins, BCAAs, creatine, and daily wellness supplements.",
+    id: "nutrition-supplements",
+    name: "Nutrition & Supplements",
+    description: "Whey protein, BCAAs, multivitamins, and creatine powders.",
     iconName: "Stethoscope",
-    image: "/categories/supplements.jpg",
-    alt: "Unbranded supplement container"
+    image: "/spaces/nutrition-centre.png",
+    alt: "Nutrition & Supplements Centre display",
+    badge: "Popular",
   },
   {
-    id: "protein-products",
-    name: "Protein Products",
-    description: "Whey protein powders, shaker bottles, and protein shakes.",
-    iconName: "Utensils",
-    image: "/categories/protein-products.jpg",
-    alt: "Protein jar and shaker bottle"
+    id: "health-beverages",
+    name: "Health Drinks & Beverages",
+    description: "Cold-pressed juices, electrolyte drinks, and kombucha.",
+    iconName: "Zap",
+    image: "/spaces/health-beverages.png",
+    alt: "Health Drinks & Beverages display",
+    badge: "Fresh",
   },
   {
-    id: "sportswear",
-    name: "Sportswear",
-    description: "Athletic jerseys, track suits, and high-performance sportswear.",
+    id: "fitness-tech",
+    name: "Fitness Technology & Wearables",
+    description: "Smartwatches, heart-rate monitors, and fitness trackers.",
     iconName: "Dumbbell",
-    image: "/categories/sportswear.jpg",
-    alt: "Folded sportswear outfit"
+    image: "/spaces/fitness-tech.png",
+    alt: "Fitness Technology & Wearables display",
   },
   {
-    id: "yoga-essentials",
-    name: "Yoga Essentials",
-    description: "Textured yoga mats, foam blocks, and yoga accessories.",
-    iconName: "Layers",
-    image: "/categories/yoga-essentials.jpg",
-    alt: "Yoga mat and yoga block"
+    id: "fruit-salads",
+    name: "Fruit Bowls & Healthy Salads",
+    description: "Fresh fruit bowls, sprout salads, and post-workout bowls.",
+    iconName: "Apple",
+    image: "/spaces/fruit-salads.png",
+    alt: "Fruit Bowls & Healthy Salads display",
   },
   {
-    id: "wellness-products",
-    name: "Wellness Products",
-    description: "Water bottles, massage tools, and personal care recovery kits.",
+    id: "protein-corners",
+    name: "Protein Shake Corners",
+    description: "Freshly blended protein shake and smoothie setups.",
+    iconName: "Utensils",
+    image: "/spaces/protein-corners.png",
+    alt: "Protein Shake Corners display",
+    badge: "High Demand",
+  },
+  {
+    id: "personal-care",
+    name: "Personal Care & Wellness",
+    description: "Pain relief sprays, muscle rubs, and organic soaps.",
     iconName: "Sparkles",
-    image: "/categories/wellness-products.jpg",
-    alt: "Wellness accessory kit"
-  }
+    image: "/spaces/personal-care.png",
+    alt: "Personal Care & Wellness display",
+  },
+  {
+    id: "physiotherapy",
+    name: "Physiotherapy & Recovery",
+    description: "Rehabilitation, injury recovery, and mobility spaces.",
+    iconName: "Layers",
+    image: "/spaces/physiotherapy-recovery.png",
+    alt: "Physiotherapy & Recovery display",
+  },
 ];
