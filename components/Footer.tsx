@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Phone, Mail, MessageCircle } from "lucide-react";
 import { SITE_CONFIG, NAV_LINKS } from "@/data/config";
 
@@ -11,29 +12,23 @@ export default function Footer() {
         {/* Main Footer Row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-[#6B0F1A]/60">
           
-          {/* Prominently Enlarged Brand Logo */}
-          <div className="flex items-center gap-3">
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-[#F4E409]/60 shadow-md flex-shrink-0 bg-white p-1">
-              <Image
-                src="/images/logo.jpeg"
-                alt="Racks on Rent Logo"
-                fill
-                sizes="(max-width: 640px) 56px, 64px"
-                className="object-contain"
-              />
-            </div>
-            <div>
-              <span className="text-2xl sm:text-3xl font-black text-white block leading-none">
-                Racks<span className="text-[#F4E409]">on</span>Rent
-              </span>
-              <span className="text-xs sm:text-sm font-extrabold text-[#FFF6A3] uppercase tracking-wider block mt-1">
-                {SITE_CONFIG.tagline}
-              </span>
-            </div>
-          </div>
+          {/* Full Horizontal Brand Logo Asset */}
+          <Link
+            href="/"
+            className="relative block w-[230px] sm:w-[270px] h-[55px] sm:h-[65px] flex-shrink-0 bg-white/95 rounded-2xl p-2.5 border border-[#F4E409]/60 shadow-md transition-transform hover:scale-[1.01]"
+            aria-label="Racks on Rent Home"
+          >
+            <Image
+              src="/images/logo.png"
+              alt="Racks on Rent - Sublet Space. Share Success."
+              fill
+              sizes="(max-width: 640px) 230px, 270px"
+              className="object-contain object-left"
+            />
+          </Link>
 
           {/* Quick Nav */}
-          <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-bold">
+          <nav className="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm font-bold">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
