@@ -13,7 +13,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     name: "Healthy Snacks",
     description: "Protein bars, organic muesli, dry fruits, and healthy snacks.",
     iconName: "Cookie",
-    image: "/categories/healthy-snacks.svg",
+    image: "/categories/healthy-snacks.jpg",
     alt: "Healthy fruit bowl for healthy snacks"
   },
   {
@@ -21,7 +21,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     name: "Gym Apparel",
     description: "Performance tees, gym hoodies, shorts, and activewear.",
     iconName: "ShoppingBag",
-    image: "/categories/gym-apparel.svg",
+    image: "/categories/gym-apparel.jpg",
     alt: "Folded gym apparel set"
   },
   {
@@ -29,7 +29,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     name: "Fitness Accessories",
     description: "Dumbbells, resistance bands, lifting straps, and accessories.",
     iconName: "Trophy",
-    image: "/categories/fitness-accessories.svg",
+    image: "/categories/fitness-accessories.jpg",
     alt: "Dumbbells and resistance band fitness accessories"
   },
   {
@@ -37,7 +37,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     name: "Supplements",
     description: "Multivitamins, BCAAs, creatine, and daily wellness supplements.",
     iconName: "Stethoscope",
-    image: "/categories/supplements.svg",
+    image: "/categories/supplements.jpg",
     alt: "Unbranded supplement container"
   },
   {
@@ -45,7 +45,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     name: "Protein Products",
     description: "Whey protein powders, shaker bottles, and protein shakes.",
     iconName: "Utensils",
-    image: "/categories/protein-products.svg",
+    image: "/categories/protein-products.jpg",
     alt: "Protein jar and shaker bottle"
   },
   {
@@ -53,7 +53,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     name: "Sportswear",
     description: "Athletic jerseys, track suits, and high-performance sportswear.",
     iconName: "Dumbbell",
-    image: "/categories/sportswear.svg",
+    image: "/categories/sportswear.jpg",
     alt: "Folded sportswear outfit"
   },
   {
@@ -61,7 +61,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     name: "Yoga Essentials",
     description: "Textured yoga mats, foam blocks, and yoga accessories.",
     iconName: "Layers",
-    image: "/categories/yoga-essentials.svg",
+    image: "/categories/yoga-essentials.jpg",
     alt: "Yoga mat and yoga block"
   },
   {
@@ -69,7 +69,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     name: "Wellness Products",
     description: "Water bottles, massage tools, and personal care recovery kits.",
     iconName: "Sparkles",
-    image: "/categories/wellness-products.svg",
+    image: "/categories/wellness-products.jpg",
     alt: "Wellness accessory kit"
   }
 ];

@@ -154,15 +154,15 @@ export default function PopularCategories() {
                   className="category-card flex-shrink-0 w-[82vw] max-w-[290px] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)] snap-start text-left rounded-3xl border-2 border-[#6B0F1A]/15 bg-[#FFFDF5] p-4 shadow-[0_8px_25px_rgba(107,15,26,0.06)] hover:shadow-[0_18px_45px_rgba(107,15,26,0.16)] hover:border-[#6B0F1A] transition-all hover:-translate-y-1 flex flex-col justify-between group cursor-pointer relative overflow-hidden h-full"
                 >
                   <div>
-                    {/* Clean Studio Product Image Container (1:1 Aspect Ratio) */}
-                    <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-[#F8F8FA] border border-[#F0E2E4] p-3 mb-4 flex items-center justify-center group-hover:bg-[#F2F1F5] transition-colors">
+                    {/* Clean Studio Product Photo Container (1:1 Aspect Ratio) */}
+                    <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-[#F8F8FA] border border-[#F0E2E4] mb-4 flex items-center justify-center group-hover:scale-[1.02] transition-transform">
                       <Image
                         src={cat.image}
                         alt={cat.alt}
-                        width={600}
-                        height={600}
+                        fill
+                        sizes="(max-width: 640px) 280px, 300px"
                         loading="lazy"
-                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
 
