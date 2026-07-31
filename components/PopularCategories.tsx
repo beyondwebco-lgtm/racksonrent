@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
+import Image from "next/image";
 import {
   Stethoscope,
   Zap,
@@ -174,29 +175,61 @@ export default function PopularCategories() {
                   type="button"
                   key={cat.id}
                   onClick={handleCategoryClick}
-                  className="category-card flex-shrink-0 w-[82vw] max-w-[280px] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)] snap-start text-left rounded-3xl border border-[#F0E2E4] bg-[#FFFDF5] p-5 shadow-[0_8px_25px_rgba(107,15,26,0.05)] hover:shadow-[0_16px_40px_rgba(107,15,26,0.12)] hover:border-[#6B0F1A]/40 transition-all hover:-translate-y-1 flex flex-col justify-between group cursor-pointer relative overflow-hidden h-full min-h-[220px]"
+                  className="category-card flex-shrink-0 w-[82vw] max-w-[300px] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)] snap-start text-left rounded-3xl border-2 border-[#6B0F1A]/20 bg-[#FFFDF5] p-3.5 shadow-[0_8px_25px_rgba(107,15,26,0.08)] hover:shadow-[0_18px_45px_rgba(107,15,26,0.18)] hover:border-[#6B0F1A] transition-all hover:-translate-y-1 flex flex-col justify-between group cursor-pointer relative overflow-hidden h-full"
                 >
-                  {cat.badge && (
-                    <span className="absolute top-3 right-3 text-[10px] font-extrabold bg-[#F4E409] text-[#3D0710] px-2 py-0.5 rounded-full border border-[#6B0F1A]/20 z-10">
-                      {cat.badge}
-                    </span>
-                  )}
-
                   <div>
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFF6A3] mb-4 group-hover:bg-[#6B0F1A] transition-colors">
-                      <IconComponent className="w-6 h-6 text-[#6B0F1A] group-hover:text-[#FFF6A3] transition-colors" />
+                    {/* Featured Category Image with Overlay Logo */}
+                    <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden border border-[#F0E2E4] bg-[#3D0710] mb-4 group-hover:scale-[1.02] transition-transform">
+                      <Image
+                        src={cat.image}
+                        alt={cat.name}
+                        fill
+                        sizes="(max-width: 640px) 280px, 300px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+
+                      {/* Brand Logo Badge Top-Left */}
+                      <div className="absolute top-2.5 left-2.5 bg-[#3D0710]/90 backdrop-blur-md rounded-xl p-1 border border-[#F4E409]/60 shadow-md flex items-center gap-1.5 pr-2.5 z-10">
+                        <div className="relative w-5 h-5 rounded-lg overflow-hidden bg-white flex-shrink-0">
+                          <Image
+                            src="/images/logo.png"
+                            alt="Logo"
+                            fill
+                            sizes="20px"
+                            className="object-contain p-0.5"
+                          />
+                        </div>
+                        <span className="text-[10px] font-black text-[#FFF6A3] tracking-wide">
+                          RACKS ON RENT
+                        </span>
+                      </div>
+
+                      {/* Category Badge Top-Right */}
+                      {cat.badge && (
+                        <span className="absolute top-2.5 right-2.5 text-[10px] font-extrabold bg-[#F4E409] text-[#3D0710] px-2.5 py-0.5 rounded-full border border-[#6B0F1A]/20 shadow-md z-10">
+                          {cat.badge}
+                        </span>
+                      )}
                     </div>
 
-                    <h3 className="font-extrabold text-base text-[#6B0F1A] group-hover:text-[#3D0710] transition-colors mb-1.5 leading-snug">
-                      {cat.name}
-                    </h3>
+                    <div className="px-1">
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <div className="p-1.5 rounded-lg bg-[#FFF6A3] text-[#6B0F1A]">
+                          <IconComponent className="w-4 h-4" />
+                        </div>
+                        <h3 className="font-extrabold text-base text-[#6B0F1A] leading-snug group-hover:text-[#3D0710] transition-colors">
+                          {cat.name}
+                        </h3>
+                      </div>
 
-                    <p className="text-xs text-[#5F5F5F] leading-relaxed font-medium line-clamp-2">
-                      {cat.description}
-                    </p>
+                      <p className="text-xs text-[#5F5F5F] leading-relaxed font-medium line-clamp-2 pl-0.5">
+                        {cat.description}
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-[#F0E2E4] flex items-center justify-between text-xs font-extrabold text-[#6B0F1A] group-hover:text-[#3D0710]">
+                  <div className="mt-4 pt-3 border-t border-[#F0E2E4] px-1 flex items-center justify-between text-xs font-extrabold text-[#6B0F1A] group-hover:text-[#3D0710]">
                     <span>Explore Spaces</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
