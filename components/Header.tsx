@@ -86,26 +86,16 @@ export default function Header({ onSelectRole }: HeaderProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
         
-        {/* Prominently Enlarged Logo & Brand Name */}
-        <Link href="/" className="flex items-center gap-3 group focus:outline-none flex-shrink-0">
-          <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 shadow-md flex-shrink-0 bg-white p-1">
-            <Image
-              src="/images/logo.jpeg"
-              alt="Racks on Rent Logo"
-              fill
-              sizes="(max-width: 640px) 56px, 64px"
-              priority
-              className="object-contain"
-            />
-          </div>
-          <div>
-            <span className="text-2xl sm:text-3xl font-black tracking-tight text-[#6B0F1A] block leading-none">
-              Racks<span className="text-[#6B0F1A]">on</span>Rent
-            </span>
-            <span className="text-xs sm:text-sm font-extrabold text-[#6B0F1A] tracking-wider uppercase block mt-1">
-              Sublet Space. Share Success.
-            </span>
-          </div>
+        {/* Brand Logo */}
+        <Link href="/" className="flex items-center group focus:outline-none flex-shrink-0">
+          <Image
+            src="/images/logo.png"
+            alt="Racks on Rent Logo"
+            width={320}
+            height={80}
+            priority
+            className="h-12 sm:h-14 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Navigation (>= 1024px) */}
@@ -171,25 +161,15 @@ export default function Header({ onSelectRole }: HeaderProps) {
             <Link
               href="/"
               onClick={closeMenu}
-              className="flex items-center gap-3 focus:outline-none"
+              className="flex items-center focus:outline-none"
             >
-              <div className="relative w-12 h-12 rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 shadow-md flex-shrink-0 bg-white p-1">
-                <Image
-                  src="/images/logo.jpeg"
-                  alt="Racks on Rent Logo"
-                  fill
-                  sizes="48px"
-                  className="object-contain"
-                />
-              </div>
-              <div>
-                <span className="text-2xl font-black tracking-tight text-[#6B0F1A] block leading-none">
-                  Racks<span className="text-[#6B0F1A]">on</span>Rent
-                </span>
-                <span className="text-xs font-extrabold text-[#6B0F1A] tracking-wider uppercase block mt-1">
-                  Sublet Space. Share Success.
-                </span>
-              </div>
+              <Image
+                src="/images/logo.png"
+                alt="Racks on Rent Logo"
+                width={240}
+                height={60}
+                className="h-10 sm:h-12 w-auto object-contain"
+              />
             </Link>
 
             <div className="flex items-center gap-2">
