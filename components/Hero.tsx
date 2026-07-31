@@ -200,35 +200,40 @@ export default function Hero({ onSelectRole }: HeroProps) {
             </div>
           </div>
 
-          {/* Right Column (Video in existing rounded frame) */}
+          {/* Right Column (Video in animated hover frame) */}
           <div className="lg:col-span-5 relative mt-6 lg:mt-0">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="animate-hero-video-entrance rounded-[2rem] border-2 border-[#F0E2E4] bg-[#FFFDF5] p-3 shadow-[0_24px_70px_rgba(107,15,26,0.10)] relative overflow-hidden transition-all duration-350 hover:scale-[1.015] hover:shadow-[0_28px_80px_rgba(107,15,26,0.18)] hover:border-[#F4E409]/60 group">
-                <div className="relative aspect-4/3 w-full rounded-2xl overflow-hidden bg-[#FFF6A3]/20">
-                  <video
-                    ref={videoRef}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    aria-label="Video showing a wellness product display rack inside a modern gym"
-                    poster="/images/hero-gym.png"
-                    preload="metadata"
-                    className="w-full h-full object-cover transition-transform duration-300 ease-out"
-                    style={{
-                      transform: `translateY(${scrollY * 0.05}px) scale(${1 + Math.min(scrollY * 0.00006, 0.025)})`,
-                    }}
-                  >
-                    <source src="/videos/hero-gym.mp4" type="video/mp4" />
-                  </video>
-                  
-                  {/* Subtle Dark Bottom Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
+              {/* Outer animated glow ring — expands on hover */}
+              <div className="animate-hero-video-entrance rounded-[2rem] p-[3px] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] bg-[#F0E2E4] hover:bg-gradient-to-br hover:from-[#F4E409] hover:via-[#6B0F1A] hover:to-[#F4E409] hover:p-[4px] shadow-[0_24px_70px_rgba(107,15,26,0.10)] hover:shadow-[0_32px_90px_rgba(107,15,26,0.30)] group cursor-pointer">
+                {/* Inner white padding frame */}
+                <div className="relative rounded-[1.6rem] bg-[#FFFDF5] p-2.5 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:p-3">
+                  {/* Video container — clips the zoom */}
+                  <div className="relative aspect-4/3 w-full rounded-2xl overflow-hidden bg-[#FFF6A3]/20">
+                    <video
+                      ref={videoRef}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      aria-label="Video showing a wellness product display rack inside a modern gym"
+                      poster="/images/hero-gym.png"
+                      preload="metadata"
+                      className="w-full h-full object-cover transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
+                      style={{
+                        transform: `translateY(${scrollY * 0.05}px) scale(${1 + Math.min(scrollY * 0.00006, 0.025)})`,
+                      }}
+                    >
+                      <source src="/videos/hero-gym.mp4" type="video/mp4" />
+                    </video>
 
-                  {/* Overlay Badge */}
-                  <div className="absolute bottom-6 right-6 bg-[#3D0710] text-white px-5 py-2.5 rounded-full border-2 border-[#F4E409] shadow-xl flex items-center gap-2 text-xs sm:text-sm font-bold tracking-wide z-10">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#F4E409] animate-ping" />
-                    <span>Extra Space. Extra Opportunity.</span>
+                    {/* Subtle Dark Bottom Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none transition-opacity duration-500 group-hover:from-black/40" />
+
+                    {/* Overlay Badge */}
+                    <div className="absolute bottom-6 right-6 bg-[#3D0710] text-white px-5 py-2.5 rounded-full border-2 border-[#F4E409] shadow-xl flex items-center gap-2 text-xs sm:text-sm font-bold tracking-wide z-10 transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(244,228,9,0.5)]">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#F4E409] animate-ping" />
+                      <span>Extra Space. Extra Opportunity.</span>
+                    </div>
                   </div>
                 </div>
               </div>
