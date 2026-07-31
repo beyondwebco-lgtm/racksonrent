@@ -12,19 +12,34 @@ export default function Footer() {
         {/* Main Footer Row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-[#6B0F1A]/60">
           
-          {/* Square Brand Logo Asset */}
+          {/* Brand Logo & Horizontal Text Lockup */}
           <Link
             href="/"
-            className="relative block w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] flex-shrink-0 bg-white/95 rounded-2xl p-1 border border-[#F4E409]/60 shadow-md transition-transform hover:scale-105"
+            className="flex items-center gap-3 flex-shrink-0 group focus:outline-none"
             aria-label="Racks on Rent Home"
           >
-            <Image
-              src="/images/logo.png"
-              alt="Racks on Rent - Sublet Space. Share Success."
-              fill
-              sizes="(max-width: 640px) 70px, 80px"
-              className="object-contain"
-            />
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden flex-shrink-0 bg-white p-0.5 border border-[#F4E409]/60 shadow-md transition-transform group-hover:scale-105">
+              <Image
+                src="/images/logo.png"
+                alt="Racks on Rent Logo Icon"
+                fill
+                sizes="(max-width: 640px) 48px, 56px"
+                className="object-contain"
+              />
+            </div>
+            <div className="flex flex-col justify-center text-left">
+              <div className="flex items-baseline font-black tracking-tight leading-none text-2xl sm:text-3xl">
+                <span className="text-white font-extrabold italic">Racks</span>
+                <span className="text-[#F4E409] font-serif text-lg sm:text-xl mx-0.5 font-bold italic lowercase">on</span>
+                <span className="text-[#F4E409] font-extrabold italic">Rent</span>
+              </div>
+              <div className="flex items-center gap-1 mt-1 text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider leading-none">
+                <span className="h-[1.5px] w-3 bg-[#F4E409] inline-block" />
+                <span className="text-[#FFF6A3]">SUBLET SPACE.</span>
+                <span className="text-[#F4E409]">SHARE SUCCESS.</span>
+                <span className="h-[1.5px] w-3 bg-[#F4E409] inline-block" />
+              </div>
+            </div>
           </Link>
 
           {/* Quick Nav */}
