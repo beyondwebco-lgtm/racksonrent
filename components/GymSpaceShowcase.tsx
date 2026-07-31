@@ -204,27 +204,27 @@ export default function GymSpaceShowcase({
           ref={showcaseRef}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
-          className="relative bg-[#FFFDF5] rounded-3xl border-2 border-[#6B0F1A] p-6 sm:p-10 shadow-[0_24px_70px_rgba(107,15,26,0.12)] overflow-hidden"
+          className="relative bg-[#FFFDF5] rounded-3xl border-2 border-[#6B0F1A] p-6 sm:p-10 px-8 sm:px-14 lg:px-16 shadow-[0_24px_70px_rgba(107,15,26,0.12)] overflow-hidden"
         >
-          {/* Arrow Buttons Positioned at Top Right */}
-          <div className="absolute top-6 right-6 z-20 flex items-center gap-2">
-            <button
-              type="button"
-              onClick={handlePrev}
-              aria-label="Previous space category"
-              className="w-10 h-10 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border border-[#F4E409] flex items-center justify-center shadow-md hover:bg-[#3D0710] hover:text-[#F4E409] transition-all cursor-pointer active:scale-95"
-            >
-              <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
-            </button>
-            <button
-              type="button"
-              onClick={handleNext}
-              aria-label="Next space category"
-              className="w-10 h-10 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border border-[#F4E409] flex items-center justify-center shadow-md hover:bg-[#3D0710] hover:text-[#F4E409] transition-all cursor-pointer active:scale-95"
-            >
-              <ChevronRight className="w-5 h-5 stroke-[2.5]" />
-            </button>
-          </div>
+          {/* Left Arrow Button on Left Side of Box */}
+          <button
+            type="button"
+            onClick={handlePrev}
+            aria-label="Previous space category"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border-2 border-[#F4E409] flex items-center justify-center shadow-lg hover:bg-[#3D0710] hover:text-[#F4E409] hover:scale-105 transition-all cursor-pointer active:scale-95"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 stroke-[3]" />
+          </button>
+
+          {/* Right Arrow Button on Right Side of Box */}
+          <button
+            type="button"
+            onClick={handleNext}
+            aria-label="Next space category"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border-2 border-[#F4E409] flex items-center justify-center shadow-lg hover:bg-[#3D0710] hover:text-[#F4E409] hover:scale-105 transition-all cursor-pointer active:scale-95"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 stroke-[3]" />
+          </button>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
