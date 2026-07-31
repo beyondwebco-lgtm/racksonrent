@@ -12,18 +12,18 @@ export default function Footer() {
         {/* Main Footer Row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-[#6B0F1A]/60">
           
-          {/* Full Horizontal Brand Logo Asset */}
+          {/* Square Brand Logo Asset */}
           <Link
             href="/"
-            className="relative block w-[230px] sm:w-[270px] h-[55px] sm:h-[65px] flex-shrink-0 bg-white/95 rounded-2xl p-2.5 border border-[#F4E409]/60 shadow-md transition-transform hover:scale-[1.01]"
+            className="relative block w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] flex-shrink-0 bg-white/95 rounded-2xl p-1 border border-[#F4E409]/60 shadow-md transition-transform hover:scale-105"
             aria-label="Racks on Rent Home"
           >
             <Image
               src="/images/logo.png"
               alt="Racks on Rent - Sublet Space. Share Success."
               fill
-              sizes="(max-width: 640px) 230px, 270px"
-              className="object-contain object-left"
+              sizes="(max-width: 640px) 70px, 80px"
+              className="object-contain"
             />
           </Link>
 

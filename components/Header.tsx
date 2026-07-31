@@ -89,17 +89,17 @@ export default function Header({ onSelectRole }: HeaderProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
         
-        {/* Far Left: Single Full Horizontal Brand Logo Asset */}
+        {/* Far Left: Square Brand Logo Asset */}
         <Link
           href="/"
-          className="relative block flex-shrink-0 w-[210px] sm:w-[260px] md:w-[280px] lg:w-[310px] h-[48px] sm:h-[58px] lg:h-[64px] focus:outline-none transition-transform hover:scale-[1.01]"
+          className="relative block flex-shrink-0 w-[56px] h-[56px] sm:w-[68px] sm:h-[68px] lg:w-[76px] lg:h-[76px] focus:outline-none transition-transform hover:scale-[1.03]"
           aria-label="Racks on Rent Home"
         >
           <Image
             src="/images/logo.png"
             alt="Racks on Rent - Sublet Space. Share Success."
             fill
-            sizes="(max-width: 640px) 210px, (max-width: 1024px) 280px, 310px"
+            sizes="(max-width: 640px) 56px, (max-width: 1024px) 68px, 76px"
             priority
             className="object-contain object-left"
           />
@@ -168,13 +168,13 @@ export default function Header({ onSelectRole }: HeaderProps) {
             <Link
               href="/"
               onClick={closeMenu}
-              className="relative block w-[190px] sm:w-[230px] h-[48px] focus:outline-none"
+              className="relative block w-[56px] h-[56px] focus:outline-none"
             >
               <Image
                 src="/images/logo.png"
                 alt="Racks on Rent Logo"
                 fill
-                sizes="230px"
+                sizes="56px"
                 className="object-contain object-left"
               />
             </Link>
