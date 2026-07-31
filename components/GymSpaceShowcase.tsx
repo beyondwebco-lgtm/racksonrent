@@ -305,7 +305,7 @@ export default function GymSpaceShowcase({
 
             {/* Right Column: Featured Category Image */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/20 bg-[#3D0710] shadow-[0_16px_40px_rgba(107,15,26,0.15)] aspect-4/5 w-full max-w-lg mx-auto group">
+              <div className="relative rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 bg-[#2A050B] shadow-[0_16px_40px_rgba(107,15,26,0.15)] aspect-4/5 w-full max-w-lg mx-auto group flex items-center justify-center p-1.5">
                 <Image
                   key={activeCategory.id}
                   src={activeCategory.image}
@@ -313,16 +313,16 @@ export default function GymSpaceShowcase({
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 45vw"
-                  className={`object-cover object-top transition-all duration-500 group-hover:scale-105 ${
-                    isAnimating ? "opacity-40 scale-102" : "opacity-100 scale-100"
+                  className={`object-contain transition-all duration-500 group-hover:scale-[1.02] ${
+                    isAnimating ? "opacity-40 scale-98" : "opacity-100 scale-100"
                   }`}
                 />
                 
-                {/* Dark Gradient at Bottom for Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+                {/* Subtle Gradient at Bottom for Overlay Label */}
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
 
                 {/* Floating Category Label */}
-                <div className="absolute bottom-4 left-4 right-4 bg-[#3D0710] text-white px-5 py-3 rounded-2xl border-2 border-[#F4E409] shadow-xl flex items-center justify-between text-sm sm:text-base font-bold tracking-wide z-10">
+                <div className="absolute bottom-4 left-4 right-4 bg-[#3D0710]/95 backdrop-blur-md text-white px-5 py-3 rounded-2xl border-2 border-[#F4E409] shadow-xl flex items-center justify-between text-sm sm:text-base font-bold tracking-wide z-10">
                   <span className="truncate">{activeCategory.title} Space</span>
                   <ArrowRight className="w-5 h-5 text-[#F4E409] flex-shrink-0 ml-2" />
                 </div>
