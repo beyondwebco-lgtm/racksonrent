@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Hero from "@/components/Hero";
 import HeroStats from "@/components/HeroStats";
 import SpaceSearch from "@/components/SpaceSearch";
-import AboutUs from "@/components/AboutUs";
+
 import GymSpaceShowcase from "@/components/GymSpaceShowcase";
 import PopularCategories from "@/components/PopularCategories";
 import HowItWorks from "@/components/HowItWorks";
@@ -58,9 +58,6 @@ export default function HomePage() {
         <SpaceSearch onSearch={handleSearchSelect} />
       </ScrollReveal>
 
-      <ScrollReveal>
-        <AboutUs />
-      </ScrollReveal>
 
       <ScrollReveal>
         <GymSpaceShowcase onSelectCategoryAction={handleShowcaseSelect} />
