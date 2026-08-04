@@ -84,7 +84,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
   return (
     <header
       className={`sticky top-0 z-40 w-full transition-all duration-200 border-b border-[#F0E2E4] bg-[#FFFDF5]/95 backdrop-blur-md ${
-        scrolled ? "py-2 shadow-md bg-[#FFFDF5]/98" : "py-3 sm:py-4 shadow-xs"
+        scrolled ? "py-1.5 shadow-md bg-[#FFFDF5]/98" : "py-2 sm:py-2.5 shadow-xs"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
@@ -96,7 +96,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
           aria-label="Racks on Rent Home"
         >
           {/* Square Rack-Icon Logo */}
-          <div className="relative w-11 h-11 sm:w-13 sm:h-13 lg:w-14 lg:h-14 rounded-xl overflow-hidden flex-shrink-0 bg-white p-0.5 border border-[#6B0F1A]/20 shadow-2xs group-hover:scale-[1.03] transition-transform">
+          <div className="relative w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-xl overflow-hidden flex-shrink-0 bg-white p-0.5 border border-[#6B0F1A]/20 shadow-2xs group-hover:scale-[1.03] transition-transform">
             <Image
               src="/images/logo.png"
               alt="Racks on Rent Logo Icon"
@@ -108,16 +108,16 @@ export default function Header({ onSelectRole }: HeaderProps) {
           </div>
 
           {/* Separate Horizontal Logo Lockup */}
-          <div className="flex flex-col justify-center min-w-[200px] lg:min-w-[250px]">
+          <div className="flex flex-col justify-center min-w-[160px] lg:min-w-[200px]">
             {/* Main Brand Title: Racks on Rent */}
-            <div className="flex items-baseline font-black tracking-tighter leading-none text-2xl sm:text-3xl lg:text-4xl xl:text-[42px]">
+            <div className="flex items-baseline font-black tracking-tighter leading-none text-xl sm:text-2xl lg:text-[26px] xl:text-3xl">
               <span className="text-[#6B0F1A] font-black italic transform scale-y-110 origin-bottom">Racks</span>
               <span className="text-[#F4E409] font-bold italic lowercase mx-1" style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "0.8em" }}>on</span>
               <span className="text-[#F4E409] font-black italic transform scale-y-110 origin-bottom">Rent</span>
             </div>
 
             {/* Tagline: — SUBLET SPACE. SHARE SUCCESS. — */}
-            <div className="flex items-center justify-between gap-1 mt-1 text-[9px] sm:text-[10px] lg:text-[11px] xl:text-xs font-black uppercase tracking-[0.2em] leading-none whitespace-nowrap">
+            <div className="flex items-center justify-between gap-1 mt-0.5 text-[7px] sm:text-[8px] lg:text-[9px] font-black uppercase tracking-[0.18em] leading-none whitespace-nowrap">
               <span className="h-[2px] w-3 sm:w-4 lg:w-5 bg-[#6B0F1A] inline-block" />
               <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
               <span className="text-[#F4E409]">SHARE SUCCESS.</span>
@@ -127,13 +127,13 @@ export default function Header({ onSelectRole }: HeaderProps) {
         </Link>
 
         {/* Desktop Main Navigation Items (>= 1024px) */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="px-2.5 xl:px-3 py-2 rounded-xl text-xs xl:text-sm font-extrabold text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/50 transition-all whitespace-nowrap"
+              className="px-2 xl:px-2.5 py-1.5 rounded-lg text-[11px] xl:text-xs font-bold text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/50 transition-all whitespace-nowrap tracking-wide"
             >
               {link.label}
             </a>
@@ -145,9 +145,9 @@ export default function Header({ onSelectRole }: HeaderProps) {
           <button
             type="button"
             onClick={handleListYourRack}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F4E409] px-5 py-2.5 text-xs xl:text-sm font-extrabold text-[#3D0710] transition-all hover:bg-[#3D0710] hover:text-[#F4E409] shadow-sm hover:shadow-md border border-[#6B0F1A]/20 cursor-pointer active:scale-95 whitespace-nowrap"
+            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#F4E409] px-4 py-2 text-[11px] xl:text-xs font-extrabold text-[#3D0710] transition-all hover:bg-[#3D0710] hover:text-[#F4E409] shadow-sm hover:shadow-md border border-[#6B0F1A]/20 cursor-pointer active:scale-95 whitespace-nowrap"
           >
-            <Dumbbell className="w-4 h-4" />
+            <Dumbbell className="w-3.5 h-3.5" />
             <span>List Your Rack</span>
           </button>
         </div>
