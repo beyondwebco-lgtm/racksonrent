@@ -36,15 +36,7 @@ export const POPULAR_CATEGORIES: CategoryItem[] = [
     alt: "Fitness Accessories display",
     badge: "Top Seller",
   },
-  {
-    id: "nutrition-supplements",
-    name: "Nutrition & Supplements",
-    description: "Whey protein, BCAAs, multivitamins, and creatine powders.",
-    iconName: "Stethoscope",
-    image: "/spaces/nutrition-centre.png",
-    alt: "Nutrition & Supplements Centre display",
-    badge: "Popular",
-  },
+
   {
     id: "health-beverages",
     name: "Health Drinks & Beverages",
