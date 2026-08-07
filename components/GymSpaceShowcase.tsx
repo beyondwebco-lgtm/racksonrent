@@ -305,16 +305,13 @@ export default function GymSpaceShowcase({
 
             {/* Right Column: Featured Category Image */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 bg-[#FFFDF5] shadow-[0_16px_40px_rgba(107,15,26,0.15)] aspect-square w-full max-w-lg mx-auto group flex items-center justify-center">
+              <div className="relative rounded-2xl overflow-hidden border-2 border-[#6B0F1A]/30 shadow-[0_16px_40px_rgba(107,15,26,0.15)] w-full max-w-lg mx-auto group flex items-center justify-center">
 
-                <Image
+                <img
                   key={activeCategory.id}
                   src={activeCategory.image}
                   alt={activeCategory.title}
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 45vw"
-                  className={`object-contain transition-all duration-500 group-hover:scale-[1.05] ${
+                  className={`w-full h-auto block object-contain transition-all duration-500 group-hover:scale-[1.05] ${
                     isAnimating ? "opacity-40 scale-98" : "opacity-100 scale-100"
                   }`}
                 />
