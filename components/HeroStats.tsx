@@ -12,7 +12,7 @@ export default function HeroStats() {
       prefix: "",
       suffix: "+",
       label: "Spaces Listed",
-      icon: <Layers className="w-6 h-6 text-[#F4E409] group-hover:scale-110 transition-transform duration-300" />,
+      icon: <Layers className="w-6 h-6 text-[#F7E200] group-hover:scale-110 transition-transform duration-300" />,
     },
     {
       id: "brands",
@@ -20,7 +20,7 @@ export default function HeroStats() {
       prefix: "",
       suffix: "+",
       label: "Brands Connected",
-      icon: <Store className="w-6 h-6 text-[#F4E409] group-hover:scale-110 transition-transform duration-300" />,
+      icon: <Store className="w-6 h-6 text-[#F7E200] group-hover:scale-110 transition-transform duration-300" />,
     },
     {
       id: "earnings",
@@ -28,7 +28,7 @@ export default function HeroStats() {
       prefix: "₹ ",
       suffix: " Lakhs+",
       label: "Earnings Generated",
-      icon: <TrendingUp className="w-6 h-6 text-[#F4E409] group-hover:scale-110 transition-transform duration-300" />,
+      icon: <TrendingUp className="w-6 h-6 text-[#F7E200] group-hover:scale-110 transition-transform duration-300" />,
     },
   ];
 
@@ -44,7 +44,7 @@ export default function HeroStats() {
               <div className="p-2.5 rounded-2xl bg-[#3D0710]/50 mb-1 group-hover:bg-[#3D0710] transition-colors">
                 {stat.icon}
               </div>
-              <span className="text-3xl sm:text-4xl font-black text-[#F4E409] tracking-tight">
+              <span className="text-3xl sm:text-4xl font-black text-[#F7E200] tracking-tight">
                 <AnimatedCounter
                   targetNumber={stat.targetNumber}
                   prefix={stat.prefix}

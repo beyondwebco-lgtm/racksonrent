@@ -56,17 +56,16 @@ export default function Header({ onSelectRole }: HeaderProps) {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    if (href.startsWith("#")) {
-      e.preventDefault();
-      closeMenu();
-      const targetId = href.substring(1);
-
-      setTimeout(() => {
+    closeMenu();
+    if (href.startsWith("#") || (href.startsWith("/#") && window.location.pathname === "/")) {
+      const targetId = href.replace(/^\/#?/, "");
+      if (targetId) {
         const element = document.getElementById(targetId);
         if (element) {
+          e.preventDefault();
           element.scrollIntoView({ behavior: "smooth" });
         }
-      }, 50);
+      }
     }
   };
 
@@ -112,15 +111,15 @@ export default function Header({ onSelectRole }: HeaderProps) {
             {/* Main Brand Title: Racks on Rent */}
             <div className="flex items-baseline font-black tracking-tighter leading-none text-xl sm:text-2xl lg:text-[26px] xl:text-3xl">
               <span className="text-[#6B0F1A] font-black italic transform scale-y-110 origin-bottom">Racks</span>
-              <span className="text-[#F4E409] font-bold italic lowercase mx-1" style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "0.8em" }}>on</span>
-              <span className="text-[#F4E409] font-black italic transform scale-y-110 origin-bottom">Rent</span>
+              <span className="text-[#F7E200] font-bold italic lowercase mx-1" style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "0.8em" }}>on</span>
+              <span className="text-[#F7E200] font-black italic transform scale-y-110 origin-bottom">Rent</span>
             </div>
 
             {/* Tagline: — SUBLET SPACE. SHARE SUCCESS. — */}
             <div className="flex items-center justify-between gap-1 mt-0.5 text-[7px] sm:text-[8px] lg:text-[9px] font-black uppercase tracking-[0.18em] leading-none whitespace-nowrap">
               <span className="h-[2px] w-3 sm:w-4 lg:w-5 bg-[#6B0F1A] inline-block" />
               <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
-              <span className="text-[#F4E409]">SHARE SUCCESS.</span>
+              <span className="text-[#F7E200]">SHARE SUCCESS.</span>
               <span className="h-[2px] w-3 sm:w-4 lg:w-5 bg-[#6B0F1A] inline-block" />
             </div>
           </div>
@@ -129,14 +128,14 @@ export default function Header({ onSelectRole }: HeaderProps) {
         {/* Desktop Main Navigation Items (>= 1024px) */}
         <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
               className="px-2 xl:px-2.5 py-1.5 rounded-lg text-[11px] xl:text-xs font-bold text-[#6B0F1A] hover:text-[#3D0710] hover:bg-[#FFF6A3]/50 transition-all whitespace-nowrap tracking-wide"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -145,7 +144,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
           <button
             type="button"
             onClick={handleListYourRack}
-            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#F4E409] px-4 py-2 text-[11px] xl:text-xs font-extrabold text-[#3D0710] transition-all hover:bg-[#3D0710] hover:text-[#F4E409] shadow-sm hover:shadow-md border border-[#6B0F1A]/20 cursor-pointer active:scale-95 whitespace-nowrap"
+            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#F7E200] px-4 py-2 text-[11px] xl:text-xs font-extrabold text-[#3D0710] transition-all hover:bg-[#3D0710] hover:text-[#F7E200] shadow-sm hover:shadow-md border border-[#6B0F1A]/20 cursor-pointer active:scale-95 whitespace-nowrap"
           >
             <Dumbbell className="w-3.5 h-3.5" />
             <span>List Your Rack</span>
@@ -157,7 +156,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
           <button
             type="button"
             onClick={handleListYourRack}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#F4E409] text-[#3D0710] text-xs font-extrabold shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-colors cursor-pointer whitespace-nowrap"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#F7E200] text-[#3D0710] text-xs font-extrabold shadow-xs hover:bg-[#3D0710] hover:text-[#F7E200] transition-colors cursor-pointer whitespace-nowrap"
           >
             <Dumbbell className="w-3.5 h-3.5" />
             <span>List Rack</span>
@@ -203,13 +202,13 @@ export default function Header({ onSelectRole }: HeaderProps) {
               <div className="flex flex-col justify-center">
                 <div className="flex items-baseline font-black tracking-tighter leading-none text-2xl sm:text-3xl">
                   <span className="text-[#6B0F1A] font-black italic transform scale-y-110 origin-bottom">Racks</span>
-                  <span className="text-[#F4E409] font-bold italic lowercase mx-1" style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "0.8em" }}>on</span>
-                  <span className="text-[#F4E409] font-black italic transform scale-y-110 origin-bottom">Rent</span>
+                  <span className="text-[#F7E200] font-bold italic lowercase mx-1" style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "0.8em" }}>on</span>
+                  <span className="text-[#F7E200] font-black italic transform scale-y-110 origin-bottom">Rent</span>
                 </div>
                 <div className="flex items-center gap-1 mt-1 text-[9px] font-black uppercase tracking-[0.15em] leading-none whitespace-nowrap">
                   <span className="h-[2px] w-3 bg-[#6B0F1A] inline-block" />
                   <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
-                  <span className="text-[#F4E409]">SHARE SUCCESS.</span>
+                  <span className="text-[#F7E200]">SHARE SUCCESS.</span>
                   <span className="h-[2px] w-3 bg-[#6B0F1A] inline-block" />
                 </div>
               </div>
@@ -228,14 +227,14 @@ export default function Header({ onSelectRole }: HeaderProps) {
           {/* Navigation Links inside Mobile Drawer */}
           <nav className="p-6 space-y-2 flex-1">
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className="block px-4 py-3 rounded-xl font-bold text-lg text-[#6B0F1A] hover:bg-[#FFF6A3]/40 transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -244,7 +243,7 @@ export default function Header({ onSelectRole }: HeaderProps) {
             <button
               type="button"
               onClick={handleListYourRack}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4E409] py-3.5 text-base font-extrabold text-[#3D0710] shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-colors cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F7E200] py-3.5 text-base font-extrabold text-[#3D0710] shadow-xs hover:bg-[#3D0710] hover:text-[#F7E200] transition-colors cursor-pointer"
             >
               <Dumbbell className="w-5 h-5" />
               <span>List Your Rack</span>

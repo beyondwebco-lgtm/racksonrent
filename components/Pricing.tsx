@@ -48,7 +48,7 @@ export default function Pricing({ onSelectRole }: PricingProps) {
               }`}
             >
               {tier.highlighted && (
-                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#6B0F1A] text-[#FFF6A3] text-xs font-black px-4 py-1 rounded-full border border-[#F4E409]">
+                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#6B0F1A] text-[#FFF6A3] text-xs font-black px-4 py-1 rounded-full border border-[#F7E200]">
                   Most Popular
                 </span>
               )}
@@ -96,8 +96,8 @@ export default function Pricing({ onSelectRole }: PricingProps) {
                 onClick={() => handlePricingClick(tier.roleType)}
                 className={`w-full py-4 px-6 rounded-full font-extrabold transition-all shadow-xs cursor-pointer text-center ${
                   tier.highlighted
-                    ? "bg-[#F4E409] text-[#3D0710] border border-[#6B0F1A]/20 hover:bg-[#3D0710] hover:text-[#F4E409]"
-                    : "bg-[#6B0F1A] text-[#FFF6A3] hover:bg-[#3D0710] hover:text-[#F4E409]"
+                    ? "bg-[#F7E200] text-[#3D0710] border border-[#6B0F1A]/20 hover:bg-[#3D0710] hover:text-[#F7E200]"
+                    : "bg-[#6B0F1A] text-[#FFF6A3] hover:bg-[#3D0710] hover:text-[#F7E200]"
                 }`}
               >
                 {tier.ctaLabel}

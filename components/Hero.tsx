@@ -106,7 +106,7 @@ export default function Hero({ onSelectRole }: HeroProps) {
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-[#6B0F1A] leading-[1.15]">
               Turn Unused Gym Space{" "}
-              <span className="bg-[#F4E409] text-[#3D0710] px-3 py-1 rounded-xl inline-block mt-1 border border-[#6B0F1A]/20">
+              <span className="bg-[#F7E200] text-[#3D0710] px-3 py-1 rounded-xl inline-block mt-1 border border-[#6B0F1A]/20">
                 Into Income
               </span>
               <span className="block text-xl sm:text-2xl lg:text-3xl text-[#6B0F1A] font-bold mt-3">
@@ -136,7 +136,7 @@ export default function Hero({ onSelectRole }: HeroProps) {
               <div className="w-16 h-0.5 bg-[#6B0F1A]/30 rounded-full animate-accent-line mb-3" />
 
               {/* Background Accent Glow */}
-              <div className="absolute inset-0 -top-1 bg-[radial-gradient(ellipse_at_center,rgba(244,228,9,0.30),transparent_70%)] pointer-events-none rounded-3xl blur-md animate-cta-pulse-group" />
+              <div className="absolute inset-0 -top-1 bg-[radial-gradient(ellipse_at_center,rgba(247,226,0,0.30),transparent_70%)] pointer-events-none rounded-3xl blur-md animate-cta-pulse-group" />
 
               <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center gap-4 z-10">
                 
@@ -146,7 +146,7 @@ export default function Hero({ onSelectRole }: HeroProps) {
                   onClick={() => handleRoleClick("gym-owner")}
                   onMouseMove={handleMouseMoveBtn1}
                   onMouseLeave={handleMouseLeaveBtn1}
-                  className="animate-cta-btn-1 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-2xl bg-[#F4E409] border-2 border-[#6B0F1A]/20 px-6 py-3.5 text-[#3D0710] shadow-md transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:scale-[1.018] hover:shadow-[0_14px_30px_rgba(107,15,26,0.22)] active:scale-[0.97] focus:outline-none cursor-pointer group"
+                  className="animate-cta-btn-1 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-2xl bg-[#F7E200] border-2 border-[#6B0F1A]/20 px-6 py-3.5 text-[#3D0710] shadow-md transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:scale-[1.018] hover:shadow-[0_14px_30px_rgba(107,15,26,0.22)] active:scale-[0.97] focus:outline-none cursor-pointer group"
                 >
                   {/* One-Time Light Sweep Overlay */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
@@ -177,7 +177,7 @@ export default function Hero({ onSelectRole }: HeroProps) {
                   className="animate-cta-btn-2 flex-1 relative overflow-hidden inline-flex flex-col items-center justify-center gap-0.5 rounded-2xl border-2 border-[#6B0F1A] bg-[#6B0F1A] px-6 py-3.5 text-[#FFF6A3] shadow-md transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:scale-[1.018] hover:shadow-[0_14px_30px_rgba(107,15,26,0.35)] active:scale-[0.97] focus:outline-none cursor-pointer group"
                 >
                   {/* One-Time Light Sweep Overlay */}
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-[#F4E409]/30 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-[#F7E200]/30 to-transparent pointer-events-none" />
 
                   {/* Inner Content Container with Proximity Shift */}
                   <div
@@ -190,7 +190,7 @@ export default function Hero({ onSelectRole }: HeroProps) {
                       <Store className="w-5 h-5 text-[#FFF6A3] group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
                       <span>I Own a Wellness Brand</span>
                     </div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#F4E409] mt-0.5">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#F7E200] mt-0.5">
                       Find Space to Display
                     </span>
                   </div>
@@ -204,7 +204,7 @@ export default function Hero({ onSelectRole }: HeroProps) {
           <div className="lg:col-span-5 relative mt-6 lg:mt-0">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               {/* Outer animated glow ring — expands on hover */}
-              <div className="animate-hero-video-entrance rounded-[2rem] p-[3px] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] bg-[#F0E2E4] hover:bg-gradient-to-br hover:from-[#F4E409] hover:via-[#6B0F1A] hover:to-[#F4E409] hover:p-[4px] shadow-[0_24px_70px_rgba(107,15,26,0.10)] hover:shadow-[0_32px_90px_rgba(107,15,26,0.30)] group cursor-pointer">
+              <div className="animate-hero-video-entrance rounded-[2rem] p-[3px] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] bg-[#F0E2E4] hover:bg-gradient-to-br hover:from-[#F7E200] hover:via-[#6B0F1A] hover:to-[#F7E200] hover:p-[4px] shadow-[0_24px_70px_rgba(107,15,26,0.10)] hover:shadow-[0_32px_90px_rgba(107,15,26,0.30)] group cursor-pointer">
                 {/* Inner white padding frame */}
                 <div className="relative rounded-[1.6rem] bg-[#FFFDF5] p-2.5 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:p-3">
                   {/* Video container — clips the zoom */}
@@ -230,8 +230,8 @@ export default function Hero({ onSelectRole }: HeroProps) {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none transition-opacity duration-500 group-hover:from-black/40" />
 
                     {/* Overlay Badge */}
-                    <div className="absolute bottom-6 right-6 bg-[#3D0710] text-white px-5 py-2.5 rounded-full border-2 border-[#F4E409] shadow-xl flex items-center gap-2 text-xs sm:text-sm font-bold tracking-wide z-10 transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(244,228,9,0.5)]">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#F4E409] animate-ping" />
+                    <div className="absolute bottom-6 right-6 bg-[#3D0710] text-white px-5 py-2.5 rounded-full border-2 border-[#F7E200] shadow-xl flex items-center gap-2 text-xs sm:text-sm font-bold tracking-wide z-10 transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(247,226,0,0.5)]">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#F7E200] animate-ping" />
                       <span>Extra Space. Extra Opportunity.</span>
                     </div>
                   </div>

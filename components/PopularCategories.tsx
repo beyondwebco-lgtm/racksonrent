@@ -110,10 +110,10 @@ export default function PopularCategories() {
             onClick={() => handleScroll("left")}
             disabled={!canScrollLeft}
             aria-label="Previous categories"
-            className={`absolute -left-2 sm:left-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border-2 border-[#F4E409] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
+            className={`absolute -left-2 sm:left-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border-2 border-[#F7E200] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
               !canScrollLeft
                 ? "opacity-30 cursor-not-allowed pointer-events-none"
-                : "hover:bg-[#3D0710] hover:text-[#F4E409] hover:scale-105"
+                : "hover:bg-[#3D0710] hover:text-[#F7E200] hover:scale-105"
             }`}
           >
             <ChevronLeft className="w-6 h-6 stroke-[3]" />
@@ -125,10 +125,10 @@ export default function PopularCategories() {
             onClick={() => handleScroll("right")}
             disabled={!canScrollRight}
             aria-label="Next categories"
-            className={`absolute -right-2 sm:right-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border-2 border-[#F4E409] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
+            className={`absolute -right-2 sm:right-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border-2 border-[#F7E200] flex items-center justify-center shadow-lg transition-all cursor-pointer ${
               !canScrollRight
                 ? "opacity-30 cursor-not-allowed pointer-events-none"
-                : "hover:bg-[#3D0710] hover:text-[#F4E409] hover:scale-105"
+                : "hover:bg-[#3D0710] hover:text-[#F7E200] hover:scale-105"
             }`}
           >
             <ChevronRight className="w-6 h-6 stroke-[3]" />

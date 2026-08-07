@@ -7,8 +7,6 @@ import SpaceSearch from "@/components/SpaceSearch";
 
 import GymSpaceShowcase from "@/components/GymSpaceShowcase";
 import PopularCategories from "@/components/PopularCategories";
-import HowItWorks from "@/components/HowItWorks";
-import WhyChooseUs from "@/components/WhyChooseUs";
 import EnquiryForm from "@/components/EnquiryForm";
 import FAQ from "@/components/FAQ";
 import TrustStrip from "@/components/TrustStrip";
@@ -65,14 +63,6 @@ export default function HomePage() {
 
       <ScrollReveal>
         <PopularCategories />
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <HowItWorks />
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <WhyChooseUs />
       </ScrollReveal>
 
       <ScrollReveal>

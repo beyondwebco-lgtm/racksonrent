@@ -411,7 +411,7 @@ ${detailsText}`;
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F4E409] hover:bg-[#3D0710] text-[#3D0710] hover:text-[#F4E409] border border-[#6B0F1A]/20 py-3.5 px-6 font-extrabold text-base shadow-xs transition-all cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F7E200] hover:bg-[#3D0710] text-[#3D0710] hover:text-[#F7E200] border border-[#6B0F1A]/20 py-3.5 px-6 font-extrabold text-base shadow-xs transition-all cursor-pointer"
               >
                 <MessageCircle className="w-5 h-5 fill-current" />
                 <span>Submit & Continue on WhatsApp</span>

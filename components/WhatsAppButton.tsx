@@ -11,7 +11,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Enquire on WhatsApp"
-      className="fixed bottom-5 right-5 z-40 flex items-center gap-2 bg-[#F4E409] hover:bg-[#3D0710] text-[#3D0710] hover:text-[#F4E409] px-4 py-3 rounded-full shadow-xl border border-[#6B0F1A]/20 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#F4E409]/50 cursor-pointer"
+      className="fixed bottom-5 right-5 z-40 flex items-center gap-2 bg-[#F7E200] hover:bg-[#3D0710] text-[#3D0710] hover:text-[#F7E200] px-4 py-3 rounded-full shadow-xl border border-[#6B0F1A]/20 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#F7E200]/50 cursor-pointer"
     >
       <MessageCircle className="w-6 h-6 fill-current text-current" />
       <span className="font-extrabold text-sm hidden sm:inline-block pr-1">

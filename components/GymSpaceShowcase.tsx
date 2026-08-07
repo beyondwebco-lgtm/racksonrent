@@ -187,11 +187,11 @@ export default function GymSpaceShowcase({
                   }}
                   className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-extrabold border transition-all flex-shrink-0 cursor-pointer ${
                     isActive
-                      ? "bg-[#6B0F1A] text-[#FFF6A3] border-[#F4E409] shadow-md scale-105"
+                      ? "bg-[#6B0F1A] text-[#FFF6A3] border-[#F7E200] shadow-md scale-105"
                       : "bg-[#FFFDF5] text-[#6B0F1A] border-[#F0E2E4] hover:bg-[#FFF6A3]/40"
                   }`}
                 >
-                  <IconComp className={`w-4 h-4 ${isActive ? "text-[#F4E409]" : "text-[#6B0F1A]"}`} />
+                  <IconComp className={`w-4 h-4 ${isActive ? "text-[#F7E200]" : "text-[#6B0F1A]"}`} />
                   <span>{cat.shortName}</span>
                 </button>
               );
@@ -211,7 +211,7 @@ export default function GymSpaceShowcase({
             type="button"
             onClick={handlePrev}
             aria-label="Previous space category"
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border-2 border-[#F4E409] flex items-center justify-center shadow-lg hover:bg-[#3D0710] hover:text-[#F4E409] hover:scale-105 transition-all cursor-pointer active:scale-95"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border-2 border-[#F7E200] flex items-center justify-center shadow-lg hover:bg-[#3D0710] hover:text-[#F7E200] hover:scale-105 transition-all cursor-pointer active:scale-95"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 stroke-[3]" />
           </button>
@@ -221,7 +221,7 @@ export default function GymSpaceShowcase({
             type="button"
             onClick={handleNext}
             aria-label="Next space category"
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border-2 border-[#F4E409] flex items-center justify-center shadow-lg hover:bg-[#3D0710] hover:text-[#F4E409] hover:scale-105 transition-all cursor-pointer active:scale-95"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#6B0F1A] text-[#FFF6A3] border-2 border-[#F7E200] flex items-center justify-center shadow-lg hover:bg-[#3D0710] hover:text-[#F7E200] hover:scale-105 transition-all cursor-pointer active:scale-95"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 stroke-[3]" />
           </button>
@@ -285,7 +285,7 @@ export default function GymSpaceShowcase({
                 <button
                   type="button"
                   onClick={handleCtaPrimaryClick}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#F4E409] text-[#3D0710] border border-[#6B0F1A]/30 px-6 py-3 font-extrabold text-xs sm:text-sm shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-all cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#F7E200] text-[#3D0710] border border-[#6B0F1A]/30 px-6 py-3 font-extrabold text-xs sm:text-sm shadow-xs hover:bg-[#3D0710] hover:text-[#F7E200] transition-all cursor-pointer"
                 >
                   <Dumbbell className="w-4 h-4" />
                   <span>{activeCategory.primaryCta}</span>
@@ -294,9 +294,9 @@ export default function GymSpaceShowcase({
                 <button
                   type="button"
                   onClick={handleCtaSecondaryClick}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#6B0F1A] text-[#FFF6A3] border border-[#6B0F1A] px-6 py-3 font-extrabold text-xs sm:text-sm shadow-xs hover:bg-[#3D0710] hover:text-[#F4E409] transition-all cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#6B0F1A] text-[#FFF6A3] border border-[#6B0F1A] px-6 py-3 font-extrabold text-xs sm:text-sm shadow-xs hover:bg-[#3D0710] hover:text-[#F7E200] transition-all cursor-pointer"
                 >
-                  <Store className="w-4 h-4 text-[#F4E409]" />
+                  <Store className="w-4 h-4 text-[#F7E200]" />
                   <span>{activeCategory.secondaryCta}</span>
                 </button>
               </div>
@@ -323,9 +323,9 @@ export default function GymSpaceShowcase({
                 <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
 
                 {/* Floating Category Label */}
-                <div className="absolute bottom-4 left-4 right-4 bg-[#3D0710]/95 backdrop-blur-md text-white px-5 py-3 rounded-2xl border-2 border-[#F4E409] shadow-xl flex items-center justify-between text-sm sm:text-base font-bold tracking-wide z-10">
+                <div className="absolute bottom-4 left-4 right-4 bg-[#3D0710]/95 backdrop-blur-md text-white px-5 py-3 rounded-2xl border-2 border-[#F7E200] shadow-xl flex items-center justify-between text-sm sm:text-base font-bold tracking-wide z-10">
                   <span className="truncate">{activeCategory.title} Space</span>
-                  <ArrowRight className="w-5 h-5 text-[#F4E409] flex-shrink-0 ml-2" />
+                  <ArrowRight className="w-5 h-5 text-[#F7E200] flex-shrink-0 ml-2" />
                 </div>
               </div>
             </div>

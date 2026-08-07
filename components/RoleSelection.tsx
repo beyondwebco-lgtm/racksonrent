@@ -70,8 +70,8 @@ export default function RoleSelection({ onSelectRole }: RoleSelectionProps) {
                   onClick={() => handleRoleClick(card.role)}
                   className={`w-full py-3.5 px-6 rounded-full font-extrabold transition-all shadow-xs cursor-pointer text-center ${
                     isGymOwner
-                      ? "bg-[#F4E409] text-[#3D0710] border border-[#6B0F1A]/20 hover:bg-[#3D0710] hover:text-[#F4E409]"
-                      : "bg-[#6B0F1A] text-[#FFF6A3] hover:bg-[#3D0710] hover:text-[#F4E409]"
+                      ? "bg-[#F7E200] text-[#3D0710] border border-[#6B0F1A]/20 hover:bg-[#3D0710] hover:text-[#F7E200]"
+                      : "bg-[#6B0F1A] text-[#FFF6A3] hover:bg-[#3D0710] hover:text-[#F7E200]"
                   }`}
                 >
                   {card.ctaLabel}

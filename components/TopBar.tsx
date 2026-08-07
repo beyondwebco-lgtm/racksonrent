@@ -9,13 +9,13 @@ export default function TopBar() {
         
         {/* Left Side */}
         <div className="flex items-center gap-1.5 text-[#FFF6A3] truncate">
-          <Users className="w-3.5 h-3.5 text-[#F4E409] flex-shrink-0" />
+          <Users className="w-3.5 h-3.5 text-[#F7E200] flex-shrink-0" />
           <span className="truncate">{SITE_CONFIG.topBarTextLeft}</span>
         </div>
 
         {/* Centre Side */}
         <div className="hidden md:flex items-center gap-1.5 text-white/90 font-medium">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#F4E409] flex-shrink-0" />
+          <ShieldCheck className="w-3.5 h-3.5 text-[#F7E200] flex-shrink-0" />
           <span>{SITE_CONFIG.topBarTextCenter}</span>
         </div>
 
@@ -23,20 +23,30 @@ export default function TopBar() {
         <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
           <a
             href={SITE_CONFIG.telLink}
-            className="flex items-center gap-1 hover:text-[#F4E409] transition-colors"
+            className="flex items-center gap-1 hover:text-[#F7E200] transition-colors"
           >
-            <Phone className="w-3 h-3 text-[#F4E409]" />
+            <Phone className="w-3 h-3 text-[#F7E200]" />
             <span>{SITE_CONFIG.phoneFormatted}</span>
           </a>
 
-          <span className="text-[#F4E409]/40 hidden sm:inline">•</span>
+          <span className="text-[#F7E200]/40 hidden sm:inline">•</span>
 
           <a
-            href={SITE_CONFIG.mailtoLink}
-            className="hidden sm:flex items-center gap-1 hover:text-[#F4E409] transition-colors"
+            href={SITE_CONFIG.supportMailtoLink}
+            className="hidden sm:flex items-center gap-1 hover:text-[#F7E200] transition-colors"
           >
-            <Mail className="w-3 h-3 text-[#F4E409]" />
-            <span>{SITE_CONFIG.email}</span>
+            <Mail className="w-3 h-3 text-[#F7E200]" />
+            <span>{SITE_CONFIG.supportEmail}</span>
+          </a>
+
+          <span className="text-[#F7E200]/40 hidden lg:inline">•</span>
+
+          <a
+            href={SITE_CONFIG.contactMailtoLink}
+            className="hidden lg:flex items-center gap-1 hover:text-[#F7E200] transition-colors"
+          >
+            <Mail className="w-3 h-3 text-[#F7E200]" />
+            <span>{SITE_CONFIG.contactEmail}</span>
           </a>
         </div>
 

@@ -74,7 +74,7 @@ export default function RootLayout({
     "logo": `${SITE_CONFIG.domain}/images/hero-gym.png`,
     "description": "Sublet space. Share Success. Connecting gym owners with nutrition and wellness businesses.",
     "telephone": "+917995424477",
-    "email": "racksonrent@gmail.com"
+    "email": ["support@racksonrent.com", "contact@racksonrent.com"]
   };
 
   return (

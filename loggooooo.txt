@@ -20,15 +20,15 @@
     {/* Main Brand Title: Racks on Rent */}
     <div className="flex items-baseline font-black tracking-tighter leading-none text-2xl sm:text-3xl lg:text-4xl xl:text-[42px]">
       <span className="text-[#6B0F1A] font-black italic transform scale-y-110 origin-bottom">Racks</span>
-      <span className="text-[#F4E409] font-bold italic lowercase mx-1" style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "0.8em" }}>on</span>
-      <span className="text-[#F4E409] font-black italic transform scale-y-110 origin-bottom">Rent</span>
+      <span className="text-[#F7E200] font-bold italic lowercase mx-1" style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "0.8em" }}>on</span>
+      <span className="text-[#F7E200] font-black italic transform scale-y-110 origin-bottom">Rent</span>
     </div>
 
     {/* Tagline: — SUBLET SPACE. SHARE SUCCESS. — */}
     <div className="flex items-center justify-between gap-1 mt-1 text-[9px] sm:text-[10px] lg:text-[11px] xl:text-xs font-black uppercase tracking-[0.2em] leading-none whitespace-nowrap">
       <span className="h-[2px] w-3 sm:w-4 lg:w-5 bg-[#6B0F1A] inline-block" />
       <span className="text-[#6B0F1A]">SUBLET SPACE.</span>
-      <span className="text-[#F4E409]">SHARE SUCCESS.</span>
+      <span className="text-[#F7E200]">SHARE SUCCESS.</span>
       <span className="h-[2px] w-3 sm:w-4 lg:w-5 bg-[#6B0F1A] inline-block" />
     </div>
   </div>
